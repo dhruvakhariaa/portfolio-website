@@ -1,0 +1,1621 @@
+{
+  "initial": [
+    {
+      "selector": "SECTION.framer-1v28xg2",
+      "initialOpacity": "1",
+      "initialTransform": "none",
+      "initialPosition": {
+        "top": 0,
+        "left": 0
+      },
+      "isInViewport": true
+    },
+    {
+      "selector": "SECTION.",
+      "initialOpacity": "1",
+      "initialTransform": "none",
+      "initialPosition": {
+        "top": 664,
+        "left": 158.6750030517578
+      },
+      "isInViewport": true
+    },
+    {
+      "selector": "SECTION.framer-z1obu2",
+      "initialOpacity": "1",
+      "initialTransform": "none",
+      "initialPosition": {
+        "top": 720,
+        "left": 0
+      },
+      "isInViewport": false
+    },
+    {
+      "selector": "SECTION.framer-rzol2o",
+      "initialOpacity": "1",
+      "initialTransform": "none",
+      "initialPosition": {
+        "top": 2160,
+        "left": 0
+      },
+      "isInViewport": false
+    },
+    {
+      "selector": "SECTION.framer-18rrafk",
+      "initialOpacity": "1",
+      "initialTransform": "none",
+      "initialPosition": {
+        "top": 4654,
+        "left": 0
+      },
+      "isInViewport": false
+    },
+    {
+      "selector": "SECTION.framer-16kjfah",
+      "initialOpacity": "1",
+      "initialTransform": "none",
+      "initialPosition": {
+        "top": 5508.39990234375,
+        "left": 0
+      },
+      "isInViewport": false
+    },
+    {
+      "selector": "SECTION.framer-4v4tpn",
+      "initialOpacity": "1",
+      "initialTransform": "none",
+      "initialPosition": {
+        "top": 6337.75,
+        "left": 0
+      },
+      "isInViewport": false
+    },
+    {
+      "selector": "SECTION.framer-1efur92",
+      "initialOpacity": "1",
+      "initialTransform": "none",
+      "initialPosition": {
+        "top": 7485.75,
+        "left": 0
+      },
+      "isInViewport": false
+    },
+    {
+      "selector": "SECTION.framer-r012tx",
+      "initialOpacity": "1",
+      "initialTransform": "none",
+      "initialPosition": {
+        "top": 10078.25,
+        "left": 0
+      },
+      "isInViewport": false
+    },
+    {
+      "selector": "SECTION.framer-7oXJr framer-IVBB3 framer-sKEJK framer-xMM0q framer-hUwwJ framer-0mfHQ framer-1l3bzdy framer-v-1l3bzdy",
+      "initialOpacity": "1",
+      "initialTransform": "none",
+      "initialPosition": {
+        "top": 11046.25,
+        "left": 0
+      },
+      "isInViewport": false
+    },
+    {
+      "selector": "SECTION.framer-f5nu3p",
+      "initialOpacity": "1",
+      "initialTransform": "none",
+      "initialPosition": {
+        "top": 12050.0498046875,
+        "left": 0
+      },
+      "isInViewport": false
+    },
+    {
+      "selector": "SECTION.framer-jq0ndk",
+      "initialOpacity": "1",
+      "initialTransform": "none",
+      "initialPosition": {
+        "top": 12931.0498046875,
+        "left": 0
+      },
+      "isInViewport": false
+    },
+    {
+      "selector": "SECTION.framer-1ok57t9",
+      "initialOpacity": "1",
+      "initialTransform": "none",
+      "initialPosition": {
+        "top": 13863.0498046875,
+        "left": 0
+      },
+      "isInViewport": false
+    }
+  ],
+  "scrollStates": [
+    {
+      "scrollPosition": 0,
+      "elements": [
+        {
+          "selector": "SECTION.framer-1v28xg2",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": 0,
+            "left": 0
+          },
+          "isInViewport": true
+        },
+        {
+          "selector": "SECTION.",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": 664,
+            "left": 158.6750030517578
+          },
+          "isInViewport": true
+        },
+        {
+          "selector": "SECTION.framer-z1obu2",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": 720,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-rzol2o",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": 2160,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-18rrafk",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": 4654,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-16kjfah",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": 5508.39990234375,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-4v4tpn",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": 6337.75,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-1efur92",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": 7485.75,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-r012tx",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": 10078.25,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-7oXJr framer-IVBB3 framer-sKEJK framer-xMM0q framer-hUwwJ framer-0mfHQ framer-1l3bzdy framer-v-1l3bzdy",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": 11046.25,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-f5nu3p",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": 12050.0498046875,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-jq0ndk",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": 12931.0498046875,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-1ok57t9",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": 13863.0498046875,
+            "left": 0
+          },
+          "isInViewport": false
+        }
+      ]
+    },
+    {
+      "scrollPosition": 1533,
+      "elements": [
+        {
+          "selector": "SECTION.framer-1v28xg2",
+          "opacity": "0",
+          "transform": "matrix(0.9, 0, 0, 0.9, 0, -100)",
+          "position": {
+            "top": -64,
+            "left": 64
+          },
+          "isInViewport": true
+        },
+        {
+          "selector": "SECTION.",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": 533.6000366210938,
+            "left": 206.8074951171875
+          },
+          "isInViewport": true
+        },
+        {
+          "selector": "SECTION.framer-z1obu2",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": -812.7999877929688,
+            "left": 0
+          },
+          "isInViewport": true
+        },
+        {
+          "selector": "SECTION.framer-rzol2o",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": 627.2000122070312,
+            "left": 0
+          },
+          "isInViewport": true
+        },
+        {
+          "selector": "SECTION.framer-18rrafk",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": 3121.199951171875,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-16kjfah",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": 3975.60009765625,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-4v4tpn",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": 4804.9501953125,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-1efur92",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": 5952.9501953125,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-r012tx",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": 8545.4501953125,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-7oXJr framer-IVBB3 framer-sKEJK framer-xMM0q framer-hUwwJ framer-0mfHQ framer-1l3bzdy framer-v-1l3bzdy",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": 9513.4501953125,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-f5nu3p",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": 10517.25,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-jq0ndk",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": 11398.25,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-1ok57t9",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": 12330.25,
+            "left": 0
+          },
+          "isInViewport": false
+        }
+      ]
+    },
+    {
+      "scrollPosition": 3067,
+      "elements": [
+        {
+          "selector": "SECTION.framer-1v28xg2",
+          "opacity": "0",
+          "transform": "matrix(0.9, 0, 0, 0.9, 0, -100)",
+          "position": {
+            "top": -64,
+            "left": 64
+          },
+          "isInViewport": true
+        },
+        {
+          "selector": "SECTION.",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": 533.6000366210938,
+            "left": 206.8074951171875
+          },
+          "isInViewport": true
+        },
+        {
+          "selector": "SECTION.framer-z1obu2",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": -2347.199951171875,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-rzol2o",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": -907.2000122070312,
+            "left": 0
+          },
+          "isInViewport": true
+        },
+        {
+          "selector": "SECTION.framer-18rrafk",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": 1586.800048828125,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-16kjfah",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": 2441.199951171875,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-4v4tpn",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": 3270.550048828125,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-1efur92",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": 4418.55029296875,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-r012tx",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": 7011.05029296875,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-7oXJr framer-IVBB3 framer-sKEJK framer-xMM0q framer-hUwwJ framer-0mfHQ framer-1l3bzdy framer-v-1l3bzdy",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": 7979.05029296875,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-f5nu3p",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": 8982.8505859375,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-jq0ndk",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": 9863.8505859375,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-1ok57t9",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": 10795.8505859375,
+            "left": 0
+          },
+          "isInViewport": false
+        }
+      ]
+    },
+    {
+      "scrollPosition": 4600,
+      "elements": [
+        {
+          "selector": "SECTION.framer-1v28xg2",
+          "opacity": "0",
+          "transform": "matrix(0.9, 0, 0, 0.9, 0, -100)",
+          "position": {
+            "top": -64,
+            "left": 64
+          },
+          "isInViewport": true
+        },
+        {
+          "selector": "SECTION.",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": 533.6000366210938,
+            "left": 206.8074951171875
+          },
+          "isInViewport": true
+        },
+        {
+          "selector": "SECTION.framer-z1obu2",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": -3880,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-rzol2o",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": -2440,
+            "left": 0
+          },
+          "isInViewport": true
+        },
+        {
+          "selector": "SECTION.framer-18rrafk",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": 54,
+            "left": 0
+          },
+          "isInViewport": true
+        },
+        {
+          "selector": "SECTION.framer-16kjfah",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": 908.4000244140625,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-4v4tpn",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": 1737.75,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-1efur92",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": 2885.75,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-r012tx",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": 5478.25,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-7oXJr framer-IVBB3 framer-sKEJK framer-xMM0q framer-hUwwJ framer-0mfHQ framer-1l3bzdy framer-v-1l3bzdy",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": 6446.25,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-f5nu3p",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": 7450.05029296875,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-jq0ndk",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": 8331.0498046875,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-1ok57t9",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": 9263.0498046875,
+            "left": 0
+          },
+          "isInViewport": false
+        }
+      ]
+    },
+    {
+      "scrollPosition": 6134,
+      "elements": [
+        {
+          "selector": "SECTION.framer-1v28xg2",
+          "opacity": "0",
+          "transform": "matrix(0.9, 0, 0, 0.9, 0, -100)",
+          "position": {
+            "top": -64,
+            "left": 64
+          },
+          "isInViewport": true
+        },
+        {
+          "selector": "SECTION.",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": 533.6000366210938,
+            "left": 206.8074951171875
+          },
+          "isInViewport": true
+        },
+        {
+          "selector": "SECTION.framer-z1obu2",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": -5414.39990234375,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-rzol2o",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": -3974.400146484375,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-18rrafk",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": -1480.4000244140625,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-16kjfah",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": -626,
+            "left": 0
+          },
+          "isInViewport": true
+        },
+        {
+          "selector": "SECTION.framer-4v4tpn",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": 203.35000610351562,
+            "left": 0
+          },
+          "isInViewport": true
+        },
+        {
+          "selector": "SECTION.framer-1efur92",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": 1351.3499755859375,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-r012tx",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": 3943.85009765625,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-7oXJr framer-IVBB3 framer-sKEJK framer-xMM0q framer-hUwwJ framer-0mfHQ framer-1l3bzdy framer-v-1l3bzdy",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": 4911.85009765625,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-f5nu3p",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": 5915.64990234375,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-jq0ndk",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": 6796.64990234375,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-1ok57t9",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": 7728.64990234375,
+            "left": 0
+          },
+          "isInViewport": false
+        }
+      ]
+    },
+    {
+      "scrollPosition": 7667,
+      "elements": [
+        {
+          "selector": "SECTION.framer-1v28xg2",
+          "opacity": "0",
+          "transform": "matrix(0.9, 0, 0, 0.9, 0, -100)",
+          "position": {
+            "top": -64,
+            "left": 64
+          },
+          "isInViewport": true
+        },
+        {
+          "selector": "SECTION.",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": 533.6000366210938,
+            "left": 206.8074951171875
+          },
+          "isInViewport": true
+        },
+        {
+          "selector": "SECTION.framer-z1obu2",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": -6947.2001953125,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-rzol2o",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": -5507.2001953125,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-18rrafk",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": -3013.199951171875,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-16kjfah",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": -2158.800048828125,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-4v4tpn",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": -1329.4500732421875,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-1efur92",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": 0,
+            "left": -76.81417846679688
+          },
+          "isInViewport": true
+        },
+        {
+          "selector": "SECTION.framer-r012tx",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": 2411.050048828125,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-7oXJr framer-IVBB3 framer-sKEJK framer-xMM0q framer-hUwwJ framer-0mfHQ framer-1l3bzdy framer-v-1l3bzdy",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": 3379.050048828125,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-f5nu3p",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": 4382.85009765625,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-jq0ndk",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": 5263.85009765625,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-1ok57t9",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": 6195.85009765625,
+            "left": 0
+          },
+          "isInViewport": false
+        }
+      ]
+    },
+    {
+      "scrollPosition": 9201,
+      "elements": [
+        {
+          "selector": "SECTION.framer-1v28xg2",
+          "opacity": "0",
+          "transform": "matrix(0.9, 0, 0, 0.9, 0, -100)",
+          "position": {
+            "top": -64,
+            "left": 64
+          },
+          "isInViewport": true
+        },
+        {
+          "selector": "SECTION.",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": 533.6000366210938,
+            "left": 206.8074951171875
+          },
+          "isInViewport": true
+        },
+        {
+          "selector": "SECTION.framer-z1obu2",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": -8480.7998046875,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-rzol2o",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": -7040.80029296875,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-18rrafk",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": -4546.80029296875,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-16kjfah",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": -3692.400146484375,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-4v4tpn",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": -2863.050048828125,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-1efur92",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": 0,
+            "left": -726.9359741210938
+          },
+          "isInViewport": true
+        },
+        {
+          "selector": "SECTION.framer-r012tx",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": 877.4500122070312,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-7oXJr framer-IVBB3 framer-sKEJK framer-xMM0q framer-hUwwJ framer-0mfHQ framer-1l3bzdy framer-v-1l3bzdy",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": 1845.4500732421875,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-f5nu3p",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": 2849.25,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-jq0ndk",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": 3730.25,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-1ok57t9",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": 4662.25,
+            "left": 0
+          },
+          "isInViewport": false
+        }
+      ]
+    },
+    {
+      "scrollPosition": 10734,
+      "elements": [
+        {
+          "selector": "SECTION.framer-1v28xg2",
+          "opacity": "0",
+          "transform": "matrix(0.9, 0, 0, 0.9, 0, -100)",
+          "position": {
+            "top": -64,
+            "left": 64
+          },
+          "isInViewport": true
+        },
+        {
+          "selector": "SECTION.",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": 533.6000366210938,
+            "left": 206.8074951171875
+          },
+          "isInViewport": true
+        },
+        {
+          "selector": "SECTION.framer-z1obu2",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": -10014.400390625,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-rzol2o",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": -8574.400390625,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-18rrafk",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": -6080.39990234375,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-16kjfah",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": -5226,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-4v4tpn",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": -4396.64990234375,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-1efur92",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": -1376.1500244140625,
+            "left": -794
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-r012tx",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": -656.1500244140625,
+            "left": 0
+          },
+          "isInViewport": true
+        },
+        {
+          "selector": "SECTION.framer-7oXJr framer-IVBB3 framer-sKEJK framer-xMM0q framer-hUwwJ framer-0mfHQ framer-1l3bzdy framer-v-1l3bzdy",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": 311.8500061035156,
+            "left": 0
+          },
+          "isInViewport": true
+        },
+        {
+          "selector": "SECTION.framer-f5nu3p",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": 1315.6500244140625,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-jq0ndk",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": 2196.650146484375,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-1ok57t9",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": 3128.650146484375,
+            "left": 0
+          },
+          "isInViewport": false
+        }
+      ]
+    },
+    {
+      "scrollPosition": 12268,
+      "elements": [
+        {
+          "selector": "SECTION.framer-1v28xg2",
+          "opacity": "0",
+          "transform": "matrix(0.9, 0, 0, 0.9, 0, -100)",
+          "position": {
+            "top": -64,
+            "left": 64
+          },
+          "isInViewport": true
+        },
+        {
+          "selector": "SECTION.",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": 533.6000366210938,
+            "left": 206.8074951171875
+          },
+          "isInViewport": true
+        },
+        {
+          "selector": "SECTION.framer-z1obu2",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": -11548,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-rzol2o",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": -10108,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-18rrafk",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": -7614,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-16kjfah",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": -6759.60009765625,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-4v4tpn",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": -5930.25,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-1efur92",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": -2909.75,
+            "left": -794
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-r012tx",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": -2189.75,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-7oXJr framer-IVBB3 framer-sKEJK framer-xMM0q framer-hUwwJ framer-0mfHQ framer-1l3bzdy framer-v-1l3bzdy",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": -1221.75,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-f5nu3p",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": -217.9499969482422,
+            "left": 0
+          },
+          "isInViewport": true
+        },
+        {
+          "selector": "SECTION.framer-jq0ndk",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": 663.0499877929688,
+            "left": 0
+          },
+          "isInViewport": true
+        },
+        {
+          "selector": "SECTION.framer-1ok57t9",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": 1595.050048828125,
+            "left": 0
+          },
+          "isInViewport": false
+        }
+      ]
+    },
+    {
+      "scrollPosition": 13801,
+      "elements": [
+        {
+          "selector": "SECTION.framer-1v28xg2",
+          "opacity": "0",
+          "transform": "matrix(0.9, 0, 0, 0.9, 0, -100)",
+          "position": {
+            "top": -64,
+            "left": 64
+          },
+          "isInViewport": true
+        },
+        {
+          "selector": "SECTION.",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": 533.6000366210938,
+            "left": 206.8074951171875
+          },
+          "isInViewport": true
+        },
+        {
+          "selector": "SECTION.framer-z1obu2",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": -13080.7998046875,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-rzol2o",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": -11640.7998046875,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-18rrafk",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": -9146.7998046875,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-16kjfah",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": -8292.400390625,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-4v4tpn",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": -7463.05029296875,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-1efur92",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": -4442.55029296875,
+            "left": -794
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-r012tx",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": -3722.550048828125,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-7oXJr framer-IVBB3 framer-sKEJK framer-xMM0q framer-hUwwJ framer-0mfHQ framer-1l3bzdy framer-v-1l3bzdy",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": -2754.550048828125,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-f5nu3p",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": -1750.75,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-jq0ndk",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": -869.75,
+            "left": 0
+          },
+          "isInViewport": true
+        },
+        {
+          "selector": "SECTION.framer-1ok57t9",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": 62.25,
+            "left": 0
+          },
+          "isInViewport": true
+        }
+      ]
+    },
+    {
+      "scrollPosition": 15335,
+      "elements": [
+        {
+          "selector": "SECTION.framer-1v28xg2",
+          "opacity": "0",
+          "transform": "matrix(0.9, 0, 0, 0.9, 0, -100)",
+          "position": {
+            "top": -836.1500244140625,
+            "left": 64
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": -238.5500030517578,
+            "left": 206.8074951171875
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-z1obu2",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": -13895.2001953125,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-rzol2o",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": -12455.2001953125,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-18rrafk",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": -9961.2001953125,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-16kjfah",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": -9106.7998046875,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-4v4tpn",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": -8277.4501953125,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-1efur92",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": -5256.9501953125,
+            "left": -794
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-r012tx",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": -4536.9501953125,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-7oXJr framer-IVBB3 framer-sKEJK framer-xMM0q framer-hUwwJ framer-0mfHQ framer-1l3bzdy framer-v-1l3bzdy",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": -3568.949951171875,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-f5nu3p",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": -2565.150146484375,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-jq0ndk",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": -1684.1500244140625,
+            "left": 0
+          },
+          "isInViewport": false
+        },
+        {
+          "selector": "SECTION.framer-1ok57t9",
+          "opacity": "1",
+          "transform": "none",
+          "position": {
+            "top": -752.1500244140625,
+            "left": 0
+          },
+          "isInViewport": false
+        }
+      ]
+    }
+  ]
+}

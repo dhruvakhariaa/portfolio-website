@@ -1,0 +1,340 @@
+{
+  "hover": [
+    {
+      "tag": "BUTTON",
+      "className": "framer-ssNMG framer-PuqFG framer-xMM0q framer-bgdx60 framer-v-bgdx60",
+      "id": "",
+      "baseTransform": "none",
+      "baseBoxShadow": "none",
+      "baseBackground": "rgb(255, 73, 37) none repeat scroll 0% 0% / auto padding-box border-box",
+      "baseColor": "rgb(0, 0, 0)",
+      "cursor": "pointer",
+      "transition": "all"
+    },
+    {
+      "tag": "A",
+      "className": "framer-1cn8ypy framer-rgb9mn",
+      "id": "",
+      "baseTransform": "none",
+      "baseBoxShadow": "none",
+      "baseBackground": "rgb(34, 15, 13) none repeat scroll 0% 0% / auto padding-box border-box",
+      "baseColor": "rgb(0, 0, 238)",
+      "cursor": "pointer",
+      "transition": "all"
+    },
+    {
+      "tag": "A",
+      "className": "framer-Yddqc framer-lgZMr framer-xMM0q framer-7moic5 framer-v-1e6cwl5 framer-1mfhp9y",
+      "id": "",
+      "baseTransform": "none",
+      "baseBoxShadow": "none",
+      "baseBackground": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+      "baseColor": "rgb(0, 0, 238)",
+      "cursor": "auto",
+      "transition": "all"
+    },
+    {
+      "tag": "A",
+      "className": "framer-Yddqc framer-lgZMr framer-xMM0q framer-7moic5 framer-v-7moic5 framer-1mfhp9y",
+      "id": "",
+      "baseTransform": "none",
+      "baseBoxShadow": "none",
+      "baseBackground": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+      "baseColor": "rgb(0, 0, 238)",
+      "cursor": "pointer",
+      "transition": "all"
+    },
+    {
+      "tag": "A",
+      "className": "framer-Yddqc framer-lgZMr framer-xMM0q framer-7moic5 framer-v-7moic5 framer-1mfhp9y",
+      "id": "",
+      "baseTransform": "none",
+      "baseBoxShadow": "none",
+      "baseBackground": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+      "baseColor": "rgb(0, 0, 238)",
+      "cursor": "pointer",
+      "transition": "all"
+    },
+    {
+      "tag": "A",
+      "className": "framer-1n0r2pd framer-lux5qc",
+      "id": "",
+      "baseTransform": "none",
+      "baseBoxShadow": "none",
+      "baseBackground": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+      "baseColor": "rgb(0, 0, 238)",
+      "cursor": "pointer",
+      "transition": "all"
+    },
+    {
+      "tag": "A",
+      "className": "framer-ut6xtr framer-lux5qc",
+      "id": "",
+      "baseTransform": "none",
+      "baseBoxShadow": "none",
+      "baseBackground": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+      "baseColor": "rgb(0, 0, 238)",
+      "cursor": "pointer",
+      "transition": "all"
+    },
+    {
+      "tag": "A",
+      "className": "framer-hh5slt framer-lux5qc",
+      "id": "",
+      "baseTransform": "none",
+      "baseBoxShadow": "none",
+      "baseBackground": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+      "baseColor": "rgb(0, 0, 238)",
+      "cursor": "pointer",
+      "transition": "all"
+    },
+    {
+      "tag": "BUTTON",
+      "className": "framer-ssNMG framer-PuqFG framer-xMM0q framer-bgdx60 framer-v-1njs713",
+      "id": "",
+      "baseTransform": "none",
+      "baseBoxShadow": "none",
+      "baseBackground": "rgb(51, 51, 51) none repeat scroll 0% 0% / auto padding-box border-box",
+      "baseColor": "rgb(0, 0, 0)",
+      "cursor": "pointer",
+      "transition": "all"
+    },
+    {
+      "tag": "A",
+      "className": "framer-1cn8ypy framer-rgb9mn",
+      "id": "",
+      "baseTransform": "none",
+      "baseBoxShadow": "none",
+      "baseBackground": "rgb(10, 10, 10) none repeat scroll 0% 0% / auto padding-box border-box",
+      "baseColor": "rgb(0, 0, 238)",
+      "cursor": "pointer",
+      "transition": "all"
+    },
+    {
+      "tag": "BUTTON",
+      "className": "framer-ssNMG framer-PuqFG framer-xMM0q framer-bgdx60 framer-v-1njs713",
+      "id": "",
+      "baseTransform": "none",
+      "baseBoxShadow": "none",
+      "baseBackground": "rgb(51, 51, 51) none repeat scroll 0% 0% / auto padding-box border-box",
+      "baseColor": "rgb(0, 0, 0)",
+      "cursor": "pointer",
+      "transition": "all"
+    },
+    {
+      "tag": "A",
+      "className": "framer-1cn8ypy framer-rgb9mn",
+      "id": "",
+      "baseTransform": "none",
+      "baseBoxShadow": "none",
+      "baseBackground": "rgb(10, 10, 10) none repeat scroll 0% 0% / auto padding-box border-box",
+      "baseColor": "rgb(0, 0, 238)",
+      "cursor": "pointer",
+      "transition": "all"
+    },
+    {
+      "tag": "BUTTON",
+      "className": "framer-ssNMG framer-PuqFG framer-xMM0q framer-bgdx60 framer-v-1njs713",
+      "id": "",
+      "baseTransform": "none",
+      "baseBoxShadow": "none",
+      "baseBackground": "rgb(51, 51, 51) none repeat scroll 0% 0% / auto padding-box border-box",
+      "baseColor": "rgb(0, 0, 0)",
+      "cursor": "pointer",
+      "transition": "all"
+    },
+    {
+      "tag": "A",
+      "className": "framer-1cn8ypy framer-rgb9mn",
+      "id": "",
+      "baseTransform": "none",
+      "baseBoxShadow": "none",
+      "baseBackground": "rgb(10, 10, 10) none repeat scroll 0% 0% / auto padding-box border-box",
+      "baseColor": "rgb(0, 0, 238)",
+      "cursor": "pointer",
+      "transition": "all"
+    },
+    {
+      "tag": "BUTTON",
+      "className": "framer-ssNMG framer-PuqFG framer-xMM0q framer-bgdx60 framer-v-1njs713",
+      "id": "",
+      "baseTransform": "none",
+      "baseBoxShadow": "none",
+      "baseBackground": "rgb(51, 51, 51) none repeat scroll 0% 0% / auto padding-box border-box",
+      "baseColor": "rgb(0, 0, 0)",
+      "cursor": "pointer",
+      "transition": "all"
+    },
+    {
+      "tag": "A",
+      "className": "framer-1cn8ypy framer-rgb9mn",
+      "id": "",
+      "baseTransform": "none",
+      "baseBoxShadow": "none",
+      "baseBackground": "rgb(10, 10, 10) none repeat scroll 0% 0% / auto padding-box border-box",
+      "baseColor": "rgb(0, 0, 238)",
+      "cursor": "pointer",
+      "transition": "all"
+    },
+    {
+      "tag": "A",
+      "className": "framer-text framer-styles-preset-1irzdq5",
+      "id": "",
+      "baseTransform": "none",
+      "baseBoxShadow": "none",
+      "baseBackground": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+      "baseColor": "rgb(255, 73, 37)",
+      "cursor": "pointer",
+      "transition": "color 0.3s cubic-bezier(0.44, 0, 0.56, 1)"
+    },
+    {
+      "tag": "BUTTON",
+      "className": "framer-ssNMG framer-PuqFG framer-xMM0q framer-bgdx60 framer-v-4bmddr",
+      "id": "",
+      "baseTransform": "none",
+      "baseBoxShadow": "none",
+      "baseBackground": "rgb(51, 51, 51) none repeat scroll 0% 0% / auto padding-box border-box",
+      "baseColor": "rgb(0, 0, 0)",
+      "cursor": "pointer",
+      "transition": "all"
+    },
+    {
+      "tag": "A",
+      "className": "framer-1cn8ypy framer-rgb9mn",
+      "id": "",
+      "baseTransform": "none",
+      "baseBoxShadow": "none",
+      "baseBackground": "rgb(10, 10, 10) none repeat scroll 0% 0% / auto padding-box border-box",
+      "baseColor": "rgb(0, 0, 238)",
+      "cursor": "pointer",
+      "transition": "all"
+    },
+    {
+      "tag": "A",
+      "className": "framer-1m32kd8 framer-lux5qc",
+      "id": "",
+      "baseTransform": "none",
+      "baseBoxShadow": "none",
+      "baseBackground": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+      "baseColor": "rgb(0, 0, 238)",
+      "cursor": "pointer",
+      "transition": "all"
+    },
+    {
+      "tag": "A",
+      "className": "framer-d1p1l9 framer-lux5qc",
+      "id": "",
+      "baseTransform": "none",
+      "baseBoxShadow": "none",
+      "baseBackground": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+      "baseColor": "rgb(0, 0, 238)",
+      "cursor": "pointer",
+      "transition": "all"
+    },
+    {
+      "selector": "[data-framer-component-type=\"Text\"] a:hover, [data-framer-component-type=\"Text\"] a div span:hover, [data-framer-component-type=\"Text\"] a span span span:hover, [data-framer-component-type=\"Text\"] a p span span:hover, [data-framer-component-type=\"Text\"] a h1 span span:hover, [data-framer-component-type=\"Text\"] a h2 span span:hover, [data-framer-component-type=\"Text\"] a h3 span span:hover, [data-framer-component-type=\"Text\"] a h4 span span:hover, [data-framer-component-type=\"Text\"] a h5 span span:hover, [data-framer-component-type=\"Text\"] a h6 span span:hover",
+      "styles": "--font-family: var(--framer-link-hover-font-family,var(--framer-link-font-family,var(--framer-font-family))); --font-style: var(--framer-link-hover-font-style,var(--framer-link-font-style,var(--framer-font-style))); --font-weight: var(--framer-link-hover-font-weight,var(--framer-link-font-weight,var(--framer-font-weight))); --text-color: var(--framer-link-hover-text-color,var(--framer-link-text-color,var(--framer-text-color))); --font-size: var(--framer-link-hover-font-size,var(--framer-link-font-size,var(--framer-font-size))); --text-transform: var(--framer-link-hover-text-transform,var(--framer-link-text-transform,var(--framer-text-transform))); --text-decoration: var(--framer-link-hover-text-decoration-style,var(--framer-link-text-decoration-style,var(--framer-text-decoration-style,solid)))var(--framer-link-hover-text-decoration,var(--framer-link-text-decoration,var(--framer-text-decoration,none)))var(--framer-link-hover-text-decoration-color,var(--framer-link-text-decoration-color,var(--framer-text-decoration-color,currentcolor)))var(--framer-link-hover-text-decoration-thickness,var(--framer-link-text-decoration-thickness,var(--framer-text-decoration-thickness,auto))); --text-decoration-skip-ink: var(--framer-link-hover-text-decoration-skip-ink,var(--framer-link-text-decoration-skip-ink,var(--framer-text-decoration-skip-ink))); --text-underline-offset: var(--framer-link-hover-text-decoration-offset,var(--framer-link-text-decoration-offset,var(--framer-text-decoration-offset)));"
+    },
+    {
+      "selector": "a.framer-text:hover, a.framer-text:hover span.framer-text:not([data-text-fill]), span.framer-text[data-nested-link]:hover, span.framer-text[data-nested-link]:hover span.framer-text:not([data-text-fill])",
+      "styles": "font-family: var(--framer-link-hover-font-family,var(--framer-blockquote-font-family,var(--framer-link-font-family,var(--framer-font-family,Inter,Inter Placeholder,sans-serif)))); font-style: var(--framer-link-hover-font-style,var(--framer-blockquote-font-style,var(--framer-link-font-style,var(--framer-font-style,normal)))); font-weight: var(--framer-link-hover-font-weight,var(--framer-blockquote-font-weight,var(--framer-link-font-weight,var(--framer-font-weight,400)))); font-size: calc(var(--framer-link-hover-font-size,var(--framer-blockquote-font-size,var(--framer-font-size,16px)))*var(--framer-font-size-scale,1)); text-transform: var(--framer-link-hover-text-transform,var(--framer-blockquote-text-transform,var(--framer-link-text-transform,var(--framer-text-transform,none)))); border-radius: var(--framer-link-hover-text-background-radius,var(--framer-link-text-background-radius,var(--framer-text-background-radius,initial))); padding: var(--framer-link-hover-text-background-padding,var(--framer-link-text-background-padding,var(--framer-text-background-padding,initial)));"
+    },
+    {
+      "selector": "a.framer-text:hover, span.framer-text[data-nested-link]:hover",
+      "styles": "color: var(--framer-link-hover-text-color,var(--framer-blockquote-text-color,var(--framer-link-text-color,var(--framer-text-color,#000)))); text-decoration-line: var(--framer-link-hover-text-decoration,var(--framer-blockquote-text-decoration,var(--framer-link-text-decoration,var(--framer-text-decoration,initial)))); text-decoration-style: var(--framer-link-hover-text-decoration-style,var(--framer-blockquote-text-decoration-style,var(--framer-link-text-decoration-style,var(--framer-text-decoration-style,initial)))); text-decoration-color: var(--framer-link-hover-text-decoration-color,var(--framer-blockquote-text-decoration-color,var(--framer-link-text-decoration-color,var(--framer-text-decoration-color,initial)))); text-decoration-thickness: var(--framer-link-hover-text-decoration-thickness,var(--framer-blockquote-text-decoration-thickness,var(--framer-link-text-decoration-thickness,var(--framer-text-decoration-thickness,initial)))); text-decoration-skip-ink: var(--framer-link-hover-text-decoration-skip-ink,var(--framer-blockquote-text-decoration-skip-ink,var(--framer-link-text-decoration-skip-ink,var(--framer-text-decoration-skip-ink,initial)))); text-underline-offset: var(--framer-link-hover-text-decoration-offset,var(--framer-blockquote-text-decoration-offset,var(--framer-link-text-decoration-offset,var(--framer-text-decoration-offset,initial)))); background-color: var(--framer-link-hover-text-background-color,var(--framer-link-text-background-color,var(--framer-text-background-color,initial)));"
+    },
+    {
+      "selector": "code.framer-text a.framer-text:hover, code.framer-text span.framer-text[data-nested-link]:hover",
+      "styles": "color: var(--framer-link-hover-text-color,var(--framer-blockquote-text-color,var(--framer-link-text-color,var(--framer-code-text-color,var(--framer-text-color,#000)))));"
+    },
+    {
+      "selector": "a.framer-text[data-framer-page-link-current]:hover, a.framer-text[data-framer-page-link-current]:hover span.framer-text:not([data-text-fill]), span.framer-text[data-framer-page-link-current]:hover, span.framer-text[data-framer-page-link-current]:hover span.framer-text:not([data-text-fill])",
+      "styles": "color: inherit; font-family: var(--framer-link-hover-font-family,var(--framer-link-current-font-family,var(--framer-link-font-family,var(--framer-font-family,Inter,Inter Placeholder,sans-serif)))); font-style: var(--framer-link-hover-font-style,var(--framer-link-current-font-style,var(--framer-link-font-style,var(--framer-font-style,normal)))); font-weight: var(--framer-link-hover-font-weight,var(--framer-link-current-font-weight,var(--framer-link-font-weight,var(--framer-font-weight,400)))); font-size: calc(var(--framer-link-hover-font-size,var(--framer-link-current-font-size,var(--framer-link-font-size,var(--framer-font-size,16px))))*var(--framer-font-size-scale,1)); text-transform: var(--framer-link-hover-text-transform,var(--framer-link-current-text-transform,var(--framer-link-text-transform,var(--framer-text-transform,none)))); border-radius: var(--framer-link-hover-text-background-radius,var(--framer-link-current-text-background-radius,var(--framer-link-text-background-radius,initial))); padding: var(--framer-link-hover-text-background-padding,var(--framer-link-current-text-background-padding,var(--framer-link-text-background-padding,initial)));"
+    },
+    {
+      "selector": "a.framer-text[data-framer-page-link-current]:hover, span.framer-text[data-framer-page-link-current]:hover",
+      "styles": "color: var(--framer-link-hover-text-color,var(--framer-link-current-text-color,var(--framer-link-text-color,var(--framer-text-color,#000)))); text-decoration-line: var(--framer-link-hover-text-decoration,var(--framer-link-current-text-decoration,var(--framer-link-text-decoration,var(--framer-text-decoration,initial)))); text-decoration-style: var(--framer-link-hover-text-decoration-style,var(--framer-link-current-text-decoration-style,var(--framer-link-text-decoration-style,var(--framer-text-decoration-style,initial)))); text-decoration-color: var(--framer-link-hover-text-decoration-color,var(--framer-link-current-text-decoration-color,var(--framer-link-text-decoration-color,var(--framer-text-decoration-color,initial)))); text-decoration-thickness: var(--framer-link-hover-text-decoration-thickness,var(--framer-link-current-text-decoration-thickness,var(--framer-link-text-decoration-thickness,var(--framer-text-decoration-thickness,initial)))); text-decoration-skip-ink: var(--framer-link-hover-text-decoration-skip-ink,var(--framer-link-current-text-decoration-skip-ink,var(--framer-link-text-decoration-skip-ink,var(--framer-text-decoration-skip-ink,initial)))); text-underline-offset: var(--framer-link-hover-text-decoration-offset,var(--framer-link-current-text-decoration-offset,var(--framer-link-text-decoration-offset,var(--framer-text-decoration-offset,initial)))); background-color: var(--framer-link-hover-text-background-color,var(--framer-link-current-text-background-color,var(--framer-link-text-background-color,initial)));"
+    },
+    {
+      "selector": "code.framer-text a.framer-text[data-framer-page-link-current]:hover, code.framer-text span.framer-text[data-framer-page-link-current]:hover",
+      "styles": "color: var(--framer-link-hover-text-color,var(--framer-link-current-text-color,var(--framer-link-text-color,var(--framer-code-text-color,var(--framer-text-color,#000)))));"
+    },
+    {
+      "selector": "[data-framer-component-type=\"DeprecatedRichText\"] a:hover, [data-framer-component-type=\"DeprecatedRichText\"] a:hover span:not([data-text-fill])",
+      "styles": "font-family: var(--framer-link-hover-font-family,var(--framer-link-font-family,var(--framer-font-family,Inter,Inter Placeholder,sans-serif))); font-style: var(--framer-link-hover-font-style,var(--framer-link-font-style,var(--framer-font-style,normal))); font-weight: var(--framer-link-hover-font-weight,var(--framer-link-font-weight,var(--framer-font-weight,400))); color: var(--framer-link-hover-text-color,var(--framer-link-text-color,var(--framer-text-color,#000))); font-size: var(--framer-link-hover-font-size,var(--framer-link-font-size,var(--framer-font-size,16px))); text-transform: var(--framer-link-hover-text-transform,var(--framer-link-text-transform,var(--framer-text-transform,none))); text-decoration: var(--framer-link-hover-text-decoration,var(--framer-link-text-decoration,var(--framer-text-decoration,none)));"
+    },
+    {
+      "selector": "[data-framer-component-type=\"DeprecatedRichText\"] a[data-framer-page-link-current]:hover, [data-framer-component-type=\"DeprecatedRichText\"] a[data-framer-page-link-current]:hover span:not([data-text-fill]):not([data-nested-link])",
+      "styles": "font-family: var(--framer-link-hover-font-family,var(--framer-link-current-font-family,var(--framer-link-font-family,var(--framer-font-family,Inter,Inter Placeholder,sans-serif)))); font-style: var(--framer-link-hover-font-style,var(--framer-link-current-font-style,var(--framer-link-font-style,var(--framer-font-style,normal)))); font-weight: var(--framer-link-hover-font-weight,var(--framer-link-current-font-weight,var(--framer-link-font-weight,var(--framer-font-weight,400)))); color: var(--framer-link-hover-text-color,var(--framer-link-current-text-color,var(--framer-link-text-color,var(--framer-text-color,#000)))); font-size: var(--framer-link-hover-font-size,var(--framer-link-current-font-size,var(--framer-link-font-size,var(--framer-font-size,16px)))); text-transform: var(--framer-link-hover-text-transform,var(--framer-link-current-text-transform,var(--framer-link-text-transform,var(--framer-text-transform,none)))); text-decoration: var(--framer-link-hover-text-decoration,var(--framer-link-current-text-decoration,var(--framer-link-text-decoration,var(--framer-text-decoration,none))));"
+    },
+    {
+      "selector": "[data-framer-component-type=\"Text\"] a:hover, [data-framer-component-type=\"Text\"] a div span:hover, [data-framer-component-type=\"Text\"] a span span span:hover, [data-framer-component-type=\"Text\"] a p span span:hover, [data-framer-component-type=\"Text\"] a h1 span span:hover, [data-framer-component-type=\"Text\"] a h2 span span:hover, [data-framer-component-type=\"Text\"] a h3 span span:hover, [data-framer-component-type=\"Text\"] a h4 span span:hover, [data-framer-component-type=\"Text\"] a h5 span span:hover, [data-framer-component-type=\"Text\"] a h6 span span:hover",
+      "styles": "--font-family: var(--framer-link-hover-font-family, var(--framer-link-font-family, var(--framer-font-family))); --font-style: var(--framer-link-hover-font-style, var(--framer-link-font-style, var(--framer-font-style))); --font-weight: var(--framer-link-hover-font-weight, var(--framer-link-font-weight, var(--framer-font-weight))); --text-color: var(--framer-link-hover-text-color, var(--framer-link-text-color, var(--framer-text-color))); --font-size: var(--framer-link-hover-font-size, var(--framer-link-font-size, var(--framer-font-size))); --text-transform: var(--framer-link-hover-text-transform, var(--framer-link-text-transform, var(--framer-text-transform))); --text-decoration: var(--framer-link-hover-text-decoration-style, var(--framer-link-text-decoration-style, var(--framer-text-decoration-style, solid))) var(--framer-link-hover-text-decoration, var(--framer-link-text-decoration, var(--framer-text-decoration, none))) var(--framer-link-hover-text-decoration-color, var(--framer-link-text-decoration-color, var(--framer-text-decoration-color, currentcolor))) var(--framer-link-hover-text-decoration-thickness, var(--framer-link-text-decoration-thickness, var(--framer-text-decoration-thickness, auto))); --text-decoration-skip-ink: var(--framer-link-hover-text-decoration-skip-ink, var(--framer-link-text-decoration-skip-ink, var(--framer-text-decoration-skip-ink))); --text-underline-offset: var(--framer-link-hover-text-decoration-offset, var(--framer-link-text-decoration-offset, var(--framer-text-decoration-offset)));"
+    },
+    {
+      "selector": "a.framer-text:hover, a.framer-text:hover span.framer-text:not([data-text-fill]), span.framer-text[data-nested-link]:hover, span.framer-text[data-nested-link]:hover span.framer-text:not([data-text-fill])",
+      "styles": "font-family: var(--framer-link-hover-font-family, var(--framer-blockquote-font-family, var(--framer-link-font-family, var(--framer-font-family, Inter, Inter Placeholder, sans-serif)))); font-style: var(--framer-link-hover-font-style, var(--framer-blockquote-font-style, var(--framer-link-font-style, var(--framer-font-style, normal)))); font-weight: var(--framer-link-hover-font-weight, var(--framer-blockquote-font-weight, var(--framer-link-font-weight, var(--framer-font-weight, 400)))); font-size: calc(var(--framer-link-hover-font-size, var(--framer-blockquote-font-size, var(--framer-font-size, 16px))) * var(--framer-font-size-scale, 1)); text-transform: var(--framer-link-hover-text-transform, var(--framer-blockquote-text-transform, var(--framer-link-text-transform, var(--framer-text-transform, none)))); border-radius: var(--framer-link-hover-text-background-radius, var(--framer-link-text-background-radius, var(--framer-text-background-radius, initial))); padding: var(--framer-link-hover-text-background-padding, var(--framer-link-text-background-padding, var(--framer-text-background-padding, initial)));"
+    },
+    {
+      "selector": "a.framer-text:hover, span.framer-text[data-nested-link]:hover",
+      "styles": "color: var(--framer-link-hover-text-color, var(--framer-blockquote-text-color, var(--framer-link-text-color, var(--framer-text-color, #000)))); text-decoration-line: var(--framer-link-hover-text-decoration, var(--framer-blockquote-text-decoration, var(--framer-link-text-decoration, var(--framer-text-decoration, initial)))); text-decoration-style: var(--framer-link-hover-text-decoration-style, var(--framer-blockquote-text-decoration-style, var(--framer-link-text-decoration-style, var(--framer-text-decoration-style, initial)))); text-decoration-color: var(--framer-link-hover-text-decoration-color, var(--framer-blockquote-text-decoration-color, var(--framer-link-text-decoration-color, var(--framer-text-decoration-color, initial)))); text-decoration-thickness: var(--framer-link-hover-text-decoration-thickness, var(--framer-blockquote-text-decoration-thickness, var(--framer-link-text-decoration-thickness, var(--framer-text-decoration-thickness, initial)))); text-decoration-skip-ink: var(--framer-link-hover-text-decoration-skip-ink, var(--framer-blockquote-text-decoration-skip-ink, var(--framer-link-text-decoration-skip-ink, var(--framer-text-decoration-skip-ink, initial)))); text-underline-offset: var(--framer-link-hover-text-decoration-offset, var(--framer-blockquote-text-decoration-offset, var(--framer-link-text-decoration-offset, var(--framer-text-decoration-offset, initial)))); background-color: var(--framer-link-hover-text-background-color, var(--framer-link-text-background-color, var(--framer-text-background-color, initial)));"
+    },
+    {
+      "selector": "code.framer-text a.framer-text:hover, code.framer-text span.framer-text[data-nested-link]:hover",
+      "styles": "color: var(--framer-link-hover-text-color, var(--framer-blockquote-text-color, var(--framer-link-text-color, var(--framer-code-text-color, var(--framer-text-color, #000)))));"
+    },
+    {
+      "selector": "a.framer-text[data-framer-page-link-current]:hover, a.framer-text[data-framer-page-link-current]:hover span.framer-text:not([data-text-fill]), span.framer-text[data-framer-page-link-current]:hover, span.framer-text[data-framer-page-link-current]:hover span.framer-text:not([data-text-fill])",
+      "styles": "color: inherit; font-family: var(--framer-link-hover-font-family, var(--framer-link-current-font-family, var(--framer-link-font-family, var(--framer-font-family, Inter, Inter Placeholder, sans-serif)))); font-style: var(--framer-link-hover-font-style, var(--framer-link-current-font-style, var(--framer-link-font-style, var(--framer-font-style, normal)))); font-weight: var(--framer-link-hover-font-weight, var(--framer-link-current-font-weight, var(--framer-link-font-weight, var(--framer-font-weight, 400)))); font-size: calc(var(--framer-link-hover-font-size, var(--framer-link-current-font-size, var(--framer-link-font-size, var(--framer-font-size, 16px)))) * var(--framer-font-size-scale, 1)); text-transform: var(--framer-link-hover-text-transform, var(--framer-link-current-text-transform, var(--framer-link-text-transform, var(--framer-text-transform, none)))); border-radius: var(--framer-link-hover-text-background-radius, var(--framer-link-current-text-background-radius, var(--framer-link-text-background-radius, initial))); padding: var(--framer-link-hover-text-background-padding, var(--framer-link-current-text-background-padding, var(--framer-link-text-background-padding, initial)));"
+    },
+    {
+      "selector": "a.framer-text[data-framer-page-link-current]:hover, span.framer-text[data-framer-page-link-current]:hover",
+      "styles": "color: var(--framer-link-hover-text-color, var(--framer-link-current-text-color, var(--framer-link-text-color, var(--framer-text-color, #000)))); text-decoration-line: var(--framer-link-hover-text-decoration, var(--framer-link-current-text-decoration, var(--framer-link-text-decoration, var(--framer-text-decoration, initial)))); text-decoration-style: var(--framer-link-hover-text-decoration-style, var(--framer-link-current-text-decoration-style, var(--framer-link-text-decoration-style, var(--framer-text-decoration-style, initial)))); text-decoration-color: var(--framer-link-hover-text-decoration-color, var(--framer-link-current-text-decoration-color, var(--framer-link-text-decoration-color, var(--framer-text-decoration-color, initial)))); text-decoration-thickness: var(--framer-link-hover-text-decoration-thickness, var(--framer-link-current-text-decoration-thickness, var(--framer-link-text-decoration-thickness, var(--framer-text-decoration-thickness, initial)))); text-decoration-skip-ink: var(--framer-link-hover-text-decoration-skip-ink, var(--framer-link-current-text-decoration-skip-ink, var(--framer-link-text-decoration-skip-ink, var(--framer-text-decoration-skip-ink, initial)))); text-underline-offset: var(--framer-link-hover-text-decoration-offset, var(--framer-link-current-text-decoration-offset, var(--framer-link-text-decoration-offset, var(--framer-text-decoration-offset, initial)))); background-color: var(--framer-link-hover-text-background-color, var(--framer-link-current-text-background-color, var(--framer-link-text-background-color, initial)));"
+    },
+    {
+      "selector": "code.framer-text a.framer-text[data-framer-page-link-current]:hover, code.framer-text span.framer-text[data-framer-page-link-current]:hover",
+      "styles": "color: var(--framer-link-hover-text-color, var(--framer-link-current-text-color, var(--framer-link-text-color, var(--framer-code-text-color, var(--framer-text-color, #000)))));"
+    },
+    {
+      "selector": "[data-framer-component-type=\"DeprecatedRichText\"] a:hover, [data-framer-component-type=\"DeprecatedRichText\"] a:hover span:not([data-text-fill])",
+      "styles": "font-family: var(--framer-link-hover-font-family, var(--framer-link-font-family, var(--framer-font-family, Inter, Inter Placeholder, sans-serif))); font-style: var(--framer-link-hover-font-style, var(--framer-link-font-style, var(--framer-font-style, normal))); font-weight: var(--framer-link-hover-font-weight, var(--framer-link-font-weight, var(--framer-font-weight, 400))); color: var(--framer-link-hover-text-color, var(--framer-link-text-color, var(--framer-text-color, #000))); font-size: var(--framer-link-hover-font-size, var(--framer-link-font-size, var(--framer-font-size, 16px))); text-transform: var(--framer-link-hover-text-transform, var(--framer-link-text-transform, var(--framer-text-transform, none))); text-decoration: var(--framer-link-hover-text-decoration, var(--framer-link-text-decoration, var(--framer-text-decoration, none)));"
+    },
+    {
+      "selector": "[data-framer-component-type=\"DeprecatedRichText\"] a[data-framer-page-link-current]:hover, [data-framer-component-type=\"DeprecatedRichText\"] a[data-framer-page-link-current]:hover span:not([data-text-fill]):not([data-nested-link])",
+      "styles": "font-family: var(--framer-link-hover-font-family, var(--framer-link-current-font-family, var(--framer-link-font-family, var(--framer-font-family, Inter, Inter Placeholder, sans-serif)))); font-style: var(--framer-link-hover-font-style, var(--framer-link-current-font-style, var(--framer-link-font-style, var(--framer-font-style, normal)))); font-weight: var(--framer-link-hover-font-weight, var(--framer-link-current-font-weight, var(--framer-link-font-weight, var(--framer-font-weight, 400)))); color: var(--framer-link-hover-text-color, var(--framer-link-current-text-color, var(--framer-link-text-color, var(--framer-text-color, #000)))); font-size: var(--framer-link-hover-font-size, var(--framer-link-current-font-size, var(--framer-link-font-size, var(--framer-font-size, 16px)))); text-transform: var(--framer-link-hover-text-transform, var(--framer-link-current-text-transform, var(--framer-link-text-transform, var(--framer-text-transform, none)))); text-decoration: var(--framer-link-hover-text-decoration, var(--framer-link-current-text-decoration, var(--framer-link-text-decoration, var(--framer-text-decoration, none))));"
+    },
+    {
+      "selector": "::-webkit-scrollbar-thumb:hover",
+      "styles": "background-color: rgb(28, 28, 28);"
+    }
+  ],
+  "focus": [
+    {
+      "selector": ".framer-form-input:focus-visible",
+      "styles": "outline: none;"
+    },
+    {
+      "selector": ".framer-form-text-input:focus-within, .framer-form-text-input.framer-form-input-forced-focus",
+      "styles": "box-shadow: var(--framer-input-focused-box-shadow,var(--framer-input-box-shadow)); background: var(--framer-input-focused-background,var(--framer-input-background));"
+    },
+    {
+      "selector": ".framer-form-text-input:focus-within::after, .framer-form-text-input.framer-form-input-forced-focus::after",
+      "styles": "border-color: var(--framer-input-focused-border-color,var(--framer-input-border-color)); border-style: var(--framer-input-focused-border-style,var(--framer-input-border-style)); border-width: var(--framer-input-focused-border-width,var(--framer-input-border-top-width)var(--framer-input-border-right-width)var(--framer-input-border-bottom-width)var(--framer-input-border-left-width));"
+    }
+  ],
+  "active": [
+    {
+      "selector": "[data-framer-cursor=\"grab\"]:active",
+      "styles": "cursor: grabbing;"
+    },
+    {
+      "selector": "[data-framer-cursor=\"grab\"]:active",
+      "styles": "cursor: grabbing;"
+    },
+    {
+      "selector": "::-webkit-scrollbar-thumb:active",
+      "styles": "background-color: rgb(0, 0, 0);"
+    }
+  ],
+  "disabled": []
+}
