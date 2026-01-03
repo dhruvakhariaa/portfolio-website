@@ -15,10 +15,10 @@ export default function Navigation() {
     const [isScrolled, setIsScrolled] = useState(false);
     const pathname = usePathname();
 
-    // Handle scroll
+    // Handle scroll - hide navbar until scrollY > 400
     useEffect(() => {
         const handleScroll = () => {
-            setIsScrolled(window.scrollY > 300);
+            setIsScrolled(window.scrollY > 550);
         };
 
         window.addEventListener('scroll', handleScroll);
@@ -51,8 +51,8 @@ export default function Navigation() {
 
             <header
                 className={`fixed top-0 left-0 right-0 z-[var(--z-sticky)] transition-all duration-300 ${isScrolled
-                    ? 'bg-[var(--color-bg)]/90 backdrop-blur-lg border-b border-[var(--color-border)]'
-                    : 'bg-transparent'
+                    ? 'bg-[var(--color-bg)]/90 backdrop-blur-lg border-b border-[var(--color-border)] translate-y-0 opacity-100'
+                    : 'bg-transparent -translate-y-full opacity-0 pointer-events-none'
                     }`}
             >
                 <nav className="container flex items-center justify-between h-16 lg:h-20" role="navigation" aria-label="Main navigation">

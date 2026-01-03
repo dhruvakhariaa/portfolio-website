@@ -7,10 +7,11 @@ import { useGSAP, gsap } from '@/hooks/useGSAP';
 
 export default function Hero() {
     const heroRef = useRef<HTMLElement>(null);
-    const nameRef = useRef<HTMLHeadingElement>(null);
+    const nameRef = useRef<HTMLDivElement>(null);
+    const subtitleRef = useRef<HTMLDivElement>(null);
     const taglineRef = useRef<HTMLDivElement>(null);
     const imageRef = useRef<HTMLDivElement>(null);
-    const badgeRef = useRef<HTMLDivElement>(null);
+    //const badgeRef = useRef<HTMLDivElement>(null);
 
     useGSAP(() => {
         const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
@@ -19,78 +20,93 @@ export default function Hero() {
         tl.fromTo(
             nameRef.current,
             { opacity: 0, y: 50 },
-            { opacity: 1, y: 0, duration: 1 }
+            { opacity: 1, y: 0, duration: 1.2 }
         )
             .fromTo(
+                subtitleRef.current,
+                { opacity: 0, x: -100 },
+                { opacity: 1, x: 0, duration: 1 },
+                '-=0.5'
+            )
+            .fromTo(
                 imageRef.current,
-                { opacity: 0, scale: 0.9 },
-                { opacity: 1, scale: 1, duration: 1 },
+                { opacity: 0, scale: 30 },
+                { opacity: 1, scale: 1, duration: 1.5 },
                 '-=0.5'
             )
             .fromTo(
                 taglineRef.current,
                 { opacity: 0, y: 30 },
-                { opacity: 1, y: 0, duration: 0.8 },
+                { opacity: 1, y: 0, duration: 1 },
                 '-=0.5'
-            )
-            .fromTo(
-                badgeRef.current,
-                { opacity: 0, y: 20 },
-                { opacity: 1, y: 0, duration: 0.6 },
-                '-=0.3'
             );
+        // .fromTo(
+        //     badgeRef.current,
+        //     { opacity: 0, y: 20 },
+        //     { opacity: 1, y: 0, duration: 0.6 },
+        //     '-=0.3'
+        // );
     }, []);
 
     return (
         <section
             ref={heroRef}
             className="relative min-h-screen flex flex-col justify-between overflow-hidden"
+            style={{ paddingTop: '40px' }}
             aria-label="Hero section"
         >
+            {/* Background Image - Full Screen */}
+            <div
+                ref={imageRef}
+                className="absolute inset-0 z-0"
+            >
+                <Image
+                    src="/arun-clarke-aclChr6h0VI-unsplash.jpg"
+                    alt="Dhruv Vakharia - Full Stack Developer"
+                    fill
+                    className="object-cover"
+                    priority
+                    sizes="100vw"
+                />
+                {/* Dark overlay for better text readability */}
+                <div className="absolute inset-0 bg-black/20" />
+            </div>
+
             {/* Main Content Grid */}
-            <div className="container flex-1 flex items-center py-8 lg:py-0">
-                <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
+            <div className="flex-1 flex items-center lg:items-start py-8 lg:py-0 lg:!pl-12 lg:!pr-24 relative z-10">
+                <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8">
 
                     {/* Left - Name/Title */}
-                    <div className="lg:col-span-3 order-2 lg:order-1 z-10 relative">
-                        <h1
+                    <div className="lg:col-span-3 order-1 text-center lg:text-left lg:self-start">
+                        <div
                             ref={nameRef}
-                            className="text-[clamp(3rem,8vw,7rem)] font-bold leading-[0.9] tracking-tighter"
-                            style={{ writingMode: 'horizontal-tb' }}
+                            className="text-[clamp(2.5rem,10vw,7rem)] font-bold leading-[0.9] tracking-tighter"
                         >
                             <span className="block">DHRUV</span>
-                            <span className="block text-[var(--color-primary)]">VAKHARIA</span>
-                        </h1>
-                    </div>
-
-                    {/* Center - Image/Video */}
-                    <div className="lg:col-span-6 order-1 lg:order-2 flex justify-center z-0">
-                        <div
-                            ref={imageRef}
-                            className="relative w-full max-w-[400px] lg:max-w-[500px] aspect-[3/4] rounded-2xl overflow-hidden"
-                        >
-                            <Image
-                                src="/hero-image.jpg"
-                                alt="Dhruv Vakharia - Full Stack Developer"
-                                fill
-                                className="object-cover"
-                                priority
-                                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 500px"
-                            />
-                            {/* Gradient overlay */}
-                            <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-bg)] via-transparent to-transparent opacity-60" />
+                            <span className="text-[var(--color-primary)]">VAKHARIA</span>
+                        </div>
+                        <div ref={subtitleRef} className="!opacity-0 lg:!opacity-100 text-[clamp(1.5rem,5vw,3rem)] font-semibold leading-[1.1] lg:!mt-[250px]">
+                            <span className="text-white">The Full stack developer</span>
+                            <span className="text-[var(--color-text-secondary)]"> that you want</span>
                         </div>
                     </div>
+
+                    {/* Middle - Empty space (columns 4-9) */}
+                    <div className="lg:col-span-6 hidden lg:block order-1 lg:order-2" />
 
                     {/* Right - Tagline & CTA */}
                     <div
                         ref={taglineRef}
-                        className="lg:col-span-3 order-3 flex flex-col gap-6 text-center lg:text-left z-10 relative"
+                        className="lg:col-span-3 lg:col-start-10 order-2 lg:order-3 flex flex-col text-center lg:text-right"
                     >
-                        <p className="text-[var(--font-size-xl)] lg:text-[var(--font-size-2xl)] text-[var(--color-text-secondary)] leading-relaxed">
-                            Crafting digital experiences that blend creativity with cutting-edge technology.
-                        </p>
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        {/* Tagline - use lg:!mt-[Xpx] to position from top */}
+                        <div className="text-[clamp(1.5rem,5vw,5rem)] font-semibold leading-[1.1] lg:!mt-[80px]">
+                            <span className="text-[var(--color-primary)]">Create.</span><br />
+                            <span className="text-[var(--color-text-primary)]"> Code.</span><br />
+                            <span className="text-[var(--color-text-secondary)]"> Deploy.</span>
+                        </div>
+                        {/* Buttons - use mt-X to control gap from tagline */}
+                        <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start !mt-[220px]">
                             <Link href="/contact" className="btn btn-primary">
                                 Let&apos;s Work Together
                             </Link>
@@ -103,12 +119,12 @@ export default function Hero() {
             </div>
 
             {/* Bottom Bar - Tech Marquee */}
+            {/* 
             <div
                 ref={badgeRef}
                 className="border-t border-[var(--color-border)] py-4"
             >
                 <div className="container flex flex-col sm:flex-row items-center justify-between gap-4">
-                    {/* Tech Stack Marquee */}
                     <div className="overflow-hidden max-w-[400px] sm:max-w-[600px]">
                         <div className="flex animate-marquee gap-8 whitespace-nowrap">
                             {['React', 'Next.js', 'TypeScript', 'Node.js', 'Python', 'AWS', 'MongoDB', 'React', 'Next.js', 'TypeScript', 'Node.js', 'Python', 'AWS', 'MongoDB'].map((tech, i) => (
@@ -123,6 +139,7 @@ export default function Hero() {
                     </div>
                 </div>
             </div>
+            */}
 
             {/* Background gradient accents */}
             <div className="absolute top-0 left-0 w-1/2 h-1/2 bg-gradient-radial from-[var(--color-primary)]/10 to-transparent opacity-50 blur-3xl pointer-events-none" />
