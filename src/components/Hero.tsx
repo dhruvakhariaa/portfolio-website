@@ -14,32 +14,43 @@ export default function Hero() {
     //const badgeRef = useRef<HTMLDivElement>(null);
 
     useGSAP(() => {
+        // Debug: Check if refs are valid
+        console.log('🎬 GSAP Animation Starting...');
+        console.log('nameRef:', nameRef.current);
+        console.log('subtitleRef:', subtitleRef.current);
+        console.log('imageRef:', imageRef.current);
+        console.log('taglineRef:', taglineRef.current);
+
         const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
         // Entrance animations
         tl.fromTo(
             nameRef.current,
-            { opacity: 0, y: 50 },
-            { opacity: 1, y: 0, duration: 1.2 }
+            { opacity: 0, y: -50 },
+            { opacity: 1, y: 0, duration: 2.2, onComplete: () => console.log('✅ Name animation complete') }
         )
             .fromTo(
                 subtitleRef.current,
-                { opacity: 0, x: -100 },
-                { opacity: 1, x: 0, duration: 1 },
+                { opacity: 0, x: -300 },
+                { opacity: 1, x: 0, duration: 1, onComplete: () => console.log('✅ Subtitle animation complete') },
                 '-=0.5'
             )
             .fromTo(
                 imageRef.current,
                 { opacity: 0, scale: 30 },
-                { opacity: 1, scale: 1, duration: 1.5 },
-                '-=0.5'
+                { opacity: 1, scale: 1, duration: 1.7, onComplete: () => console.log('✅ Image animation complete') },
+                1
             )
             .fromTo(
                 taglineRef.current,
                 { opacity: 0, y: 30 },
-                { opacity: 1, y: 0, duration: 1 },
+                { opacity: 1, y: 0, duration: 1, onComplete: () => console.log('✅ Tagline animation complete') },
                 '-=0.5'
             );
+
+        // Debug: Track overall timeline
+        tl.then(() => console.log('🎉 All Hero animations complete!'));
+
         // .fromTo(
         //     badgeRef.current,
         //     { opacity: 0, y: 20 },
