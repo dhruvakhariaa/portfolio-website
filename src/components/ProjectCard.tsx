@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useGSAP, gsap } from '@/hooks/useGSAP';
@@ -23,6 +23,7 @@ interface ProjectCardProps {
 
 export default function ProjectCard({ project, index = 0 }: ProjectCardProps) {
     const cardRef = useRef<HTMLElement>(null);
+    const [imageError, setImageError] = useState(false);
 
     useGSAP(() => {
         if (!cardRef.current) return;
@@ -50,13 +51,22 @@ export default function ProjectCard({ project, index = 0 }: ProjectCardProps) {
         >
             {/* Image Container */}
             <div className="relative aspect-[4/3] overflow-hidden">
-                <Image
-                    src={project.image}
-                    alt={`${project.title} project screenshot`}
-                    fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                />
+                {imageError ? (
+                    <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-bg-secondary)] via-[var(--color-bg-card)] to-[var(--color-bg)] flex items-center justify-center">
+                        <span className="text-2xl sm:text-3xl font-bold text-[var(--color-text-muted)]/30 uppercase tracking-wider text-center px-4">
+                            {project.title}
+                        </span>
+                    </div>
+                ) : (
+                    <Image
+                        src={project.image}
+                        alt={`${project.title} project screenshot`}
+                        fill
+                        className="object-cover transition-transform duration-700 group-hover:scale-105"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        onError={() => setImageError(true)}
+                    />
+                )}
 
                 {/* Hover Overlay */}
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none group-hover:pointer-events-auto">

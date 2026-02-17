@@ -44,25 +44,18 @@ export default function Work({ showAll = false }: WorkProps) {
                 {/* Section Header */}
                 <div className="work-header flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12 lg:mb-16">
                     <div>
-                        <div className="flex items-center gap-4 mb-6">
-                            <span className="text-[var(--font-size-sm)] uppercase tracking-widest text-[var(--color-primary)]">
-                                Work
-                            </span>
-                            <div className="w-12 h-[1px] bg-[var(--color-border)]" />
-                            <span className="text-[var(--font-size-xs)] text-[var(--color-text-muted)]">04</span>
-                        </div>
-                        <h2 className="text-[var(--font-size-4xl)] lg:text-[var(--font-size-5xl)] font-bold">
-                            Featured Projects
+                        <h2 className="font-black uppercase leading-[0.95] text-[var(--color-text)]" style={{ fontSize: 'clamp(2.5rem, 2rem + 3vw, 5.5rem)' }}>
+                            LATEST WORK
+                            <sup className="text-base sm:text-lg text-[var(--color-text-muted)] ml-2 font-normal normal-case">
+                                ({projects.length.toString().padStart(2, '0')})
+                            </sup>
                         </h2>
-                        <p className="mt-4 text-[var(--font-size-lg)] text-[var(--color-text-secondary)] max-w-2xl">
-                            A selection of recent work showcasing my expertise in building exceptional digital products
-                        </p>
                     </div>
 
                     {!showAll && (
                         <Link
                             href="/projects"
-                            className="btn btn-outline self-start lg:self-auto"
+                            className="btn btn-secondary self-start lg:self-auto"
                         >
                             View All Projects
                             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">

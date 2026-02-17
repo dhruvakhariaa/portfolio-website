@@ -1,129 +1,149 @@
 'use client';
 
-import { useRef, useEffect, useState } from 'react';
+import { useRef } from 'react';
 import { useGSAP, gsap } from '@/hooks/useGSAP';
 
 interface ProcessStep {
-    number: string;
+    step: number;
     title: string;
     description: string;
 }
 
-const processSteps: ProcessStep[] = [
+const steps: ProcessStep[] = [
     {
-        number: '01',
-        title: 'Discovery',
-        description: 'Understanding your vision, goals, and requirements through in-depth discussions and research to lay a solid foundation.',
+        step: 1,
+        title: 'Discovery Phase',
+        description: 'Understanding your goals, pain points, audience, and what sets you apart.',
     },
     {
-        number: '02',
-        title: 'Strategy',
-        description: 'Developing a comprehensive roadmap and technical architecture that aligns with your business objectives.',
+        step: 2,
+        title: 'Project Kickoff',
+        description: 'Setting up projects, aligning on scope and milestones, and diving into the work.',
     },
     {
-        number: '03',
-        title: 'Design & Develop',
-        description: 'Bringing ideas to life through iterative design and development, with regular feedback loops for refinement.',
+        step: 3,
+        title: 'Receive & Refine',
+        description: 'Sharing initial designs, gathering feedback, and fine-tuning together.',
     },
     {
-        number: '04',
-        title: 'Launch & Support',
-        description: 'Deploying your solution and providing ongoing support to ensure continued success and optimization.',
+        step: 4,
+        title: 'Continue & Grow',
+        description: 'Launching with confidence and supporting your next extraordinary moves.',
     },
 ];
 
 export default function Process() {
     const sectionRef = useRef<HTMLElement>(null);
+    const headingRef = useRef<HTMLDivElement>(null);
+    const cardsRef = useRef<HTMLDivElement>(null);
 
     useGSAP(() => {
         if (!sectionRef.current) return;
 
-        const cards = sectionRef.current.querySelectorAll('.process-card');
-
-        // Header animation
+        // Animate the heading
         gsap.fromTo(
-            '.process-header',
-            { opacity: 0, y: 30 },
+            headingRef.current,
+            { opacity: 0, x: -40 },
             {
                 opacity: 1,
-                y: 0,
+                x: 0,
                 duration: 0.8,
+                ease: 'power2.out',
                 scrollTrigger: {
                     trigger: sectionRef.current,
                     start: 'top 80%',
+                    toggleActions: 'play none none reverse',
                 },
             }
         );
 
-        // Stagger cards entrance
-        gsap.fromTo(
-            cards,
-            { opacity: 0, y: 40 },
-            {
-                opacity: 1,
-                y: 0,
-                stagger: 0.15,
-                duration: 0.6,
-                scrollTrigger: {
-                    trigger: sectionRef.current,
-                    start: 'top 70%',
-                },
-            }
-        );
+        // Animate the process cards
+        const cards = cardsRef.current?.querySelectorAll('.process-step-card');
+        if (cards) {
+            gsap.fromTo(
+                cards,
+                { opacity: 0, y: 30 },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.6,
+                    stagger: 0.15,
+                    ease: 'power2.out',
+                    scrollTrigger: {
+                        trigger: cardsRef.current,
+                        start: 'top 80%',
+                        toggleActions: 'play none none reverse',
+                    },
+                }
+            );
+        }
     }, []);
 
     return (
         <section
             ref={sectionRef}
             id="process"
-            className="section bg-[var(--color-bg-secondary)]"
-            aria-label="Work process section"
+            className="py-20 lg:py-32 bg-[var(--color-bg)]"
+            aria-label="Work process"
         >
             <div className="container">
-                {/* Section Header */}
-                <div className="process-header mb-12 lg:mb-16">
-                    <div className="flex items-center gap-4 mb-6">
-                        <span className="text-[var(--font-size-sm)] uppercase tracking-widest text-[var(--color-primary)]">
-                            Process
-                        </span>
-                        <div className="w-12 h-[1px] bg-[var(--color-border)]" />
-                        <span className="text-[var(--font-size-xs)] text-[var(--color-text-muted)]">03</span>
+                {/* Side-by-side layout: massive heading left + cards right */}
+                <div className="flex flex-col lg:flex-row lg:items-start gap-10 lg:gap-16 xl:gap-20">
+
+                    {/* Left Side - Massive Heading */}
+                    <div ref={headingRef} className="lg:w-[35%] xl:w-[30%] shrink-0">
+                        <div className="flex items-start gap-3 mb-0">
+                            <h2
+                                className="font-black uppercase leading-[0.9] text-[var(--color-text)]"
+                                style={{ fontSize: 'clamp(3rem, 2.5rem + 4vw, 7rem)' }}
+                            >
+                                HOW I<br />WORK
+                            </h2>
+                            <span className="text-xs sm:text-sm text-[var(--color-text-muted)] mt-2 whitespace-nowrap">
+                                (PROCESS)
+                            </span>
+                        </div>
                     </div>
-                    <h2 className="text-[var(--font-size-4xl)] lg:text-[var(--font-size-5xl)] font-bold">
-                        How I Work
-                    </h2>
-                    <p className="mt-4 text-[var(--font-size-lg)] text-[var(--color-text-secondary)] max-w-2xl">
-                        A streamlined approach to turning your ideas into reality
-                    </p>
-                </div>
 
-                {/* Process Cards Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    {processSteps.map((step) => (
-                        <article
-                            key={step.number}
-                            className="process-card group"
-                        >
-                            <div className="h-full card p-8 flex flex-col transition-all duration-300 hover:border-[var(--color-primary)]/50 hover:-translate-y-2">
-                                {/* Number */}
-                                <div className="mb-6">
-                                    <span className="text-[var(--font-size-5xl)] font-bold text-[var(--color-primary)] group-hover:scale-110 transition-transform duration-300 inline-block">
-                                        {step.number}
-                                    </span>
-                                </div>
+                    {/* Right Side - 4-Column Process Grid */}
+                    <div ref={cardsRef} className="flex-1">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border-t border-[rgba(255,255,255,0.1)]">
+                            {steps.map((step, index) => (
+                                <div
+                                    key={step.step}
+                                    className={`
+                                        process-step-card flex flex-col justify-between
+                                        p-5 sm:p-6 lg:p-5 xl:p-6
+                                        min-h-[280px] sm:min-h-[320px] lg:min-h-[380px]
+                                        border-b border-[rgba(255,255,255,0.1)]
+                                        ${index > 0 ? 'sm:border-l lg:border-l' : ''}
+                                        ${index === 2 ? 'sm:border-l-0 lg:border-l' : ''}
+                                    `}
+                                >
+                                    {/* Step Label at top */}
+                                    <div className="mb-auto">
+                                        <span className="text-sm sm:text-base lg:text-lg text-[var(--color-text-muted)] uppercase tracking-wider">
+                                            STEP {step.step}
+                                            <span className="text-[var(--color-primary)]">.</span>
+                                        </span>
+                                    </div>
 
-                                {/* Content */}
-                                <div className="flex-1">
-                                    <h3 className="text-[var(--font-size-xl)] lg:text-[var(--font-size-2xl)] font-bold mb-4 group-hover:text-[var(--color-primary)] transition-colors duration-300">
-                                        {step.title}
-                                    </h3>
-                                    <p className="text-[var(--font-size-sm)] text-[var(--color-text-secondary)] leading-relaxed">
-                                        {step.description}
-                                    </p>
+                                    {/* Title + Description at bottom */}
+                                    <div>
+                                        <h3
+                                            className="font-bold text-[var(--color-text)] mb-3 sm:mb-4 leading-tight"
+                                            style={{ fontSize: 'clamp(1.25rem, 1rem + 1vw, 2rem)' }}
+                                        >
+                                            {step.title}
+                                        </h3>
+                                        <p className="text-sm sm:text-base text-[var(--color-text-secondary)] leading-relaxed">
+                                            {step.description}
+                                        </p>
+                                    </div>
                                 </div>
-                            </div>
-                        </article>
-                    ))}
+                            ))}
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

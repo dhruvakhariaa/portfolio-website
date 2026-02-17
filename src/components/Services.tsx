@@ -1,13 +1,14 @@
 'use client';
 
-import { useRef, useState, useEffect, useCallback } from 'react';
+import { useRef, useState, useCallback } from 'react';
 import { useGSAP, gsap, ScrollTrigger } from '@/hooks/useGSAP';
 
 interface Service {
     id: string;
     number: string;
     title: string;
-    description: string;
+    description1: string;
+    description2: string;
     features: string[];
 }
 
@@ -16,28 +17,32 @@ const services: Service[] = [
         id: 'web-development',
         number: '01',
         title: 'Web Development',
-        description: 'Building fast, scalable, and modern web applications using cutting-edge technologies. From simple landing pages to complex enterprise solutions.',
+        description1: 'From simple landing pages to complex enterprise solutions with experience in modern frameworks.',
+        description2: 'Building fast, scalable, and modern web applications using cutting-edge technologies.',
         features: ['React & Next.js', 'Node.js & Express', 'Database Design', 'API Development'],
     },
     {
         id: 'mobile-development',
         number: '02',
         title: 'Mobile Development',
-        description: 'Creating cross-platform mobile applications that deliver native-like experiences on both iOS and Android devices.',
+        description1: 'Creating cross-platform mobile applications that deliver native-like experiences.',
+        description2: 'Seamless performance on both iOS and Android with modern tooling and best practices.',
         features: ['React Native', 'Expo', 'Native Features', 'App Store Deployment'],
     },
     {
         id: 'ui-ux-design',
         number: '03',
         title: 'UI/UX Design',
-        description: 'Designing intuitive and visually stunning user interfaces that prioritize user experience and drive engagement.',
+        description1: 'Designing intuitive and visually stunning user interfaces that prioritize experience.',
+        description2: 'Research-driven design systems that drive engagement and delight users.',
         features: ['User Research', 'Wireframing', 'Prototyping', 'Design Systems'],
     },
     {
         id: 'cloud-solutions',
         number: '04',
         title: 'Cloud Services',
-        description: 'Architecting and deploying scalable cloud infrastructure using modern DevOps practices and cloud-native technologies.',
+        description1: 'Architecting and deploying scalable cloud infrastructure using modern DevOps practices.',
+        description2: 'Cloud-native technologies with automated pipelines and infrastructure as code.',
         features: ['AWS & GCP', 'Docker & Kubernetes', 'CI/CD Pipelines', 'Infrastructure as Code'],
     },
 ];
@@ -138,7 +143,7 @@ export default function Services() {
         // Scroll to corresponding position
         if (sectionRef.current) {
             const st = ScrollTrigger.getAll().find(
-                (t) => t.vars.trigger === sectionRef.current
+                (t) => t.vars.trigger === pinContainerRef.current
             );
             if (st) {
                 const targetProgress = (index + 0.5) / services.length;
@@ -169,7 +174,7 @@ export default function Services() {
                         <div className="lg:col-span-5 xl:col-span-4">
                             <div className="services-header-content mb-6 lg:mb-8">
                                 {/* Section Label */}
-                                <div className="flex items-center gap-3 mb-3 lg:mb-4">
+                                <div className="flex items-center gap-3 mb-4 lg:mb-6">
                                     <span className="text-[10px] sm:text-xs uppercase tracking-[0.15em] text-[var(--color-primary)] font-medium">
                                         Services
                                     </span>
@@ -177,10 +182,10 @@ export default function Services() {
                                     <span className="text-[10px] sm:text-xs text-[var(--color-text-muted)]">02</span>
                                 </div>
 
-                                {/* Heading - Much smaller and readable */}
+                                {/* Heading - Larger display heading */}
                                 <h2
-                                    className="font-semibold leading-snug text-[var(--color-text)]"
-                                    style={{ fontSize: 'clamp(1.125rem, 1rem + 0.5vw, 1.5rem)' }}
+                                    className="font-bold leading-tight text-[var(--color-text)]"
+                                    style={{ fontSize: 'clamp(1.5rem, 1.2rem + 1.5vw, 2.5rem)' }}
                                 >
                                     Expertise that brings your vision to life
                                 </h2>
@@ -200,10 +205,10 @@ export default function Services() {
                                         aria-controls={`service-content-${service.id}`}
                                         onClick={() => handleMenuClick(index)}
                                         className={`
-                                            group flex items-center gap-2 sm:gap-3 
-                                            px-3 py-2 sm:px-3.5 sm:py-2.5 lg:px-4 lg:py-3
+                                            group flex items-center gap-3 sm:gap-4
+                                            px-3 py-2.5 sm:px-4 sm:py-3 lg:px-5 lg:py-3.5
                                             rounded-lg text-left whitespace-nowrap lg:whitespace-normal
-                                            border transition-all duration-300
+                                            border transition-all duration-300 font-mono
                                             ${activeService === index
                                                 ? 'bg-[var(--color-bg-card)] border-[var(--color-primary)] shadow-[0_0_12px_rgba(255,73,37,0.1)]'
                                                 : 'border-transparent hover:bg-[var(--color-bg-card)]/40 hover:border-[var(--color-border)]'
@@ -212,7 +217,7 @@ export default function Services() {
                                     >
                                         <span
                                             className={`
-                                                text-[10px] sm:text-xs font-bold font-mono transition-colors duration-300
+                                                text-xs sm:text-sm font-bold transition-colors duration-300
                                                 ${activeService === index
                                                     ? 'text-[var(--color-primary)]'
                                                     : 'text-[var(--color-text-muted)]'
@@ -223,7 +228,7 @@ export default function Services() {
                                         </span>
                                         <span
                                             className={`
-                                                text-xs sm:text-sm lg:text-base font-medium transition-colors duration-300
+                                                text-sm sm:text-base lg:text-lg font-medium transition-colors duration-300
                                                 ${activeService === index
                                                     ? 'text-[var(--color-text)]'
                                                     : 'text-[var(--color-text-secondary)]'
@@ -239,7 +244,7 @@ export default function Services() {
 
                         {/* Right Panel - Service Card */}
                         <div className="lg:col-span-7 xl:col-span-8">
-                            <div className="service-card-container relative h-[280px] sm:h-[320px] lg:h-[380px] xl:h-[420px]">
+                            <div className="service-card-container relative h-[320px] sm:h-[360px] lg:h-[400px] xl:h-[440px]">
                                 {/* Single Active Card with key for re-mount animation */}
                                 <article
                                     key={`${currentService.id}-${animationKey}`}
@@ -250,36 +255,41 @@ export default function Services() {
                                         ${slideDirection === 'down' ? 'animate-slide-in-up' : 'animate-slide-in-down'}
                                     `}
                                 >
-                                    <div className="service-card-content h-full p-4 sm:p-5 lg:p-6 xl:p-8 flex flex-col">
-                                        {/* Service Number with Square */}
-                                        <div className="mb-3 sm:mb-4 lg:mb-5">
+                                    <div className="service-card-content h-full p-5 sm:p-6 lg:p-8 xl:p-10 flex flex-col">
+                                        {/* Service Number + Title inline */}
+                                        <div className="flex items-baseline gap-3 sm:gap-4 mb-5 sm:mb-6 lg:mb-8">
                                             <span
-                                                className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-[var(--color-primary)]"
+                                                className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-[var(--color-primary)]"
                                                 style={{ fontFamily: 'Inter, sans-serif' }}
                                             >
                                                 {currentService.number}
                                             </span>
                                             <span className="service-number-square" aria-hidden="true" />
+                                            <h3 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold text-[var(--color-text)]">
+                                                {currentService.title}
+                                            </h3>
                                         </div>
 
-                                        {/* Service Title */}
-                                        <h3 className="text-base sm:text-lg lg:text-xl xl:text-2xl font-bold mb-2 sm:mb-3 text-[#CACACA]">
-                                            {currentService.title}
-                                        </h3>
+                                        {/* Two description bullets */}
+                                        <div className="space-y-3 sm:space-y-4 mb-6 sm:mb-8 lg:mb-10 flex-1">
+                                            <p className="text-sm sm:text-base lg:text-lg text-[var(--color-text-secondary)] leading-relaxed flex items-start gap-3">
+                                                <span className="text-[var(--color-primary)] mt-1.5 shrink-0">—</span>
+                                                {currentService.description1}
+                                            </p>
+                                            <p className="text-sm sm:text-base lg:text-lg text-[var(--color-text-secondary)] leading-relaxed flex items-start gap-3">
+                                                <span className="text-[var(--color-primary)] mt-1.5 shrink-0">—</span>
+                                                {currentService.description2}
+                                            </p>
+                                        </div>
 
-                                        {/* Service Description */}
-                                        <p className="text-xs sm:text-sm lg:text-base text-[#CACACA] leading-relaxed mb-4 sm:mb-5 lg:mb-6 flex-1">
-                                            {currentService.description}
-                                        </p>
-
-                                        {/* Features Grid */}
-                                        <div className="grid grid-cols-2 gap-1.5 sm:gap-2 lg:gap-3">
+                                        {/* Features Grid - all orange dots */}
+                                        <div className="grid grid-cols-2 gap-2 sm:gap-3 lg:gap-4">
                                             {currentService.features.map((feature, idx) => (
                                                 <div
                                                     key={idx}
-                                                    className="flex items-center gap-2 text-[10px] sm:text-xs lg:text-sm text-[#CACACA]"
+                                                    className="flex items-center gap-2.5 text-xs sm:text-sm lg:text-base text-[var(--color-text-secondary)]"
                                                 >
-                                                    <span className="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-[var(--color-primary)] flex-shrink-0" />
+                                                    <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-[var(--color-primary)] flex-shrink-0" />
                                                     <span>{feature}</span>
                                                 </div>
                                             ))}

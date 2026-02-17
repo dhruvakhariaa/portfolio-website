@@ -121,8 +121,11 @@ export default function Hero() {
                             <Link href="/contact" className="btn btn-primary">
                                 Let&apos;s Work Together
                             </Link>
-                            <Link href="/projects" className="btn btn-outline">
+                            <Link href="/projects" className="btn btn-secondary">
                                 View Projects
+                                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                </svg>
                             </Link>
                         </div>
                     </div>
