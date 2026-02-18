@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useState } from 'react';
+import { useRef, useState, useCallback } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useGSAP, gsap } from '@/hooks/useGSAP';
@@ -19,11 +19,15 @@ interface Project {
 interface ProjectCardProps {
     project: Project;
     index?: number;
+    featured?: boolean;
 }
 
-export default function ProjectCard({ project, index = 0 }: ProjectCardProps) {
+export default function ProjectCard({ project, index = 0, featured = false }: ProjectCardProps) {
     const cardRef = useRef<HTMLElement>(null);
+    const glareRef = useRef<HTMLDivElement>(null);
     const [imageError, setImageError] = useState(false);
+    const [isHovered, setIsHovered] = useState(false);
+    const rafRef = useRef<number>(0);
 
     useGSAP(() => {
         if (!cardRef.current) return;
@@ -44,16 +48,84 @@ export default function ProjectCard({ project, index = 0 }: ProjectCardProps) {
         );
     }, [index]);
 
+    // 3D Tilt Effect
+    const handleMouseMove = useCallback((e: React.MouseEvent<HTMLElement>) => {
+        cancelAnimationFrame(rafRef.current);
+        rafRef.current = requestAnimationFrame(() => {
+            const card = cardRef.current;
+            const glare = glareRef.current;
+            if (!card) return;
+
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+
+            // Calculate tilt (max ±8 degrees)
+            const rotateX = ((y - centerY) / centerY) * -8;
+            const rotateY = ((x - centerX) / centerX) * 8;
+
+            card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+
+            // Move glare to follow cursor
+            if (glare) {
+                glare.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(255,255,255,0.15) 0%, transparent 60%)`;
+            }
+        });
+    }, []);
+
+    const handleMouseEnter = useCallback(() => {
+        setIsHovered(true);
+    }, []);
+
+    const handleMouseLeave = useCallback(() => {
+        cancelAnimationFrame(rafRef.current);
+        setIsHovered(false);
+        const card = cardRef.current;
+        if (card) {
+            card.style.transition = 'transform 0.5s cubic-bezier(0.23, 1, 0.32, 1)';
+            card.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+            setTimeout(() => {
+                if (card) card.style.transition = '';
+            }, 500);
+        }
+        if (glareRef.current) {
+            glareRef.current.style.background = 'transparent';
+        }
+    }, []);
+
+    const projectNumber = (index + 1).toString().padStart(2, '0');
+
     return (
         <article
             ref={cardRef}
-            className="group relative overflow-hidden rounded-2xl bg-[var(--color-bg-card)] border border-[var(--color-border)] transition-all duration-500 hover:border-[var(--color-primary)]/30"
+            className="project-card group relative overflow-hidden rounded-2xl cursor-pointer"
+            style={{
+                willChange: 'transform',
+                transformStyle: 'preserve-3d',
+            }}
+            onMouseMove={handleMouseMove}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
         >
-            {/* Image Container */}
-            <div className="relative aspect-[4/3] overflow-hidden">
+            <Link
+                href={`/projects/${project.id}`}
+                className="absolute inset-0 z-20"
+                aria-label={`View ${project.title} project details`}
+            />
+
+            {/* Card Inner — full bleed image */}
+            <div
+                className="relative w-full overflow-hidden"
+                style={{
+                    height: featured ? 'clamp(420px, 40vw + 60px, 640px)' : 'clamp(320px, 25vw + 60px, 440px)',
+                }}
+            >
+                {/* Background Image */}
                 {imageError ? (
-                    <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-bg-secondary)] via-[var(--color-bg-card)] to-[var(--color-bg)] flex items-center justify-center">
-                        <span className="text-2xl sm:text-3xl font-bold text-[var(--color-text-muted)]/30 uppercase tracking-wider text-center px-4">
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#1a1a2e] via-[#16213e] to-[#0f3460] flex items-center justify-center">
+                        <span className="text-4xl sm:text-5xl lg:text-6xl font-black text-white/5 uppercase tracking-widest text-center px-8">
                             {project.title}
                         </span>
                     </div>
@@ -62,84 +134,113 @@ export default function ProjectCard({ project, index = 0 }: ProjectCardProps) {
                         src={project.image}
                         alt={`${project.title} project screenshot`}
                         fill
-                        className="object-cover transition-transform duration-700 group-hover:scale-105"
-                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                        sizes={featured ? '(max-width: 1024px) 100vw, 66vw' : '(max-width: 768px) 100vw, 33vw'}
                         onError={() => setImageError(true)}
                     />
                 )}
 
-                {/* Hover Overlay */}
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none group-hover:pointer-events-auto">
-                    {/* Top Gradient */}
-                    <div className="absolute top-0 left-0 right-0 h-1/3 bg-gradient-to-b from-black/80 to-transparent" />
+                {/* Permanent gradient scrim — heavier at bottom */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/10" />
 
-                    {/* Bottom Gradient */}
-                    <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-black/90 via-black/60 to-transparent" />
+                {/* Cursor-following glare overlay */}
+                <div
+                    ref={glareRef}
+                    className="absolute inset-0 pointer-events-none z-10 transition-opacity duration-300"
+                    style={{ opacity: isHovered ? 1 : 0 }}
+                />
 
-                    {/* Center Content */}
-                    <div className="absolute inset-0 flex items-center justify-center">
-                        <Link
-                            href={`/projects/${project.id}`}
-                            className="btn btn-primary transform scale-90 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-500 delay-100"
-                            aria-label={`View ${project.title} project details`}
+                {/* Glowing border on hover */}
+                <div
+                    className="absolute inset-0 rounded-2xl pointer-events-none z-10 transition-all duration-500"
+                    style={{
+                        boxShadow: isHovered
+                            ? '0 0 30px rgba(255,73,37,0.15), inset 0 0 0 1px rgba(255,73,37,0.3)'
+                            : 'inset 0 0 0 1px rgba(255,255,255,0.06)',
+                    }}
+                />
+
+                {/* Large faded project number watermark */}
+                <div className="absolute top-6 left-8 sm:top-8 sm:left-10 z-[5] pointer-events-none select-none">
+                    <span
+                        className="font-black text-white/[0.04] leading-none"
+                        style={{ fontSize: featured ? 'clamp(6rem, 8vw, 12rem)' : 'clamp(4rem, 6vw, 8rem)' }}
+                    >
+                        {projectNumber}
+                    </span>
+                </div>
+
+                {/* Bottom content overlay */}
+                <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 lg:p-10 z-[5]">
+                    <div className="flex items-end justify-between gap-6">
+                        {/* Left — Title + Description */}
+                        <div className="flex-1 min-w-0">
+                            {/* Year label */}
+                            <span className="inline-block text-[10px] sm:text-xs text-[var(--color-primary)] font-mono tracking-widest uppercase mb-2">
+                                {project.year}
+                            </span>
+
+                            <h3
+                                className="font-bold text-white leading-tight mb-2 transition-all duration-500"
+                                style={{
+                                    fontSize: featured
+                                        ? 'clamp(1.75rem, 1.4rem + 1.8vw, 3rem)'
+                                        : 'clamp(1.25rem, 1rem + 1.2vw, 2rem)',
+                                }}
+                            >
+                                {project.title}
+                            </h3>
+
+                            <p
+                                className="text-white/50 leading-relaxed line-clamp-2 transition-all duration-500"
+                                style={{
+                                    fontSize: featured ? 'clamp(0.85rem, 0.8rem + 0.3vw, 1rem)' : '0.85rem',
+                                    maxHeight: isHovered ? '3em' : '3em',
+                                }}
+                            >
+                                {project.description}
+                            </p>
+
+                            {/* Tech stack badges — animate in on hover */}
+                            <div
+                                className="flex flex-wrap gap-2 mt-4 transition-all duration-500"
+                                style={{
+                                    opacity: isHovered ? 1 : 0,
+                                    transform: isHovered ? 'translateY(0)' : 'translateY(12px)',
+                                }}
+                            >
+                                {project.tags.slice(0, featured ? 5 : 3).map((tag, i) => (
+                                    <span
+                                        key={i}
+                                        className="px-3 py-1 text-[11px] sm:text-xs bg-white/10 backdrop-blur-sm text-white/80 rounded-full border border-white/10 font-mono"
+                                        style={{
+                                            transitionDelay: `${i * 60}ms`,
+                                            opacity: isHovered ? 1 : 0,
+                                            transform: isHovered ? 'translateY(0)' : 'translateY(8px)',
+                                            transition: 'opacity 0.4s, transform 0.4s',
+                                        }}
+                                    >
+                                        {tag}
+                                    </span>
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* Right — Arrow CTA */}
+                        <div
+                            className="flex-shrink-0 w-12 h-12 rounded-full border border-white/20 flex items-center justify-center transition-all duration-500 backdrop-blur-sm"
+                            style={{
+                                opacity: isHovered ? 1 : 0,
+                                transform: isHovered ? 'translateX(0) scale(1)' : 'translateX(16px) scale(0.8)',
+                                background: isHovered ? 'rgba(255,73,37,0.15)' : 'transparent',
+                                borderColor: isHovered ? 'rgba(255,73,37,0.4)' : 'rgba(255,255,255,0.2)',
+                            }}
                         >
-                            View Project
-                            <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                             </svg>
-                        </Link>
+                        </div>
                     </div>
-
-                    {/* Bottom Info Bar */}
-                    <div className="absolute bottom-0 left-0 right-0 p-6 flex items-center justify-between">
-                        {/* Project Year */}
-                        <span className="text-[var(--font-size-sm)] text-white/70 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 delay-150">
-                            {project.year}
-                        </span>
-
-                        {/* GitHub Link */}
-                        {project.github && (
-                            <a
-                                href={project.github}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-white text-[var(--font-size-sm)] transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 delay-200 hover:bg-white/20"
-                                aria-label={`View ${project.title} source code on GitHub`}
-                            >
-                                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                    <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
-                                </svg>
-                                <span>GitHub</span>
-                            </a>
-                        )}
-                    </div>
-                </div>
-            </div>
-
-            {/* Card Content */}
-            <div className="p-6">
-                <h3 className="text-[var(--font-size-xl)] font-bold mb-2 group-hover:text-[var(--color-primary)] transition-colors duration-300">
-                    {project.title}
-                </h3>
-                <p className="text-[var(--font-size-sm)] text-[var(--color-text-secondary)] line-clamp-2 mb-4">
-                    {project.description}
-                </p>
-
-                {/* Tags */}
-                <div className="flex flex-wrap gap-2">
-                    {project.tags.slice(0, 3).map((tag, i) => (
-                        <span
-                            key={i}
-                            className="px-3 py-1 text-[var(--font-size-xs)] bg-[var(--color-bg-secondary)] text-[var(--color-text-muted)] rounded-full"
-                        >
-                            {tag}
-                        </span>
-                    ))}
-                    {project.tags.length > 3 && (
-                        <span className="px-3 py-1 text-[var(--font-size-xs)] text-[var(--color-text-muted)]">
-                            +{project.tags.length - 3}
-                        </span>
-                    )}
                 </div>
             </div>
         </article>

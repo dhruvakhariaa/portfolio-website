@@ -1,7 +1,7 @@
 'use client';
 
 import { useRef } from 'react';
-import { useGSAP, gsap } from '@/hooks/useGSAP';
+import { useGSAP, gsap, ScrollTrigger } from '@/hooks/useGSAP';
 
 interface ProcessStep {
     step: number;
@@ -13,136 +13,137 @@ const steps: ProcessStep[] = [
     {
         step: 1,
         title: 'Discovery Phase',
-        description: 'Understanding your goals, pain points, audience, and what sets you apart.',
+        description: `You might know the competition in your industry, but I'll help you identify the unique opportunities that set you apart.`,
     },
     {
         step: 2,
-        title: 'Project Kickoff',
-        description: 'Setting up projects, aligning on scope and milestones, and diving into the work.',
+        title: 'Design Phase',
+        description: `I'll create wireframes, mockups, and bring your vision to life, ensuring every detail aligns with your goals.`,
     },
     {
         step: 3,
         title: 'Receive & Refine',
-        description: 'Sharing initial designs, gathering feedback, and fine-tuning together.',
+        description: `Designs are meant to be flexible. I'll work closely with you to refine and ensure it aligns with your vision.`,
     },
     {
         step: 4,
-        title: 'Continue & Grow',
-        description: 'Launching with confidence and supporting your next extraordinary moves.',
+        title: 'Development',
+        description: `"AI can vibe-code the whole project". Then, let's see how that code reacts in the real world. IT WOULD BREAK!!`,
+    },
+    {
+        step: 5,
+        title: 'Deployment',
+        description: `Deploying is where even the best code breaks. I make sure that it doesn't. AWS, GCP, Azure, you name it, I connect it.`,
+    },
+    {
+        step: 6,
+        title: 'Support',
+        description: `If the project can't return real-life value, then it's as good as powerbank without charging. I make sure it adds that value.`,
     },
 ];
 
 export default function Process() {
     const sectionRef = useRef<HTMLElement>(null);
-    const headingRef = useRef<HTMLDivElement>(null);
-    const cardsRef = useRef<HTMLDivElement>(null);
+    const trackRef = useRef<HTMLDivElement>(null);
+    const pinContainerRef = useRef<HTMLDivElement>(null);
 
     useGSAP(() => {
-        if (!sectionRef.current) return;
+        if (!sectionRef.current || !trackRef.current || !pinContainerRef.current) return;
 
-        // Animate the heading
-        gsap.fromTo(
-            headingRef.current,
-            { opacity: 0, x: -40 },
-            {
-                opacity: 1,
-                x: 0,
-                duration: 0.8,
-                ease: 'power2.out',
-                scrollTrigger: {
-                    trigger: sectionRef.current,
-                    start: 'top 80%',
-                    toggleActions: 'play none none reverse',
-                },
-            }
-        );
+        // Delay to ensure Services section's pinSpacing is calculated first
+        const timeoutId = setTimeout(() => {
+            ScrollTrigger.refresh(true);
 
-        // Animate the process cards
-        const cards = cardsRef.current?.querySelectorAll('.process-step-card');
-        if (cards) {
-            gsap.fromTo(
-                cards,
-                { opacity: 0, y: 30 },
-                {
-                    opacity: 1,
-                    y: 0,
-                    duration: 0.6,
-                    stagger: 0.15,
-                    ease: 'power2.out',
-                    scrollTrigger: {
-                        trigger: cardsRef.current,
-                        start: 'top 80%',
-                        toggleActions: 'play none none reverse',
-                    },
-                }
-            );
-        }
+
+            // Calculate the horizontal distance: track width minus viewport
+            const getScrollAmount = () => {
+                return -(trackRef.current!.scrollWidth - window.innerWidth + 200);
+            };
+
+            // Horizontal scroll driven by vertical scroll
+            const horizontalTween = gsap.to(trackRef.current, {
+                x: getScrollAmount,
+                ease: 'none',
+            });
+
+            ScrollTrigger.create({
+                trigger: pinContainerRef.current,
+                start: 'top top',
+                end: () => `+=${trackRef.current!.scrollWidth + 1000}`,
+                pin: true,
+                pinSpacing: true,
+                scrub: 0.8,
+                animation: horizontalTween,
+                invalidateOnRefresh: true,
+            });
+        }, 200);
     }, []);
 
     return (
         <section
             ref={sectionRef}
             id="process"
-            className="py-20 lg:py-32 bg-[var(--color-bg)]"
+            className="bg-[var(--color-bg)]"
             aria-label="Work process"
         >
-            <div className="container">
-                {/* Side-by-side layout: massive heading left + cards right */}
-                <div className="flex flex-col lg:flex-row lg:items-start gap-10 lg:gap-16 xl:gap-20">
-
-                    {/* Left Side - Massive Heading */}
-                    <div ref={headingRef} className="lg:w-[35%] xl:w-[30%] shrink-0">
-                        <div className="flex items-start gap-3 mb-0">
-                            <h2
-                                className="font-black uppercase leading-[0.9] text-[var(--color-text)]"
-                                style={{ fontSize: 'clamp(3rem, 2.5rem + 4vw, 7rem)' }}
-                            >
-                                HOW I<br />WORK
-                            </h2>
-                            <span className="text-xs sm:text-sm text-[var(--color-text-muted)] mt-2 whitespace-nowrap">
-                                (PROCESS)
-                            </span>
-                        </div>
+            {/* This entire container gets pinned */}
+            <div ref={pinContainerRef} className="overflow-hidden min-h-screen flex items-center">
+                {/* Horizontal track: heading + cards in one row */}
+                <div
+                    ref={trackRef}
+                    className="flex items-start"
+                    style={{ willChange: 'transform' }}
+                >
+                    {/* Left Side - Massive Heading (part of the scroll track) */}
+                    <div className="shrink-0 flex items-start gap-3 pr-16 xl:pr-20 pl-8 lg:pl-16 xl:pl-20"
+                        style={{ width: 'clamp(400px, 35vw, 550px)' }}
+                    >
+                        <h2
+                            className="font-black uppercase leading-[0.9] text-[var(--color-text)]"
+                            style={{ fontSize: 'clamp(3rem, 2.5rem + 4vw, 7rem)' }}
+                        >
+                            HOW I<br />WORK
+                        </h2>
+                        <span className="text-xs sm:text-sm text-[var(--color-text-muted)] mt-2 whitespace-nowrap">
+                            (PROCESS)
+                        </span>
                     </div>
 
-                    {/* Right Side - 4-Column Process Grid */}
-                    <div ref={cardsRef} className="flex-1">
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border-t border-[rgba(255,255,255,0.1)]">
-                            {steps.map((step, index) => (
-                                <div
-                                    key={step.step}
-                                    className={`
-                                        process-step-card flex flex-col justify-between
-                                        p-5 sm:p-6 lg:p-5 xl:p-6
-                                        min-h-[280px] sm:min-h-[320px] lg:min-h-[380px]
-                                        border-b border-[rgba(255,255,255,0.1)]
-                                        ${index > 0 ? 'sm:border-l lg:border-l' : ''}
-                                        ${index === 2 ? 'sm:border-l-0 lg:border-l' : ''}
-                                    `}
-                                >
-                                    {/* Step Label at top */}
-                                    <div className="mb-auto">
-                                        <span className="text-sm sm:text-base lg:text-lg text-[var(--color-text-muted)] uppercase tracking-wider">
-                                            STEP {step.step}
-                                            <span className="text-[var(--color-primary)]">.</span>
-                                        </span>
-                                    </div>
-
-                                    {/* Title + Description at bottom */}
-                                    <div>
-                                        <h3
-                                            className="font-bold text-[var(--color-text)] mb-3 sm:mb-4 leading-tight"
-                                            style={{ fontSize: 'clamp(1.25rem, 1rem + 1vw, 2rem)' }}
-                                        >
-                                            {step.title}
-                                        </h3>
-                                        <p className="text-sm sm:text-base text-[var(--color-text-secondary)] leading-relaxed">
-                                            {step.description}
-                                        </p>
-                                    </div>
+                    {/* Cards — same row, scroll horizontally */}
+                    <div className="flex border-t border-[rgba(255,255,255,0.1)]">
+                        {steps.map((step) => (
+                            <div
+                                key={step.step}
+                                className="process-step-card flex flex-col justify-between
+                                    p-5 sm:p-6 lg:p-5 xl:p-6
+                                    min-h-[380px] sm:min-h-[420px] lg:min-h-[460px]
+                                    border-b border-[rgba(255,255,255,0.1)]
+                                    border-r border-r-[rgba(255,255,255,0.1)]
+                                    shrink-0"
+                                style={{ padding: '24px', width: 'clamp(300px, 25vw, 380px)' }}
+                            >
+                                {/* Step Label at top */}
+                                <div className="mb-auto">
+                                    <span className="text-sm sm:text-base lg:text-lg text-[var(--color-text-muted)] uppercase tracking-wider">
+                                        STEP {step.step}
+                                        <span className="text-[var(--color-primary)]">.</span>
+                                    </span>
                                 </div>
-                            ))}
-                        </div>
+
+                                {/* Title + Description grouped at bottom */}
+                                <div>
+                                    <h3
+                                        className="font-bold text-[var(--color-text)] leading-tight"
+                                        style={{ marginBottom: '24px', fontSize: 'clamp(1.5rem, 1.2rem + 1.5vw, 2.5rem)' }}
+                                    >
+                                        {step.title}
+                                    </h3>
+                                    <p className="text-sm sm:text-base text-[var(--color-text-secondary)] leading-relaxed">
+                                        {step.description}
+                                    </p>
+                                </div>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </div>

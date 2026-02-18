@@ -117,7 +117,7 @@ export default function Hero() {
                             <span className="text-[var(--color-text-secondary)]"> Deploy.</span>
                         </div>
                         {/* Buttons - use mt-X to control gap from tagline */}
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start !mt-[220px]">
+                        <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-center !mt-[220px]">
                             <Link href="/contact" className="btn btn-primary">
                                 Let&apos;s Work Together
                             </Link>

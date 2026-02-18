@@ -65,10 +65,23 @@ export default function Work({ showAll = false }: WorkProps) {
                     )}
                 </div>
 
-                {/* Projects Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-                    {projects.map((project, index) => (
-                        <ProjectCard key={project.id} project={project} index={index} />
+                {/* Asymmetric Bento Grid */}
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-6">
+                    {projects.map((project, idx) => (
+                        <div
+                            key={project.id}
+                            className={
+                                idx === 0
+                                    ? 'lg:col-span-2 lg:row-span-2'
+                                    : 'lg:col-span-1'
+                            }
+                        >
+                            <ProjectCard
+                                project={project}
+                                index={idx}
+                                featured={idx === 0}
+                            />
+                        </div>
                     ))}
                 </div>
 
