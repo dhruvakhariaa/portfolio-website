@@ -12,7 +12,7 @@ interface WorkProps {
 
 export default function Work({ showAll = false }: WorkProps) {
     const sectionRef = useRef<HTMLElement>(null);
-    const projects = showAll ? getFeaturedProjects(6) : getFeaturedProjects(3);
+    const projects = showAll ? getFeaturedProjects(6) : getFeaturedProjects(4);
 
     useGSAP(() => {
         if (!sectionRef.current) return;
@@ -33,6 +33,11 @@ export default function Work({ showAll = false }: WorkProps) {
         );
     }, []);
 
+    // Split projects into two columns for staggered layout
+    // Left: index 0, 2  |  Right: index 1, 3
+    const leftCol = projects.filter((_, i) => i % 2 === 0);
+    const rightCol = projects.filter((_, i) => i % 2 === 1);
+
     return (
         <section
             ref={sectionRef}
@@ -41,10 +46,10 @@ export default function Work({ showAll = false }: WorkProps) {
             aria-label="Featured projects"
         >
             <div className="container">
-                {/* Section Header */}
-                <div className="work-header flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12 lg:mb-16">
+                {/* Section Header — button aligned inline with heading */}
+                <div className="work-header flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6" style={{ marginBottom: 'clamp(24px, 3vw, 40px)' }}>
                     <div>
-                        <h2 className="font-black uppercase leading-[0.95] text-[var(--color-text)]" style={{ fontSize: 'clamp(2.5rem, 2rem + 3vw, 5.5rem)' }}>
+                        <h2 className="font-black uppercase leading-[0.95] text-[var(--color-text)]" style={{ fontSize: 'clamp(3rem, 2.5rem + 4vw, 7rem)' }}>
                             LATEST WORK
                             <sup className="text-base sm:text-lg text-[var(--color-text-muted)] ml-2 font-normal normal-case">
                                 ({projects.length.toString().padStart(2, '0')})
@@ -65,23 +70,43 @@ export default function Work({ showAll = false }: WorkProps) {
                     )}
                 </div>
 
-                {/* Asymmetric Bento Grid */}
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-6">
-                    {projects.map((project, idx) => (
-                        <div
-                            key={project.id}
-                            className={
-                                idx === 0
-                                    ? 'lg:col-span-2 lg:row-span-2'
-                                    : 'lg:col-span-1'
-                            }
-                        >
-                            <ProjectCard
-                                project={project}
-                                index={idx}
-                                featured={idx === 0}
-                            />
-                        </div>
+                {/* Staggered 2-Column Grid — right column offset, 4th card fills to align */}
+                <div className="hidden lg:grid grid-cols-2 gap-8">
+                    {/* Left column — cards 1, 3 */}
+                    <div className="flex flex-col gap-8">
+                        {leftCol.map((project) => {
+                            const originalIdx = projects.indexOf(project);
+                            return (
+                                <ProjectCard
+                                    key={project.id}
+                                    project={project}
+                                    index={originalIdx}
+                                />
+                            );
+                        })}
+                    </div>
+
+                    {/* Right column — offset 80px, last card fills remaining height */}
+                    <div className="flex flex-col gap-8" style={{ marginTop: '80px' }}>
+                        {rightCol.map((project, colIdx) => {
+                            const originalIdx = projects.indexOf(project);
+                            const isLast = colIdx === rightCol.length - 1;
+                            return (
+                                <ProjectCard
+                                    key={project.id}
+                                    project={project}
+                                    index={originalIdx}
+                                    fillHeight={isLast}
+                                />
+                            );
+                        })}
+                    </div>
+                </div>
+
+                {/* Mobile: single column, no stagger */}
+                <div className="flex flex-col gap-6 lg:hidden">
+                    {projects.map((project, index) => (
+                        <ProjectCard key={project.id} project={project} index={index} />
                     ))}
                 </div>
 

@@ -92,70 +92,95 @@ export default function FAQ({ showAll = true }: FAQProps) {
             aria-label="Frequently asked questions"
         >
             <div className="container">
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
-                    {/* Header */}
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
+                    {/* Header — left side */}
                     <div className="lg:col-span-4 faq-header">
                         <div className="lg:sticky lg:top-32">
                             <div className="flex items-center gap-4 mb-6">
-                                <span className="text-[var(--font-size-sm)] uppercase tracking-widest text-[var(--color-primary)]">
+                                <span className="text-xs sm:text-sm uppercase tracking-[0.2em] text-[var(--color-primary)]">
                                     FAQ
                                 </span>
-                                <div className="w-12 h-[1px] bg-[var(--color-border)]" />
+                                <div className="w-12 h-[1px] bg-[rgba(255,255,255,0.15)]" />
                             </div>
-                            <h2 className="text-[var(--font-size-3xl)] lg:text-[var(--font-size-4xl)] font-bold mb-4">
-                                Common Questions
+                            <h2
+                                className="font-black text-[var(--color-text)] leading-[0.95] mb-6"
+                                style={{ fontSize: 'clamp(2.5rem, 2rem + 3vw, 5rem)' }}
+                            >
+                                Common<br />Questions
                             </h2>
-                            <p className="text-[var(--font-size-base)] text-[var(--color-text-secondary)]">
+                            <p className="text-base text-[var(--color-text-muted)] leading-relaxed max-w-sm">
                                 Find answers to frequently asked questions about my services and process.
                             </p>
                         </div>
                     </div>
 
-                    {/* Accordion */}
+                    {/* Accordion — right side */}
                     <div className="lg:col-span-8">
-                        <div className="space-y-4" role="region" aria-label="FAQ accordion">
-                            {items.map((item, index) => (
-                                <div
-                                    key={item.id}
-                                    className="faq-item card overflow-hidden"
-                                >
-                                    <button
-                                        onClick={() => toggleItem(index)}
-                                        className="w-full flex items-center justify-between p-6 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] focus-visible:ring-inset"
-                                        aria-expanded={openIndex === index}
-                                        aria-controls={`faq-answer-${item.id}`}
-                                    >
-                                        <span className="text-[var(--font-size-lg)] font-medium text-[var(--color-text)] pr-8">
-                                            {item.question}
-                                        </span>
-                                        <span
-                                            className={`flex-shrink-0 w-8 h-8 rounded-full bg-[var(--color-bg-secondary)] flex items-center justify-center transition-transform duration-300 ${openIndex === index ? 'rotate-45' : ''
-                                                }`}
-                                        >
-                                            <svg
-                                                className="w-4 h-4 text-[var(--color-primary)]"
-                                                fill="none"
-                                                viewBox="0 0 24 24"
-                                                stroke="currentColor"
-                                            >
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
-                                            </svg>
-                                        </span>
-                                    </button>
-
+                        <div role="region" aria-label="FAQ accordion">
+                            {items.map((item, index) => {
+                                const isOpen = openIndex === index;
+                                return (
                                     <div
-                                        id={`faq-answer-${item.id}`}
-                                        className={`overflow-hidden transition-all duration-300 ${openIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-                                            }`}
+                                        key={item.id}
+                                        className="faq-item"
+                                        style={{
+                                            borderBottom: '1px solid rgba(255,255,255,0.08)',
+                                        }}
                                     >
-                                        <div className="px-6 pb-6">
-                                            <p className="text-[var(--font-size-base)] text-[var(--color-text-secondary)] leading-relaxed">
-                                                {item.answer}
-                                            </p>
+                                        <button
+                                            onClick={() => toggleItem(index)}
+                                            className="w-full flex items-center justify-between text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] focus-visible:ring-inset transition-colors"
+                                            style={{ padding: '24px 0' }}
+                                            aria-expanded={isOpen}
+                                            aria-controls={`faq-answer-${item.id}`}
+                                        >
+                                            <span
+                                                className="font-medium text-[var(--color-text)] pr-8 transition-colors"
+                                                style={{
+                                                    fontSize: 'clamp(0.95rem, 0.9rem + 0.3vw, 1.125rem)',
+                                                    color: isOpen ? 'var(--color-text)' : 'var(--color-text-secondary)',
+                                                }}
+                                            >
+                                                {item.question}
+                                            </span>
+                                            <span
+                                                className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300"
+                                                style={{
+                                                    background: isOpen ? 'var(--color-primary)' : 'transparent',
+                                                    transform: isOpen ? 'rotate(45deg)' : 'rotate(0deg)',
+                                                }}
+                                            >
+                                                <svg
+                                                    className="w-4 h-4"
+                                                    fill="none"
+                                                    viewBox="0 0 24 24"
+                                                    stroke="currentColor"
+                                                    style={{
+                                                        color: isOpen ? '#000' : 'var(--color-primary)',
+                                                    }}
+                                                >
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+                                                </svg>
+                                            </span>
+                                        </button>
+
+                                        <div
+                                            id={`faq-answer-${item.id}`}
+                                            className="overflow-hidden transition-all duration-300"
+                                            style={{
+                                                maxHeight: isOpen ? '300px' : '0px',
+                                                opacity: isOpen ? 1 : 0,
+                                            }}
+                                        >
+                                            <div style={{ paddingBottom: '24px', paddingRight: '48px' }}>
+                                                <p className="text-base text-[var(--color-text-muted)] leading-relaxed">
+                                                    {item.answer}
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            ))}
+                                );
+                            })}
                         </div>
                     </div>
                 </div>

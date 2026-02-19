@@ -7,6 +7,7 @@ interface ProcessStep {
     step: number;
     title: string;
     description: string;
+    icon: string;
 }
 
 const steps: ProcessStep[] = [
@@ -14,31 +15,37 @@ const steps: ProcessStep[] = [
         step: 1,
         title: 'Discovery Phase',
         description: `You might know the competition in your industry, but I'll help you identify the unique opportunities that set you apart.`,
+        icon: '/how-i-work/search-check.svg',
     },
     {
         step: 2,
         title: 'Design Phase',
         description: `I'll create wireframes, mockups, and bring your vision to life, ensuring every detail aligns with your goals.`,
+        icon: '/how-i-work/pen-tool.svg',
     },
     {
         step: 3,
         title: 'Receive & Refine',
         description: `Designs are meant to be flexible. I'll work closely with you to refine and ensure it aligns with your vision.`,
+        icon: '/how-i-work/repeat.svg',
     },
     {
         step: 4,
         title: 'Development',
         description: `"AI can vibe-code the whole project". Then, let's see how that code reacts in the real world. IT WOULD BREAK!!`,
+        icon: '/how-i-work/folder-code.svg',
     },
     {
         step: 5,
         title: 'Deployment',
         description: `Deploying is where even the best code breaks. I make sure that it doesn't. AWS, GCP, Azure, you name it, I connect it.`,
+        icon: '/how-i-work/cloud-upload.svg',
     },
     {
         step: 6,
         title: 'Support',
         description: `If the project can't return real-life value, then it's as good as powerbank without charging. I make sure it adds that value.`,
+        icon: '/how-i-work/shield-half.svg',
     },
 ];
 
@@ -57,7 +64,7 @@ export default function Process() {
 
             // Calculate the horizontal distance: track width minus viewport
             const getScrollAmount = () => {
-                return -(trackRef.current!.scrollWidth - window.innerWidth + 200);
+                return -(trackRef.current!.scrollWidth - window.innerWidth + 350);
             };
 
             // Horizontal scroll driven by vertical scroll
@@ -95,8 +102,8 @@ export default function Process() {
                     style={{ willChange: 'transform' }}
                 >
                     {/* Left Side - Massive Heading (part of the scroll track) */}
-                    <div className="shrink-0 flex items-start gap-3 pr-16 xl:pr-20 pl-8 lg:pl-16 xl:pl-20"
-                        style={{ width: 'clamp(400px, 35vw, 550px)' }}
+                    <div className="shrink-0 flex items-start gap-3 pr-16 xl:pr-20"
+                        style={{ width: 'clamp(550px, 35vw + 150px, 700px)', paddingLeft: '150px' }}
                     >
                         <h2
                             className="font-black uppercase leading-[0.9] text-[var(--color-text)]"
@@ -123,11 +130,23 @@ export default function Process() {
                                 style={{ padding: '24px', width: 'clamp(300px, 25vw, 380px)' }}
                             >
                                 {/* Step Label at top */}
-                                <div className="mb-auto">
+                                <div>
                                     <span className="text-sm sm:text-base lg:text-lg text-[var(--color-text-muted)] uppercase tracking-wider">
                                         STEP {step.step}
                                         <span className="text-[var(--color-primary)]">.</span>
                                     </span>
+                                </div>
+
+                                {/* Icon in center */}
+                                <div className="flex-1 flex items-center justify-center">
+                                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                                    <img
+                                        src={step.icon}
+                                        alt={`${step.title} icon`}
+                                        width={64}
+                                        height={64}
+                                        style={{ width: '64px', height: '64px' }}
+                                    />
                                 </div>
 
                                 {/* Title + Description grouped at bottom */}

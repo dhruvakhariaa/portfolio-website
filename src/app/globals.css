@@ -6,6 +6,7 @@
 :root {
   /* Colors */
   --color-primary: #FF4925;
+  --color-primary-rgb: 255, 73, 37;
   --color-primary-hover: #E53E1F;
   --color-bg: #0A0A0A;
   --color-bg-secondary: #111111;
