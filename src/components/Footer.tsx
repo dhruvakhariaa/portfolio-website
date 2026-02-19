@@ -11,12 +11,6 @@ const socialLinks = [
     { name: 'Email', url: 'mailto:hello@dhruvvakharia.com', icon: 'email' },
 ];
 
-const footerLinks = [
-    { name: 'Home', href: '/' },
-    { name: 'Projects', href: '/projects' },
-    { name: 'Contact', href: '/contact' },
-];
-
 export default function Footer() {
     const footerRef = useRef<HTMLElement>(null);
 
@@ -24,15 +18,15 @@ export default function Footer() {
         if (!footerRef.current) return;
 
         gsap.fromTo(
-            '.footer-content',
-            { opacity: 0, y: 50 },
+            '.footer-cta',
+            { opacity: 0, y: 40 },
             {
                 opacity: 1,
                 y: 0,
                 duration: 0.8,
                 scrollTrigger: {
                     trigger: footerRef.current,
-                    start: 'top 90%',
+                    start: 'top 85%',
                 },
             }
         );
@@ -70,134 +64,122 @@ export default function Footer() {
     };
 
     return (
-        <footer
-            ref={footerRef}
-            role="contentinfo"
-        >
-            {/* CTA Section — dark background, matching the rest of the site */}
-            <div className="footer-content">
+        <footer ref={footerRef} role="contentinfo">
+
+            {/* Wave SVG — transitions from dark bg into orange footer */}
+            <div style={{ lineHeight: 0, overflow: 'hidden', background: 'var(--color-bg)', marginBottom: '-2px' }}>
+                <svg
+                    viewBox="0 0 1440 120"
+                    preserveAspectRatio="none"
+                    style={{ width: '100%', height: '120px', display: 'block' }}
+                    fill="var(--color-primary)"
+                >
+                    <path d="M0,80 C180,120 360,20 540,60 C720,100 900,10 1080,50 C1200,75 1320,30 1440,70 L1440,120 L0,120 Z" />
+                </svg>
+            </div>
+
+            {/* Entire footer — orange background */}
+            <div
+                className="footer-cta"
+                style={{
+                    background: 'var(--color-primary)',
+                    position: 'relative',
+                }}
+            >
+                {/* CTA content */}
                 <div
-                    className="relative overflow-hidden"
+                    className="container"
                     style={{
-                        background: 'var(--color-primary)',
+                        textAlign: 'center',
+                        paddingTop: 'clamp(28px, 4vw, 28px)',
+                        paddingBottom: 'clamp(16px, 2vw, 16px)',
                     }}
                 >
-                    {/* Subtle noise overlay */}
-                    <div
-                        className="absolute inset-0 pointer-events-none"
+                    <h2
+                        className="font-black leading-[0.95]"
                         style={{
-                            background: 'radial-gradient(ellipse at center, rgba(0,0,0,0) 0%, rgba(0,0,0,0.15) 100%)',
+                            fontSize: 'clamp(2.5rem, 2rem + 5vw, 6rem)',
+                            color: 'rgba(0,0,0,0.85)',
+                            marginBottom: '16px',
                         }}
-                    />
-
-                    <div
-                        className="container relative z-10 text-center"
-                        style={{ padding: 'clamp(80px, 10vw, 140px) 0' }}
                     >
-                        <h2
-                            className="font-black leading-[0.95] mb-6"
-                            style={{
-                                fontSize: 'clamp(3rem, 2.5rem + 5vw, 7rem)',
-                                color: 'rgba(0,0,0,0.85)',
-                            }}
+                        Let&apos;s Work Together
+                    </h2>
+                    <p
+                        style={{
+                            fontSize: 'clamp(0.9rem, 0.85rem + 0.3vw, 1.05rem)',
+                            color: 'rgba(0,0,0,0.5)',
+                            maxWidth: '440px',
+                            marginLeft: 'auto',
+                            marginRight: 'auto',
+                            marginBottom: '28px',
+                            lineHeight: 1.6,
+                        }}
+                    >
+                        Have a project in mind? Let&apos;s create something amazing.
+                    </p>
+                    <Link
+                        href="/contact"
+                        className="group inline-flex items-center gap-3 font-semibold transition-all duration-300"
+                        style={{
+                            padding: '14px 32px',
+                            background: 'rgba(0,0,0,0.9)',
+                            color: '#fff',
+                            borderRadius: '999px',
+                            fontSize: '0.95rem',
+                        }}
+                    >
+                        Start a Conversation
+                        <svg
+                            className="inline-block -rotate-45 transition-transform duration-300 group-hover:rotate-0"
+                            style={{ width: '16px', height: '16px' }}
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
                         >
-                            Let&apos;s Work<br />Together
-                        </h2>
-                        <p
-                            className="max-w-xl mx-auto mb-10"
-                            style={{
-                                fontSize: 'clamp(1rem, 0.9rem + 0.3vw, 1.125rem)',
-                                color: 'rgba(0,0,0,0.55)',
-                                lineHeight: 1.7,
-                            }}
-                        >
-                            Have a project in mind? I&apos;d love to hear about it. Let&apos;s create something amazing together.
-                        </p>
-                        <Link
-                            href="/contact"
-                            className="inline-flex items-center gap-3 font-medium transition-all duration-300 hover:gap-4"
-                            style={{
-                                padding: '16px 36px',
-                                background: 'rgba(0,0,0,0.9)',
-                                color: '#fff',
-                                borderRadius: '999px',
-                                fontSize: '1rem',
-                            }}
-                        >
-                            Start a Conversation
-                            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                            </svg>
-                        </Link>
-                    </div>
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                    </Link>
                 </div>
 
-                {/* Footer bar — dark, matching the main site background */}
+                {/* Bottom bar — socials + copyright, still on orange */}
                 <div
+                    className="container"
                     style={{
-                        background: 'var(--color-bg)',
-                        borderTop: '1px solid rgba(255,255,255,0.06)',
+                        paddingTop: '24px',
+                        paddingBottom: '24px',
+                        borderTop: '1px solid rgba(0,0,0,0.1)',
                     }}
                 >
-                    <div
-                        className="container"
-                        style={{ paddingTop: '40px', paddingBottom: '40px' }}
-                    >
-                        <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
-                            {/* Name */}
-                            <div className="text-center lg:text-left">
-                                <Link href="/" className="text-lg font-bold text-[var(--color-text)] tracking-wide">
-                                    DHRUV VAKHARIA
-                                </Link>
-                                <p className="mt-1 text-sm text-[var(--color-text-muted)]">
-                                    Full Stack Developer
-                                </p>
-                            </div>
-
-                            {/* Navigation */}
-                            <nav className="flex items-center gap-8" aria-label="Footer navigation">
-                                {footerLinks.map((link) => (
-                                    <Link
-                                        key={link.name}
-                                        href={link.href}
-                                        className="text-sm text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors"
-                                    >
-                                        {link.name}
-                                    </Link>
-                                ))}
-                            </nav>
-
-                            {/* Social Icons */}
-                            <div className="flex items-center gap-3">
-                                {socialLinks.map((social) => (
-                                    <a
-                                        key={social.name}
-                                        href={social.url}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex items-center justify-center text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-all duration-300"
-                                        style={{
-                                            width: '40px',
-                                            height: '40px',
-                                            borderRadius: '50%',
-                                            border: '1px solid rgba(255,255,255,0.08)',
-                                        }}
-                                        aria-label={`Follow on ${social.name}`}
-                                    >
-                                        {renderIcon(social.icon)}
-                                    </a>
-                                ))}
-                            </div>
-                        </div>
-
+                    <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
                         {/* Copyright */}
-                        <div
-                            className="text-center mt-8 pt-6"
-                            style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}
+                        <p
+                            style={{
+                                fontSize: '0.8rem',
+                                color: '#FFFFF0',
+                            }}
+                            suppressHydrationWarning
                         >
-                            <p className="text-xs text-[var(--color-text-muted)]" style={{ opacity: 0.5 }}>
-                                © {new Date().getFullYear()} Dhruv Vakharia. All rights reserved.
-                            </p>
+                            © {new Date().getFullYear()} Dhruv Vakharia. All rights reserved.
+                        </p>
+
+                        {/* Social icons */}
+                        <div className="flex items-center gap-4">
+                            {socialLinks.map((social) => (
+                                <a
+                                    key={social.name}
+                                    href={social.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="transition-all duration-200"
+                                    style={{ color: '#FFFFF0' }}
+                                    onMouseEnter={e => { e.currentTarget.style.color = '#fff'; }}
+                                    onMouseLeave={e => { e.currentTarget.style.color = '#FFFFF0'; }}
+                                    aria-label={social.name}
+                                >
+                                    {renderIcon(social.icon)}
+                                </a>
+                            ))}
                         </div>
                     </div>
                 </div>

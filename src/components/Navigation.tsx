@@ -15,15 +15,25 @@ export default function Navigation() {
     const [isScrolled, setIsScrolled] = useState(false);
     const pathname = usePathname();
 
-    // Handle scroll - hide navbar until scrollY > 600
+    // On home page: hide navbar until scrollY > 600. On other pages: always visible.
+    const isHomePage = pathname === '/';
+
     useEffect(() => {
+        if (!isHomePage) {
+            setIsScrolled(true);
+            return;
+        }
+
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 600);
         };
 
+        // Check initial scroll position
+        handleScroll();
+
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+    }, [isHomePage]);
 
     // Close menu on route change
     useEffect(() => {
@@ -78,12 +88,12 @@ export default function Navigation() {
                                 key={link.name}
                                 href={link.href}
                                 onClick={(e) => {
-                                if (pathname === link.href) {
-                                    e.preventDefault();
-                                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                                }
-                                setIsOpen(false);
-                            }}
+                                    if (pathname === link.href) {
+                                        e.preventDefault();
+                                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                                    }
+                                    setIsOpen(false);
+                                }}
                                 className={`relative text-[var(--font-size-sm)] font-medium transition-colors ${pathname === link.href
                                     ? 'text-[var(--color-text)]'
                                     : 'text-[var(--color-text-secondary)] hover:text-[var(--color-text)]'

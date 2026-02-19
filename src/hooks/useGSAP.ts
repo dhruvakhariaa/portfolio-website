@@ -15,17 +15,25 @@ export function useGSAP(
     dependencies: React.DependencyList = []
 ) {
     const contextRef = useRef<gsap.Context | null>(null);
+    const cleanupRef = useRef<(() => void) | null>(null);
 
     useEffect(() => {
         // Create GSAP context for cleanup
         contextRef.current = gsap.context(() => {
-            callback(gsap, ScrollTrigger);
+            const cleanup = callback(gsap, ScrollTrigger);
+            if (typeof cleanup === 'function') {
+                cleanupRef.current = cleanup;
+            }
         });
 
         return () => {
-            // Cleanup all GSAP animations in this context
+            // Run custom cleanup (e.g. clearTimeout) first
+            cleanupRef.current?.();
+            cleanupRef.current = null;
+            // Then revert all GSAP animations in this context
             contextRef.current?.revert();
         };
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, dependencies);
 
     return contextRef;

@@ -59,12 +59,15 @@ export default function Process() {
 
         // Delay to ensure Services section's pinSpacing is calculated first
         const timeoutId = setTimeout(() => {
-            ScrollTrigger.refresh(true);
+            // Guard against refs being null if component unmounted during the timeout
+            if (!trackRef.current || !pinContainerRef.current) return;
 
+            ScrollTrigger.refresh(true);
 
             // Calculate the horizontal distance: track width minus viewport
             const getScrollAmount = () => {
-                return -(trackRef.current!.scrollWidth - window.innerWidth + 350);
+                if (!trackRef.current) return 0;
+                return -(trackRef.current.scrollWidth - window.innerWidth + 350);
             };
 
             // Horizontal scroll driven by vertical scroll
@@ -76,7 +79,10 @@ export default function Process() {
             ScrollTrigger.create({
                 trigger: pinContainerRef.current,
                 start: 'top top',
-                end: () => `+=${trackRef.current!.scrollWidth + 1000}`,
+                end: () => {
+                    if (!trackRef.current) return '+=2000';
+                    return `+=${trackRef.current.scrollWidth + 1000}`;
+                },
                 pin: true,
                 pinSpacing: true,
                 scrub: 0.8,
@@ -84,6 +90,11 @@ export default function Process() {
                 invalidateOnRefresh: true,
             });
         }, 200);
+
+        // Return cleanup function to clear the timeout
+        return () => {
+            clearTimeout(timeoutId);
+        };
     }, []);
 
     return (

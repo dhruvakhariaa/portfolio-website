@@ -112,12 +112,35 @@ export default function Work({ showAll = false }: WorkProps) {
 
                 {/* CTA for homepage */}
                 {!showAll && (
-                    <div className="mt-16 text-center">
-                        <p className="text-[var(--font-size-lg)] text-[var(--color-text-secondary)] mb-6">
-                            Interested in working together?
+                    <div style={{ marginTop: '40px', textAlign: 'center' }}>
+                        <p style={{ fontSize: 'var(--font-size-2xl)', color: 'var(--color-text-secondary)', display: 'inline' }}>
+                            Interested in working together?{' '}
                         </p>
-                        <Link href="/contact" className="btn btn-primary">
-                            Start a Project
+                        <Link
+                            href="/contact"
+                            className="group"
+                            style={{
+                                fontSize: 'var(--font-size-2xl)',
+                                color: 'var(--color-primary)',
+                                textDecoration: 'none',
+                                fontWeight: 600,
+                            }}
+                        >
+                            Start a project{' '}
+                            <svg
+                                className="inline-block -rotate-45 transition-transform duration-300 group-hover:rotate-0"
+                                style={{
+                                    width: '18px',
+                                    height: '18px',
+                                    verticalAlign: 'middle',
+                                    marginLeft: '4px',
+                                }}
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                            >
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                            </svg>
                         </Link>
                     </div>
                 )}
