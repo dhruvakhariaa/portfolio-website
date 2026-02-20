@@ -5,7 +5,7 @@ import { useParams, notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import { getProjectById, projects } from '@/data/projects';
-import { useGSAP, gsap } from '@/hooks/useGSAP';
+import { useGSAP, gsap } from '../../../hooks/useGSAP';
 
 export default function ProjectDetailPage() {
     const params = useParams();
@@ -38,34 +38,62 @@ export default function ProjectDetailPage() {
     return (
         <div ref={pageRef} className="pt-24 lg:pt-32">
             {/* Hero Section */}
-            <section className="section pb-0">
+            <section style={{ paddingTop: 'clamp(16px, 2vw, 32px)', paddingBottom: 0 }}>
                 <div className="container">
                     {/* Back Link */}
                     <Link
                         href="/projects"
-                        className="project-content inline-flex items-center gap-2 text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors mb-8"
+                        className="project-content inline-flex items-center gap-2 transition-colors"
+                        style={{
+                            fontSize: 'clamp(0.8rem, 0.75rem + 0.15vw, 0.9rem)',
+                            color: 'var(--color-text-muted)',
+                            marginBottom: '32px',
+                            display: 'inline-flex',
+                        }}
+                        onMouseEnter={e => { e.currentTarget.style.color = 'var(--color-text)'; }}
+                        onMouseLeave={e => { e.currentTarget.style.color = 'var(--color-text-muted)'; }}
                     >
-                        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
                         </svg>
                         Back to Projects
                     </Link>
 
                     {/* Project Header */}
-                    <div className="project-content max-w-4xl mb-12">
-                        <span className="text-[var(--font-size-sm)] text-[var(--color-primary)] mb-4 block">
+                    <div className="project-content" style={{ maxWidth: '720px', marginBottom: '28px' }}>
+                        <span
+                            style={{
+                                fontSize: 'clamp(0.75rem, 0.7rem + 0.15vw, 0.85rem)',
+                                color: 'var(--color-primary)',
+                                display: 'block',
+                                marginBottom: '12px',
+                            }}
+                        >
                             {project.year}
                         </span>
-                        <h1 className="text-[var(--font-size-4xl)] lg:text-[var(--font-size-5xl)] font-bold mb-6">
+                        <h1
+                            className="font-bold"
+                            style={{
+                                fontSize: 'clamp(1.75rem, 1.5rem + 1.5vw, 3rem)',
+                                lineHeight: 1.15,
+                                marginBottom: '14px',
+                            }}
+                        >
                             {project.title}
                         </h1>
-                        <p className="text-[var(--font-size-xl)] text-[var(--color-text-secondary)] leading-relaxed">
+                        <p
+                            style={{
+                                fontSize: 'clamp(0.95rem, 0.9rem + 0.2vw, 1.1rem)',
+                                color: 'var(--color-text-secondary)',
+                                lineHeight: 1.65,
+                            }}
+                        >
                             {project.description}
                         </p>
                     </div>
 
                     {/* Action Buttons */}
-                    <div className="project-content flex flex-wrap gap-4 mb-12">
+                    <div className="project-content flex flex-wrap gap-3" style={{ marginBottom: '40px' }}>
                         {project.github && (
                             <a
                                 href={project.github}
@@ -97,7 +125,7 @@ export default function ProjectDetailPage() {
             </section>
 
             {/* Project Image */}
-            <section className="project-content container mb-16">
+            <section className="project-content container" style={{ marginBottom: 'clamp(32px, 4vw, 64px)' }}>
                 <div className="relative aspect-video rounded-2xl overflow-hidden">
                     <Image
                         src={project.image}
@@ -110,17 +138,41 @@ export default function ProjectDetailPage() {
             </section>
 
             {/* Project Details */}
-            <section className="section bg-[var(--color-bg-secondary)]">
+            <section
+                style={{
+                    background: 'var(--color-bg-secondary)',
+                    paddingTop: 'clamp(40px, 5vw, 64px)',
+                    paddingBottom: 'clamp(40px, 5vw, 64px)',
+                }}
+            >
                 <div className="container">
-                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                    <div className="grid grid-cols-1 lg:grid-cols-12" style={{ gap: 'clamp(32px, 4vw, 48px)' }}>
                         {/* Main Content */}
                         <div className="lg:col-span-8 project-content">
-                            <h2 className="text-[var(--font-size-2xl)] font-bold mb-6">About the Project</h2>
-                            <div className="prose prose-invert max-w-none">
-                                <p className="text-[var(--font-size-lg)] text-[var(--color-text-secondary)] leading-relaxed mb-6">
+                            <h2
+                                className="font-bold"
+                                style={{ fontSize: 'clamp(1.2rem, 1.1rem + 0.5vw, 1.5rem)', marginBottom: '16px' }}
+                            >
+                                About the Project
+                            </h2>
+                            <div>
+                                <p
+                                    style={{
+                                        fontSize: 'clamp(0.9rem, 0.85rem + 0.2vw, 1.05rem)',
+                                        color: 'var(--color-text-secondary)',
+                                        lineHeight: 1.7,
+                                        marginBottom: '16px',
+                                    }}
+                                >
                                     {project.description}
                                 </p>
-                                <p className="text-[var(--font-size-base)] text-[var(--color-text-secondary)] leading-relaxed">
+                                <p
+                                    style={{
+                                        fontSize: 'clamp(0.875rem, 0.8rem + 0.2vw, 1rem)',
+                                        color: 'var(--color-text-secondary)',
+                                        lineHeight: 1.7,
+                                    }}
+                                >
                                     This project showcases my ability to build full-stack applications with modern technologies.
                                     The development process involved careful planning, iterative design, and rigorous testing
                                     to ensure a high-quality final product that meets both technical requirements and user needs.
@@ -131,13 +183,32 @@ export default function ProjectDetailPage() {
                         {/* Sidebar */}
                         <div className="lg:col-span-4 project-content">
                             {/* Technologies */}
-                            <div className="card p-6 mb-6">
-                                <h3 className="text-[var(--font-size-lg)] font-semibold mb-4">Technologies</h3>
+                            <div
+                                style={{
+                                    padding: 'clamp(20px, 3vw, 28px)',
+                                    background: 'rgba(255,255,255,0.03)',
+                                    border: '1px solid rgba(255,255,255,0.06)',
+                                    borderRadius: '12px',
+                                    marginBottom: '16px',
+                                }}
+                            >
+                                <h3
+                                    className="font-semibold"
+                                    style={{ fontSize: 'clamp(0.95rem, 0.9rem + 0.15vw, 1.05rem)', marginBottom: '12px' }}
+                                >
+                                    Technologies
+                                </h3>
                                 <div className="flex flex-wrap gap-2">
                                     {project.tags.map((tag, index) => (
                                         <span
                                             key={index}
-                                            className="px-3 py-1 text-[var(--font-size-sm)] bg-[var(--color-bg)] text-[var(--color-text-secondary)] rounded-full"
+                                            style={{
+                                                padding: '4px 12px',
+                                                fontSize: 'clamp(0.75rem, 0.7rem + 0.15vw, 0.85rem)',
+                                                background: 'rgba(255,255,255,0.05)',
+                                                color: 'var(--color-text-secondary)',
+                                                borderRadius: '999px',
+                                            }}
                                         >
                                             {tag}
                                         </span>
@@ -146,9 +217,23 @@ export default function ProjectDetailPage() {
                             </div>
 
                             {/* Year */}
-                            <div className="card p-6">
-                                <h3 className="text-[var(--font-size-lg)] font-semibold mb-4">Year</h3>
-                                <p className="text-[var(--color-text-secondary)]">{project.year}</p>
+                            <div
+                                style={{
+                                    padding: 'clamp(20px, 3vw, 28px)',
+                                    background: 'rgba(255,255,255,0.03)',
+                                    border: '1px solid rgba(255,255,255,0.06)',
+                                    borderRadius: '12px',
+                                }}
+                            >
+                                <h3
+                                    className="font-semibold"
+                                    style={{ fontSize: 'clamp(0.95rem, 0.9rem + 0.15vw, 1.05rem)', marginBottom: '8px' }}
+                                >
+                                    Year
+                                </h3>
+                                <p style={{ color: 'var(--color-text-secondary)', fontSize: 'clamp(0.85rem, 0.8rem + 0.15vw, 0.95rem)' }}>
+                                    {project.year}
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -157,9 +242,15 @@ export default function ProjectDetailPage() {
 
             {/* Related Projects */}
             {relatedProjects.length > 0 && (
-                <section className="section">
+                <section style={{ paddingTop: 'clamp(40px, 5vw, 64px)', paddingBottom: 'clamp(40px, 5vw, 64px)' }}>
                     <div className="container">
-                        <h2 className="text-[var(--font-size-2xl)] lg:text-[var(--font-size-3xl)] font-bold mb-8">
+                        <h2
+                            className="font-bold"
+                            style={{
+                                fontSize: 'clamp(1.2rem, 1rem + 0.8vw, 1.75rem)',
+                                marginBottom: 'clamp(24px, 3vw, 40px)',
+                            }}
+                        >
                             Other Projects
                         </h2>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -167,7 +258,12 @@ export default function ProjectDetailPage() {
                                 <Link
                                     key={relatedProject.id}
                                     href={`/projects/${relatedProject.id}`}
-                                    className="group card overflow-hidden"
+                                    className="group overflow-hidden"
+                                    style={{
+                                        borderRadius: '12px',
+                                        border: '1px solid rgba(255,255,255,0.06)',
+                                        background: 'rgba(255,255,255,0.02)',
+                                    }}
                                 >
                                     <div className="relative aspect-video overflow-hidden">
                                         <Image
@@ -177,8 +273,11 @@ export default function ProjectDetailPage() {
                                             className="object-cover transition-transform duration-500 group-hover:scale-105"
                                         />
                                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                                        <div className="absolute bottom-0 left-0 right-0 p-6">
-                                            <h3 className="text-[var(--font-size-xl)] font-bold text-white">
+                                        <div className="absolute bottom-0 left-0 right-0 p-5">
+                                            <h3
+                                                className="font-bold text-white"
+                                                style={{ fontSize: 'clamp(1rem, 0.9rem + 0.4vw, 1.25rem)' }}
+                                            >
                                                 {relatedProject.title}
                                             </h3>
                                         </div>
