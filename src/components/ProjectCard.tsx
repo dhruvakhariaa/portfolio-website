@@ -9,6 +9,13 @@ interface Project {
     id: string;
     title: string;
     description: string;
+    longDescription?: string;
+    details?: {
+        overview: string;
+        problem?: string;
+        features?: { title: string; description: string }[];
+        stack?: { category: string; items: string[] }[];
+    };
     image: string;
     tags: string[];
     github?: string;
@@ -152,7 +159,7 @@ export default function ProjectCard({ project, index = 0, fillHeight = false }: 
             >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                    src = "cursors/view-project.svg"
+                    src="cursors/view-project.svg"
                     alt=""
                     width={182}
                     height={49}

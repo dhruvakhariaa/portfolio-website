@@ -149,35 +149,112 @@ export default function ProjectDetailPage() {
                     <div className="grid grid-cols-1 lg:grid-cols-12" style={{ gap: 'clamp(32px, 4vw, 48px)' }}>
                         {/* Main Content */}
                         <div className="lg:col-span-8 project-content">
-                            <h2
-                                className="font-bold"
-                                style={{ fontSize: 'clamp(1.2rem, 1.1rem + 0.5vw, 1.5rem)', marginBottom: '16px' }}
-                            >
-                                About the Project
-                            </h2>
-                            <div>
-                                <p
-                                    style={{
-                                        fontSize: 'clamp(0.9rem, 0.85rem + 0.2vw, 1.05rem)',
-                                        color: 'var(--color-text-secondary)',
-                                        lineHeight: 1.7,
-                                        marginBottom: '16px',
-                                    }}
-                                >
-                                    {project.description}
-                                </p>
-                                <p
-                                    style={{
-                                        fontSize: 'clamp(0.875rem, 0.8rem + 0.2vw, 1rem)',
-                                        color: 'var(--color-text-secondary)',
-                                        lineHeight: 1.7,
-                                    }}
-                                >
-                                    This project showcases my ability to build full-stack applications with modern technologies.
-                                    The development process involved careful planning, iterative design, and rigorous testing
-                                    to ensure a high-quality final product that meets both technical requirements and user needs.
-                                </p>
-                            </div>
+                            {project.details ? (
+                                <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
+                                    {/* Overview */}
+                                    <div>
+                                        <h2 className="font-bold" style={{ fontSize: 'clamp(1.1rem, 1rem + 0.4vw, 1.4rem)', marginBottom: '10px' }}>
+                                            Overview
+                                        </h2>
+                                        <p style={{ fontSize: 'clamp(0.875rem, 0.85rem + 0.15vw, 1rem)', color: 'var(--color-text-secondary)', lineHeight: 1.75 }}>
+                                            {project.details.overview}
+                                        </p>
+                                    </div>
+
+                                    {/* Problem */}
+                                    {project.details.problem && (
+                                        <div>
+                                            <h2 className="font-bold" style={{ fontSize: 'clamp(1.1rem, 1rem + 0.4vw, 1.4rem)', marginBottom: '10px' }}>
+                                                The Problem It Solves
+                                            </h2>
+                                            <p style={{ fontSize: 'clamp(0.875rem, 0.85rem + 0.15vw, 1rem)', color: 'var(--color-text-secondary)', lineHeight: 1.75 }}>
+                                                {project.details.problem}
+                                            </p>
+                                        </div>
+                                    )}
+
+                                    {/* Features */}
+                                    {project.details.features && project.details.features.length > 0 && (
+                                        <div>
+                                            <h2 className="font-bold" style={{ fontSize: 'clamp(1.1rem, 1rem + 0.4vw, 1.4rem)', marginBottom: '16px' }}>
+                                                Key Features
+                                            </h2>
+                                            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                                                {project.details.features.map((feature, i) => (
+                                                    <div
+                                                        key={i}
+                                                        style={{
+                                                            padding: '16px 20px',
+                                                            background: 'rgba(255,255,255,0.03)',
+                                                            border: '1px solid rgba(255,255,255,0.06)',
+                                                            borderLeft: '3px solid var(--color-primary)',
+                                                            borderRadius: '8px',
+                                                        }}
+                                                    >
+                                                        <p className="font-semibold" style={{ fontSize: 'clamp(0.85rem, 0.8rem + 0.15vw, 0.95rem)', marginBottom: '4px' }}>
+                                                            {feature.title}
+                                                        </p>
+                                                        <p style={{ fontSize: 'clamp(0.8rem, 0.75rem + 0.15vw, 0.9rem)', color: 'var(--color-text-secondary)', lineHeight: 1.65 }}>
+                                                            {feature.description}
+                                                        </p>
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        </div>
+                                    )}
+
+                                    {/* Stack */}
+                                    {project.details.stack && project.details.stack.length > 0 && (
+                                        <div>
+                                            <h2 className="font-bold" style={{ fontSize: 'clamp(1.1rem, 1rem + 0.4vw, 1.4rem)', marginBottom: '16px' }}>
+                                                Technical Stack
+                                            </h2>
+                                            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                                                {project.details.stack.map((layer, i) => (
+                                                    <div key={i} className="flex items-start gap-4">
+                                                        <span
+                                                            className="shrink-0 font-medium"
+                                                            style={{
+                                                                fontSize: 'clamp(0.75rem, 0.7rem + 0.1vw, 0.85rem)',
+                                                                color: 'var(--color-primary)',
+                                                                minWidth: '110px',
+                                                                paddingTop: '2px',
+                                                            }}
+                                                        >
+                                                            {layer.category}
+                                                        </span>
+                                                        <div className="flex flex-wrap gap-2">
+                                                            {layer.items.map((item, j) => (
+                                                                <span
+                                                                    key={j}
+                                                                    style={{
+                                                                        padding: '3px 10px',
+                                                                        fontSize: 'clamp(0.75rem, 0.7rem + 0.1vw, 0.82rem)',
+                                                                        background: 'rgba(255,255,255,0.05)',
+                                                                        color: 'var(--color-text-secondary)',
+                                                                        borderRadius: '999px',
+                                                                    }}
+                                                                >
+                                                                    {item}
+                                                                </span>
+                                                            ))}
+                                                        </div>
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        </div>
+                                    )}
+                                </div>
+                            ) : (
+                                <div>
+                                    <h2 className="font-bold" style={{ fontSize: 'clamp(1.2rem, 1.1rem + 0.5vw, 1.5rem)', marginBottom: '16px' }}>
+                                        About the Project
+                                    </h2>
+                                    <p style={{ fontSize: 'clamp(0.875rem, 0.8rem + 0.2vw, 1rem)', color: 'var(--color-text-secondary)', lineHeight: 1.7 }}>
+                                        {project.longDescription || project.description}
+                                    </p>
+                                </div>
+                            )}
                         </div>
 
                         {/* Sidebar */}
