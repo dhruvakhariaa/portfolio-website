@@ -81,7 +81,7 @@ export default function Process() {
                 start: 'top top',
                 end: () => {
                     if (!trackRef.current) return '+=2000';
-                    return `+=${trackRef.current.scrollWidth + 1000}`;
+                    return `+=${trackRef.current.scrollWidth}`;
                 },
                 pin: true,
                 pinSpacing: true,

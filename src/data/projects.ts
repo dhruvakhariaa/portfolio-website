@@ -202,8 +202,8 @@ export const projects: Project[] = [
         year: 'January 2026',
     },
     {
-        id: 'cloud-infrastructure-dashboard',
-        title: 'Cloud Infrastructure Dashboard',
+        id: 'freelancer-leads-generator',
+        title: 'Freelancer Leads Generator',
         description: 'A real-time monitoring dashboard for AWS infrastructure with cost optimization insights, alerts, and automated scaling recommendations.',
         details: {
             overview: 'A unified monitoring dashboard that aggregates data from multiple AWS services to provide real-time visibility into infrastructure health, performance metrics, and cloud spending. Features intelligent alerting and a cost optimization engine for resource right-sizing.',
@@ -243,7 +243,7 @@ export const projects: Project[] = [
         },
         image: '/projects/project-5.jpg',
         tags: ['AWS', 'Python', 'React', 'Terraform', 'Grafana'],
-        github: 'https://github.com/dhruvakhariaa',
+        github: 'https://github.com/dhruvakhariaa/lead-generator',
         year: '2023',
     },
     {

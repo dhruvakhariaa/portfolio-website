@@ -74,7 +74,7 @@ export default function Navigation() {
                         onClick={(e) => {
                             if (pathname === '/') {
                                 e.preventDefault();
-                                window.scrollTo({ top: 0, behavior: 'smooth' });
+                                window.scrollTo({ top: 0, behavior: 'instant' });
                             }
                         }}
                     >
@@ -90,7 +90,7 @@ export default function Navigation() {
                                 onClick={(e) => {
                                     if (pathname === link.href) {
                                         e.preventDefault();
-                                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                                        window.scrollTo({ top: 0, behavior: 'instant' });
                                     }
                                     setIsOpen(false);
                                 }}
