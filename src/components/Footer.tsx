@@ -45,14 +45,14 @@ export default function Footer() {
 
         gsap.fromTo(
             '.footer-cta',
-            { opacity: 0, y: 40 },
+            { y: 40 },
             {
-                opacity: 1,
                 y: 0,
                 duration: 0.8,
                 scrollTrigger: {
                     trigger: footerRef.current,
                     start: 'top 85%',
+                    toggleActions: 'play none none none',
                 },
             }
         );

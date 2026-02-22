@@ -132,7 +132,7 @@ export default function ProjectDetailPage() {
                         alt={`${project.title} screenshot`}
                         fill
                         className="object-cover"
-                        priority
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
                     />
                 </div>
             </section>
@@ -348,6 +348,8 @@ export default function ProjectDetailPage() {
                                             alt={relatedProject.title}
                                             fill
                                             className="object-cover transition-transform duration-500 group-hover:scale-105"
+                                            sizes="(max-width: 768px) 100vw, 50vw"
+                                            loading="lazy"
                                         />
                                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                                         <div className="absolute bottom-0 left-0 right-0 p-5">
