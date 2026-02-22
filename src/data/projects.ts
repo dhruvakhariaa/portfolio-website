@@ -101,7 +101,7 @@ export const projects: Project[] = [
         },
         image: '/projects/project2.png',
         tags: ['Next.js', 'Node.js', 'MongoDB', 'Redis', 'Docker'],
-        github: 'https://github.com/dhruvakhariaa',
+        github: 'https://github.com/dhruvakhariaa/missing-semicolon',
         liveUrl: 'https://example.com',
         year: '2024',
     },
@@ -109,45 +109,95 @@ export const projects: Project[] = [
         id: 'clinker-transport-optimization-system',
         title: 'Clinker Transport Optimization System',
         description: 'An AI-powered logistics platform that optimizes clinker transportation routes, minimizes fuel consumption, and reduces delivery times.',
-        longDescription: `Project Overview
-The Clinker Transport Optimization system is a robust Multi-Period Mixed Integer Linear Programming (MILP) solution engineered to solve complex supply chain logistics for the cement industry. The platform determines the most cost-effective strategies for clinker production, multi-modal transportation routing, and inventory management across a network of Integrated Units (IUs) and Grinding Units (GUs) over configurable time horizons.
-
-The Problem It Solves
-Managing heavy industrial supply chains involves balancing production costs, freight expenses, fluctuating demand, and strict inventory constraints. Traditional planning methods often fail to find the true mathematical optimum. This project solves that by translating complex logistics rules (like integer trip constraints and safety stock requirements) into a rigorous mathematical model, ensuring minimal operational costs while consistently meeting product demand.
-
-Key Features
-
-Advanced MILP Optimization: Utilizes a state-of-the-art Gurobi solver engine to compute optimal production cycles, transportation flows (T1 and T2 modes), and inventory levels.
-
-Multi-Period Planning: Features a cyclic re-optimization logic capable of handling time-linked inventory balances across varied production horizons.
-
-Interactive Data Visualization: Includes a React-based dashboard that provides period-by-period result visualization, cost breakdown summaries, and transportation flow analysis.
-
-Excel Integration: Seamlessly handles input data loading and validation, and extracts complex optimized solutions into user-friendly Excel formats for easy business management.
-
-Technical Stack & Architecture
-
-Frontend: React, JavaScript, CSS (for interactive dashboard and visualization)
-
-Backend API: FastAPI (Python)
-
-Optimization Engine: Python, Gurobi Solver (for large-scale MILP problem solving)
-
-Data Handling: Excel-based data loaders and solution extractors`,
+        details: {
+            overview: 'A robust Multi-Period Mixed Integer Linear Programming (MILP) solution engineered to solve complex supply chain logistics for the cement industry. The platform determines the most cost-effective strategies for clinker production, multi-modal transportation routing, and inventory management across a network of Integrated Units (IUs) and Grinding Units (GUs) over configurable time horizons.',
+            problem: 'Managing heavy industrial supply chains involves balancing production costs, freight expenses, fluctuating demand, and strict inventory constraints. Traditional planning methods often fail to find the true mathematical optimum. This project solves that by translating complex logistics rules — like integer trip constraints and safety stock requirements — into a rigorous mathematical model, ensuring minimal operational costs while consistently meeting product demand.',
+            features: [
+                {
+                    title: 'Advanced MILP Optimization',
+                    description: 'Utilizes a state-of-the-art Gurobi solver engine to compute optimal production cycles, transportation flows (T1 and T2 modes), and inventory levels.',
+                },
+                {
+                    title: 'Multi-Period Planning',
+                    description: 'Features a cyclic re-optimization logic capable of handling time-linked inventory balances across varied production horizons.',
+                },
+                {
+                    title: 'Interactive Data Visualization',
+                    description: 'Includes a React-based dashboard providing period-by-period result visualization, cost breakdown summaries, and transportation flow analysis.',
+                },
+                {
+                    title: 'Excel Integration',
+                    description: 'Seamlessly handles input data loading and validation, and extracts complex optimized solutions into user-friendly Excel formats for easy business management.',
+                },
+            ],
+            stack: [
+                {
+                    category: 'Frontend',
+                    items: ['React', 'JavaScript', 'CSS'],
+                },
+                {
+                    category: 'Backend',
+                    items: ['FastAPI', 'Python'],
+                },
+                {
+                    category: 'Optimization',
+                    items: ['Gurobi Solver', 'MILP'],
+                },
+                {
+                    category: 'Data',
+                    items: ['Excel Loaders', 'Solution Extractors'],
+                },
+            ],
+        },
         image: '/projects/project3.png',
-        tags: ['React', 'Firebase', 'TypeScript', 'Tailwind CSS'],
-        github: 'https://github.com/dhruvakhariaa',
+        tags: ['Python', 'FastAPI', 'React', 'Gurobi', 'MILP'],
+        github: 'https://github.com/dhruvakhariaa/clinker_transport_optimisation',
         liveUrl: 'https://example.com',
         year: '2023',
     },
     {
-        id: 'health-fitness-tracker',
-        title: 'Health & Fitness Tracker',
+        id: 'emotion-analyser',
+        title: 'Emotion Analyser',
         description: 'A comprehensive mobile app for tracking workouts, nutrition, sleep patterns, and health metrics with personalized recommendations.',
-        longDescription: 'This cross-platform mobile app provides a holistic view of personal health by integrating workout logging, nutrition tracking with a food database, sleep quality analysis, and vital health metrics. A recommendation engine analyzes user patterns to suggest workout routines, meal plans, and lifestyle adjustments.',
-        image: '/projects/project-4.jpg',
+        details: {
+            overview: 'An AI-powered emotion analysis platform that leverages IBM Watson\'s NLP Emotion Prediction API to dissect text into five core emotional dimensions — anger, disgust, fear, joy, and sadness. Delivers instant, precision-scored breakdowns with dominant emotion identification through an intuitive Flask-based web interface, turning raw text into measurable emotional intelligence.',
+            problem: 'Understanding the emotional undertone of text at scale is a challenge that spans industries — from customer support teams drowning in unstructured feedback, to content creators gauging audience reactions, to researchers studying sentiment in large text corpora. Manual emotion tagging is slow, subjective, and inconsistent. This platform eliminates that bottleneck by providing instant, API-driven analysis that scores text across five emotional axes and surfaces the dominant emotion — enabling data-backed decisions on tone, messaging, and audience engagement in real-time.',
+            features: [
+                {
+                    title: 'Multi-Dimensional Emotion Scoring',
+                    description: 'Analyzes input text and returns precision-scored values across all five emotional dimensions — not just a single label, but a full emotional fingerprint of the content.',
+                },
+                {
+                    title: 'Dominant Emotion Identification',
+                    description: 'Automatically surfaces the strongest emotional signal from the analysis, making it instantly clear what feeling drives the text — no manual interpretation needed.',
+                },
+                {
+                    title: 'Real-Time Web Analysis',
+                    description: 'A clean, responsive web interface where users can input any text and get instant emotional breakdowns — no API keys, no setup, just results on demand.',
+                },
+                {
+                    title: 'Graceful Error Handling',
+                    description: 'Robust input validation ensures blank or malformed inputs are caught and handled elegantly, returning clear user-facing messages instead of cryptic errors.',
+                },
+            ],
+            stack: [
+                {
+                    category: 'Frontend',
+                    items: ['HTML5', 'JavaScript', 'CSS'],
+                },
+                {
+                    category: 'Backend',
+                    items: ['Python', 'Flask', 'Requests'],
+                },
+                {
+                    category: 'NLP & Testing',
+                    items: ['IBM Watson NLP', 'Unittest', 'PyLint'],
+                },
+            ],
+        },
+        image: '/projects/project4.png',
         tags: ['React Native', 'Expo', 'Node.js', 'PostgreSQL'],
-        github: 'https://github.com/dhruvakhariaa',
+        github: 'https://github.com/dhruvakhariaa/emotion-detector',
         liveUrl: 'https://example.com',
         year: '2023',
     },
@@ -155,7 +205,42 @@ Data Handling: Excel-based data loaders and solution extractors`,
         id: 'cloud-infrastructure-dashboard',
         title: 'Cloud Infrastructure Dashboard',
         description: 'A real-time monitoring dashboard for AWS infrastructure with cost optimization insights, alerts, and automated scaling recommendations.',
-        longDescription: 'This dashboard aggregates data from multiple AWS services to provide a unified view of infrastructure health, performance, and costs. It features real-time metric visualization with Grafana, intelligent alerting that correlates events across services to reduce noise, and a cost optimization engine that identifies underutilized resources.',
+        details: {
+            overview: 'A unified monitoring dashboard that aggregates data from multiple AWS services to provide real-time visibility into infrastructure health, performance metrics, and cloud spending. Features intelligent alerting and a cost optimization engine for resource right-sizing.',
+            problem: 'Cloud infrastructure sprawl makes it difficult to track resource utilization, predict costs, and react to incidents quickly. Native AWS dashboards are fragmented across services. This dashboard centralizes everything into a single pane of glass with actionable cost-saving recommendations.',
+            features: [
+                {
+                    title: 'Real-Time Metric Visualization',
+                    description: 'Grafana-powered dashboards displaying CPU, memory, network, and custom application metrics with configurable refresh intervals.',
+                },
+                {
+                    title: 'Intelligent Alerting',
+                    description: 'Correlates events across services to reduce alert noise, with escalation policies and PagerDuty/Slack integrations.',
+                },
+                {
+                    title: 'Cost Optimization Engine',
+                    description: 'Identifies underutilized EC2 instances, idle RDS databases, and orphaned EBS volumes with right-sizing and reservation recommendations.',
+                },
+                {
+                    title: 'Infrastructure as Code',
+                    description: 'All infrastructure managed via Terraform, enabling one-click provisioning, environment replication, and drift detection.',
+                },
+            ],
+            stack: [
+                {
+                    category: 'Frontend',
+                    items: ['React', 'TypeScript', 'Grafana'],
+                },
+                {
+                    category: 'Backend',
+                    items: ['Python', 'Flask', 'Celery'],
+                },
+                {
+                    category: 'Cloud & DevOps',
+                    items: ['AWS', 'Terraform', 'CloudWatch', 'Docker'],
+                },
+            ],
+        },
         image: '/projects/project-5.jpg',
         tags: ['AWS', 'Python', 'React', 'Terraform', 'Grafana'],
         github: 'https://github.com/dhruvakhariaa',
@@ -165,7 +250,42 @@ Data Handling: Excel-based data loaders and solution extractors`,
         id: 'social-media-analytics',
         title: 'Social Media Analytics',
         description: 'An analytics platform for tracking social media performance across multiple platforms with sentiment analysis and competitor insights.',
-        longDescription: 'This platform connects to major social media APIs to aggregate engagement metrics, audience demographics, and content performance across channels. Its NLP-powered sentiment analysis engine gauges audience reactions and identifies trending topics in real-time, while the competitor benchmarking module surfaces actionable insights.',
+        details: {
+            overview: 'A multi-platform analytics tool that connects to social media APIs to aggregate engagement metrics, audience demographics, and content performance. Features NLP-powered sentiment analysis and automated reporting with data-driven content strategy recommendations.',
+            problem: 'Brands managing multiple social media accounts struggle to get a unified view of their performance. Manual reporting is time-consuming and misses real-time trend shifts. This platform automates cross-platform analytics with sentiment analysis, so teams can react to audience shifts and competitor moves in real-time.',
+            features: [
+                {
+                    title: 'Cross-Platform Aggregation',
+                    description: 'Unified dashboard pulling metrics from Instagram, Twitter/X, LinkedIn, and Facebook with normalized engagement scoring.',
+                },
+                {
+                    title: 'Sentiment Analysis',
+                    description: 'NLP-powered engine that gauges audience reactions on posts, comments, and mentions — identifying positive, negative, and neutral trends.',
+                },
+                {
+                    title: 'Competitor Benchmarking',
+                    description: 'Tracks rival brand performance, content strategies, and audience growth to surface actionable competitive insights.',
+                },
+                {
+                    title: 'Automated Reporting',
+                    description: 'Generates weekly and monthly summary reports with data-driven recommendations for content strategy, posting times, and audience targeting.',
+                },
+            ],
+            stack: [
+                {
+                    category: 'Frontend',
+                    items: ['React', 'Chart.js', 'TypeScript'],
+                },
+                {
+                    category: 'Backend',
+                    items: ['Python', 'Django', 'Celery'],
+                },
+                {
+                    category: 'Database & NLP',
+                    items: ['PostgreSQL', 'spaCy', 'NLTK'],
+                },
+            ],
+        },
         image: '/projects/project-6.jpg',
         tags: ['Python', 'Django', 'PostgreSQL', 'Chart.js', 'NLP'],
         github: 'https://github.com/dhruvakhariaa',
