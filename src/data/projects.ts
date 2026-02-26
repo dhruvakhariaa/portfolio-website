@@ -204,47 +204,39 @@ export const projects: Project[] = [
     {
         id: 'freelancer-leads-generator',
         title: 'Freelancer Leads Generator',
-        description: 'A real-time monitoring dashboard for AWS infrastructure with cost optimization insights, alerts, and automated scaling recommendations.',
+        description: 'Freelancers find it quite difficult to get leads. This project aims to solve that problem by generating leads for freelancers.',
         details: {
-            overview: 'A unified monitoring dashboard that aggregates data from multiple AWS services to provide real-time visibility into infrastructure health, performance metrics, and cloud spending. Features intelligent alerting and a cost optimization engine for resource right-sizing.',
-            problem: 'Cloud infrastructure sprawl makes it difficult to track resource utilization, predict costs, and react to incidents quickly. Native AWS dashboards are fragmented across services. This dashboard centralizes everything into a single pane of glass with actionable cost-saving recommendations.',
+            overview: 'Once you enter the niche you want to go in and the platform you want to scrape the leads from, the website will scrape the leads from the platform and save them in a CSV file.',
+            problem: 'Freelancers find it quite difficult to get leads. They have to manually search for leads on different platforms and save them in a CSV file. This is a time consuming and tedious process.',
             features: [
                 {
-                    title: 'Real-Time Metric Visualization',
-                    description: 'Grafana-powered dashboards displaying CPU, memory, network, and custom application metrics with configurable refresh intervals.',
+                    title: 'Scrape Leads',
+                    description: 'Scrapes leads from the platform you want to scrape the leads from.',
                 },
                 {
-                    title: 'Intelligent Alerting',
-                    description: 'Correlates events across services to reduce alert noise, with escalation policies and PagerDuty/Slack integrations.',
-                },
-                {
-                    title: 'Cost Optimization Engine',
-                    description: 'Identifies underutilized EC2 instances, idle RDS databases, and orphaned EBS volumes with right-sizing and reservation recommendations.',
-                },
-                {
-                    title: 'Infrastructure as Code',
-                    description: 'All infrastructure managed via Terraform, enabling one-click provisioning, environment replication, and drift detection.',
+                    title: 'Save Leads',
+                    description: 'Saves the leads in a CSV file.',
                 },
             ],
             stack: [
                 {
                     category: 'Frontend',
-                    items: ['React', 'TypeScript', 'Grafana'],
+                    items: ['React', 'TypeScript'],
                 },
                 {
                     category: 'Backend',
-                    items: ['Python', 'Flask', 'Celery'],
+                    items: ['Python', 'Flask', 'Playwright'],
                 },
                 {
                     category: 'Cloud & DevOps',
-                    items: ['AWS', 'Terraform', 'CloudWatch', 'Docker'],
+                    items: ['AWS', 'Docker'],
                 },
             ],
         },
         image: '/projects/project-5.jpg',
         tags: ['AWS', 'Python', 'React', 'Terraform', 'Grafana'],
         github: 'https://github.com/dhruvakhariaa/lead-generator',
-        year: '2023',
+        year: '2024',
     },
     {
         id: 'social-media-analytics',
