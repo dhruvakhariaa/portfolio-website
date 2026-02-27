@@ -2,6 +2,7 @@
 
 import { useRef } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useGSAP, gsap } from '@/hooks/useGSAP';
 import PhysicsPlayground from './PhysicsPlayground';
 
@@ -86,8 +87,29 @@ export default function Hero() {
                             className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-center !mt-[220px]"
                             style={{ pointerEvents: 'auto' }}
                         >
-                            <Link href="/contact" className="btn btn-primary">
-                                Let&apos;s Work Together
+                            <Link href="/contact" className="btn btn-primary hero-btn-3d-wrap">
+                                {/* Default label — fades out on hover */}
+                                <span className="hero-btn-default-label">
+                                    Let&apos;s Work Together
+                                </span>
+
+                                {/* 3D layer — always in DOM, fades in on hover */}
+                                <div className="hero-btn-3d">
+                                    {/* Shadow (red) — sits below */}
+                                    <div className="hero-btn-3d-shadow" />
+                                    {/* Face (white) — sits on top */}
+                                    <div className="hero-btn-3d-face" />
+                                    {/* Text */}
+                                    <span className="hero-btn-3d-label">
+                                        Let&apos;s Work Together
+                                    </span>
+                                    {/* Decorative icons */}
+                                    <Image src="/buttons/laptop.svg" alt="" width={16} height={16} className="hero-btn-3d-deco hero-btn-3d-laptop" draggable={false} />
+                                    <Image src="/buttons/sandclock.svg" alt="" width={12} height={17} className="hero-btn-3d-deco hero-btn-3d-sandclock" draggable={false} />
+                                    <Image src="/buttons/Star 2.svg" alt="" width={7} height={7} className="hero-btn-3d-deco hero-btn-3d-star1" draggable={false} />
+                                    <Image src="/buttons/Star 3.svg" alt="" width={6} height={6} className="hero-btn-3d-deco hero-btn-3d-star2" draggable={false} />
+                                    <Image src="/buttons/Star 4.svg" alt="" width={5} height={5} className="hero-btn-3d-deco hero-btn-3d-star3" draggable={false} />
+                                </div>
                             </Link>
                             <Link href="/projects" className="btn btn-secondary">
                                 View Projects
