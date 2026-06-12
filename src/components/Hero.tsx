@@ -41,6 +41,21 @@ export default function Hero() {
             style={{ paddingTop: '40px' }}
             aria-label="Hero section"
         >
+            {/* Full-bleed background photo — bottom layer (z-0) */}
+            <div className="hero-bg-photo">
+                <Image
+                    src="/AI_Bg_020.png"
+                    alt=""
+                    fill
+                    priority
+                    quality={100}
+                    sizes="100vw"
+                    draggable={false}
+                />
+            </div>
+            {/* Soft legibility wash over the photo */}
+            <div className="hero-bg-overlay" aria-hidden="true" />
+
             {/* Interactive Physics Playground — z-0, behind text */}
             <PhysicsPlayground />
 
@@ -87,29 +102,11 @@ export default function Hero() {
                             className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-center !mt-[220px]"
                             style={{ pointerEvents: 'auto' }}
                         >
-                            <Link href="/contact" className="btn btn-primary hero-btn-3d-wrap">
-                                {/* Default label — fades out on hover */}
-                                <span className="hero-btn-default-label">
-                                    Let&apos;s Work Together
-                                </span>
-
-                                {/* 3D layer — always in DOM, fades in on hover */}
-                                <div className="hero-btn-3d">
-                                    {/* Shadow (red) — sits below */}
-                                    <div className="hero-btn-3d-shadow" />
-                                    {/* Face (white) — sits on top */}
-                                    <div className="hero-btn-3d-face" />
-                                    {/* Text */}
-                                    <span className="hero-btn-3d-label">
-                                        Let&apos;s Work Together
-                                    </span>
-                                    {/* Decorative icons */}
-                                    <Image src="/buttons/laptop.svg" alt="" width={16} height={16} className="hero-btn-3d-deco hero-btn-3d-laptop" draggable={false} />
-                                    <Image src="/buttons/sandclock.svg" alt="" width={12} height={17} className="hero-btn-3d-deco hero-btn-3d-sandclock" draggable={false} />
-                                    <Image src="/buttons/Star 2.svg" alt="" width={7} height={7} className="hero-btn-3d-deco hero-btn-3d-star1" draggable={false} />
-                                    <Image src="/buttons/Star 3.svg" alt="" width={6} height={6} className="hero-btn-3d-deco hero-btn-3d-star2" draggable={false} />
-                                    <Image src="/buttons/Star 4.svg" alt="" width={5} height={5} className="hero-btn-3d-deco hero-btn-3d-star3" draggable={false} />
-                                </div>
+                            <Link href="/contact" className="btn btn-primary btn-sweep">
+                                <span className="btn-sweep__label">Let&apos;s Work Together</span>
+                                <svg className="btn-sweep__arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14M13 6l6 6-6 6" />
+                                </svg>
                             </Link>
                             <Link href="/projects" className="btn btn-secondary">
                                 View Projects

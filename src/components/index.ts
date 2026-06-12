@@ -10,6 +10,7 @@ export { default as Testimonials } from './Testimonials';
 export { default as FAQ } from './FAQ';
 export { default as Footer } from './Footer';
 export { default as PageTransition } from './PageTransition';
+export { default as ThemeToggle } from './ThemeToggle';
 
 // Re-export types
 export type { Project } from './ProjectCard';

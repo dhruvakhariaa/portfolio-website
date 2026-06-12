@@ -328,7 +328,7 @@ export default function Services() {
                                                     fontFamily: 'Inter, sans-serif',
                                                     fontSize: 'clamp(2rem, 1.5rem + 2.5vw, 3.5rem)',
                                                     fontWeight: 700,
-                                                    color: '#555555',
+                                                    color: 'var(--color-text-muted)',
                                                     lineHeight: 1,
                                                 }}
                                             >

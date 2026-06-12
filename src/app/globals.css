@@ -12,10 +12,31 @@
   --color-bg-secondary: #111111;
   --color-bg-card: #1A1A1A;
   --color-text: #FFFFFF;
+  --color-text-primary: #FFFFFF;
   --color-text-secondary: #888888;
   --color-text-muted: #555555;
   --color-border: #222222;
   --color-border-light: #333333;
+
+  /* Theme-aware surfaces & hairlines.
+     Dark values match the previously-hardcoded rgba(255,255,255,x) usages 1:1,
+     so dark mode is pixel-identical. The [data-theme='light'] block flips them. */
+  --surface-2: rgba(255, 255, 255, 0.02);
+  --surface-3: rgba(255, 255, 255, 0.03);
+  --surface-4: rgba(255, 255, 255, 0.04);
+  --surface-5: rgba(255, 255, 255, 0.05);
+  --line-6: rgba(255, 255, 255, 0.06);
+  --line-8: rgba(255, 255, 255, 0.08);
+  --line-10: rgba(255, 255, 255, 0.10);
+  --line-15: rgba(255, 255, 255, 0.15);
+
+  /* Service-card chrome (light flips these) */
+  --service-card-bg: #1A1A1A;
+  --service-gradient-1: rgba(255, 255, 255, 0.35);
+  --service-gradient-2: rgba(255, 255, 255, 0.15);
+  --service-gradient-3: rgba(255, 255, 255, 0.06);
+
+  color-scheme: dark;
 
   /* Fluid Typography - scales smoothly from mobile to desktop */
   --font-size-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
@@ -62,6 +83,48 @@
   --z-modal: 300;
   --z-overlay: 400;
   --z-max: 9999;
+}
+
+/* ========================================
+   LIGHT THEME
+   Activated by data-theme="light" on <html>.
+   Only color tokens flip — every component that reads the variables
+   adapts automatically. Primary orange is shared across both themes.
+   ======================================== */
+[data-theme='light'] {
+  --color-bg: #FAFAF7;
+  --color-bg-secondary: #F2F2EC;
+  --color-bg-card: #FFFFFF;
+  --color-text: #14130F;
+  --color-text-primary: #14130F;
+  --color-text-secondary: #4A4A45;
+  --color-text-muted: #7A7A72;
+  --color-border: #E4E2DB;
+  --color-border-light: #D2CFC6;
+
+  --surface-2: rgba(20, 19, 15, 0.025);
+  --surface-3: rgba(20, 19, 15, 0.035);
+  --surface-4: rgba(20, 19, 15, 0.05);
+  --surface-5: rgba(20, 19, 15, 0.065);
+  --line-6: rgba(20, 19, 15, 0.10);
+  --line-8: rgba(20, 19, 15, 0.12);
+  --line-10: rgba(20, 19, 15, 0.14);
+  --line-15: rgba(20, 19, 15, 0.18);
+
+  --service-card-bg: #FFFFFF;
+  --service-gradient-1: rgba(20, 19, 15, 0.18);
+  --service-gradient-2: rgba(20, 19, 15, 0.10);
+  --service-gradient-3: rgba(20, 19, 15, 0.04);
+
+  color-scheme: light;
+}
+
+/* Smooth the flip so toggling doesn't hard-cut */
+body,
+.card,
+.service-card-box,
+.service-card-content {
+  transition: background-color var(--transition-normal), border-color var(--transition-normal), color var(--transition-normal);
 }
 
 /* ========================================
@@ -208,147 +271,65 @@ a:hover {
 }
 
 /* ========================================
-   3D HOVER BUTTON
-   Exact positions from Figma (node 56:7)
+   EDGE-SWEEP CTA BUTTON
+   Minimalistic hover: a deep fill sweeps left→right across the pill
+   while a small arrow eases in. No layout shift (arrow space reserved).
    ======================================== */
-
-/* Wrapper — keeps same size, enables crossfade */
-.hero-btn-3d-wrap {
+.btn-sweep {
   position: relative;
-  overflow: visible;
-  transition: background-color 0.4s ease,
-    border-color 0.4s ease,
-    box-shadow 0.4s ease,
-    transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  overflow: hidden;
+  isolation: isolate;
+  /* Keep intrinsic width so overflow:hidden never clips the label
+     when the CTA row is tight. */
+  flex: none;
+  /* Room for the arrow to ease into on the right (it's absolute, adds no width) */
+  padding-right: 2.5rem;
 }
 
-/* Default label — visible at rest */
-.hero-btn-default-label {
-  position: relative;
-  z-index: 1;
-  transition: opacity 0.3s ease;
-}
-
-/* 3D layer — always present, invisible at rest */
-.hero-btn-3d {
+/* Sweep fill — parked off the left edge, slides across on hover */
+.btn-sweep::before {
+  content: '';
   position: absolute;
   inset: 0;
-  width: 210px;
-  height: 49px;
-  left: 50%;
+  z-index: -1;
+  background: #14130F;
+  transform: translateX(-101%);
+  transition: transform 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.btn-sweep:hover::before,
+.btn-sweep:focus-visible::before {
+  transform: translateX(0);
+}
+
+/* Neutralise the base btn-primary hover (scale + colour change) */
+.btn-sweep:hover {
+  background-color: var(--color-primary);
+  transform: none;
+}
+
+.btn-sweep__label {
+  position: relative;
+  z-index: 1;
+}
+
+/* Arrow — absolute in the right padding so it adds no width (no reflow);
+   fades + slides in on hover */
+.btn-sweep__arrow {
+  position: absolute;
+  right: 1.05rem;
   top: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
+  z-index: 1;
   opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.4s ease;
+  transform: translateY(-50%) translateX(-8px);
+  transition: opacity 0.4s ease,
+    transform 0.45s cubic-bezier(0.65, 0, 0.35, 1);
 }
 
-/* ── Hover: crossfade ── */
-.hero-btn-3d-wrap:hover {
-  background-color: transparent !important;
-  border-color: transparent !important;
-  box-shadow: none !important;
-  transform: scale(1.08) rotate(-3deg) !important;
-  animation: none !important;
-}
-
-.hero-btn-3d-wrap:hover .hero-btn-default-label {
-  opacity: 0;
-}
-
-.hero-btn-3d-wrap:hover .hero-btn-3d {
+.btn-sweep:hover .btn-sweep__arrow,
+.btn-sweep:focus-visible .btn-sweep__arrow {
   opacity: 1;
-}
-
-/* ── Two-layer 3D construction (exact Figma coords) ── */
-
-/* Red shadow layer — 210×49, sits at origin */
-.hero-btn-3d-shadow {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 210px;
-  height: 49px;
-  background: #FF4925;
-  border-radius: 112px;
-  border: 0.694px solid #000;
-}
-
-/* White face layer — 210×44.8, offset 0.46px down */
-.hero-btn-3d-face {
-  position: absolute;
-  left: 0.14px;
-  top: 0.46px;
-  width: 210px;
-  height: 44.8px;
-  background: #ffffff;
-  border-radius: 107px;
-  border: 0.694px solid #000;
-}
-
-/* Text — DM Mono Medium 16px, letter-spacing -0.96px */
-.hero-btn-3d-label {
-  position: absolute;
-  left: 25px;
-  top: 12px;
-  width: 166px;
-  height: 21px;
-  text-align: center;
-  color: #000;
-  font-family: 'DM Mono', monospace;
-  font-weight: 500;
-  font-size: 16px;
-  letter-spacing: -0.96px;
-  line-height: normal;
-  z-index: 2;
-  white-space: nowrap;
-}
-
-/* ── Decorative icons ── */
-.hero-btn-3d-deco {
-  position: absolute;
-  z-index: 3;
-  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-/* Laptop — left: 108, top: 2 */
-.hero-btn-3d-laptop {
-  left: 108px;
-  top: 2px;
-}
-
-/* Sandclock — left: 9, top: 25.67, rotated -27deg */
-.hero-btn-3d-sandclock {
-  left: 9px;
-  top: 25.67px;
-  transform: rotate(-27deg);
-  transform-origin: top left;
-}
-
-/* Star 2 — right side, left: 195.24, top: 7.52 */
-.hero-btn-3d-star1 {
-  left: 190px;
-  top: 7px;
-}
-
-/* Star 4 — left side, left: 26.68, top: 5.96 */
-.hero-btn-3d-star2 {
-  left: 20px;
-  top: 8.5px;
-}
-
-/* Star 3 — bottom right, left: 167, top: 33.50 */
-.hero-btn-3d-star3 {
-  left: 160px;
-  top: 28px;
-}
-
-/* ── Hover micro-animations on decorations ── */
-.hero-btn-3d-wrap:hover .hero-btn-3d-star1,
-.hero-btn-3d-wrap:hover .hero-btn-3d-star2,
-.hero-btn-3d-wrap:hover .hero-btn-3d-star3 {
-  transform: scale(1.5) rotate(15deg);
+  transform: translateY(-50%) translateX(0);
 }
 
 .btn-secondary {
@@ -557,6 +538,58 @@ a:hover {
 }
 
 /* ========================================
+   HERO BACKGROUND PHOTO
+   ======================================== */
+/* Full-bleed photo layer — sits beneath physics (z-1) and content (z-10) */
+.hero-bg-photo {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-bg-photo img {
+  object-fit: cover;
+  object-position: center 38%;
+}
+
+/* Soft, localized legibility wash — strongest at bottom-left where the
+   headline sits, fading to transparent so the photo stays HD and vivid. */
+.hero-bg-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(to top, rgba(8, 10, 14, 0.45) 0%, rgba(8, 10, 14, 0.12) 32%, transparent 60%),
+    linear-gradient(105deg, rgba(8, 10, 14, 0.32) 0%, transparent 42%);
+}
+
+/* Keep the dark→light flip from washing the hero photo out:
+   the photo is the same in both modes, so its overlay is theme-independent. */
+
+/* ========================================
+   PHYSICS PLAYGROUND — glass cracks
+   ======================================== */
+.crack-overlay {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.22s ease;
+  /* px-based bevel: a light catch on the upper-left, a recessed shadow on the
+     lower-right — gives the fracture real glassy depth at any shape size. */
+  filter:
+    drop-shadow(-0.4px -0.5px 0 rgba(255, 255, 255, 0.45))
+    drop-shadow(0.5px 0.8px 0.6px rgba(0, 0, 0, 0.55));
+}
+
+.playground-shape[data-crack="1"] .crack-l1,
+.playground-shape[data-crack="2"] .crack-l1,
+.playground-shape[data-crack="2"] .crack-l2 {
+  opacity: 1;
+}
+
+/* ========================================
    SERVICES SECTION
    ======================================== */
 .services-section-wrapper {
@@ -577,7 +610,7 @@ a:hover {
 
 /* Service Card Box with Gradient Border */
 .service-card-box {
-  background: #1A1A1A !important;
+  background: var(--service-card-bg) !important;
   border-radius: var(--radius-xl) !important;
   position: relative !important;
   height: 100% !important;
@@ -593,9 +626,9 @@ a:hover {
   border-radius: inherit;
   padding: 1.5px;
   background: linear-gradient(135deg,
-      rgba(255, 255, 255, 0.35) 0%,
-      rgba(255, 255, 255, 0.15) 40%,
-      rgba(255, 255, 255, 0.06) 70%,
+      var(--service-gradient-1) 0%,
+      var(--service-gradient-2) 40%,
+      var(--service-gradient-3) 70%,
       transparent 100%);
   -webkit-mask:
     linear-gradient(#fff 0 0) content-box,
@@ -612,7 +645,7 @@ a:hover {
 .service-card-content {
   position: relative !important;
   z-index: 1 !important;
-  background: #1A1A1A !important;
+  background: var(--service-card-bg) !important;
   border-radius: inherit !important;
   height: 100% !important;
   padding: 40px !important;

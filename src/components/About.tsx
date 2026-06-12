@@ -25,14 +25,15 @@ export default function About() {
             pinSpacing: true,
         });
 
-        // Animate words from gray to white - same duration as pin
+        // Animate words from faded to solid via opacity (theme-safe: the base
+        // color is var(--color-text), so this works in both light and dark).
         gsap.fromTo(
             wordSpans,
             {
-                color: 'rgba(255, 255, 255, 0.2)', // Start gray (low opacity white)
+                opacity: 0.2, // Start faded
             },
             {
-                color: 'rgba(255, 255, 255, 1)', // Transition to full white
+                opacity: 1, // Transition to full strength
                 stagger: 0.03,
                 ease: 'none',
                 scrollTrigger: {
@@ -93,7 +94,8 @@ export default function About() {
                                         key={index}
                                         className="word"
                                         style={{
-                                            color: 'rgba(255, 255, 255, 0.2)',
+                                            color: 'var(--color-text)',
+                                            opacity: 0.2,
                                         }}
                                     >
                                         {word}{' '}
