@@ -69,7 +69,6 @@ export default function ProjectCard({ project, index = 0, fillHeight = false }: 
             if (!card || !wrapper) return;
 
             const rect = card.getBoundingClientRect();
-            const wrapperRect = wrapper.getBoundingClientRect();
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
             const centerX = rect.width / 2;

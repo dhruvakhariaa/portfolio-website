@@ -195,20 +195,21 @@ a:hover {
 
 .btn-primary {
   background-color: var(--color-primary);
-  color: #000000;
+  color: #ffffff;
+  font-weight: 500;
+  letter-spacing: -0.02em;
   border: none;
 }
 
 .btn-primary:hover {
   background-color: #e03d1e;
-  color: #000000;
+  color: #ffffff;
   transform: scale(1.03);
 }
 
 /* ========================================
    3D HOVER BUTTON
-   Translates the React Native Button3D
-   two-layer approach to CSS.
+   Exact positions from Figma (node 56:7)
    ======================================== */
 
 /* Wrapper — keeps same size, enables crossfade */
@@ -216,9 +217,9 @@ a:hover {
   position: relative;
   overflow: visible;
   transition: background-color 0.4s ease,
-              border-color 0.4s ease,
-              box-shadow 0.4s ease,
-              transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    border-color 0.4s ease,
+    box-shadow 0.4s ease,
+    transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 /* Default label — visible at rest */
@@ -231,7 +232,12 @@ a:hover {
 /* 3D layer — always present, invisible at rest */
 .hero-btn-3d {
   position: absolute;
-  inset: -2px -4px;
+  inset: 0;
+  width: 210px;
+  height: 49px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   z-index: 2;
   opacity: 0;
   pointer-events: none;
@@ -255,98 +261,94 @@ a:hover {
   opacity: 1;
 }
 
-/* ── Two-layer 3D construction ── */
+/* ── Two-layer 3D construction (exact Figma coords) ── */
 
-/* Shadow layer (red) — full area, peeking 4px at bottom */
+/* Red shadow layer — 210×49, sits at origin */
 .hero-btn-3d-shadow {
   position: absolute;
   left: 0;
-  top: 4px;
-  right: 0;
-  bottom: -4px;
+  top: 0;
+  width: 210px;
+  height: 49px;
   background: #FF4925;
-  border-radius: 24px;
-  border: 0.69px solid #000;
+  border-radius: 112px;
+  border: 0.694px solid #000;
 }
 
-/* Face layer (white) — sits on top, covers all but bottom 4px */
+/* White face layer — 210×44.8, offset 0.46px down */
 .hero-btn-3d-face {
   position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
+  left: 0.14px;
+  top: 0.46px;
+  width: 210px;
+  height: 44.8px;
   background: #ffffff;
-  border-radius: 24px;
-  border: 0.69px solid #000;
+  border-radius: 107px;
+  border: 0.694px solid #000;
 }
 
-/* Text label on the 3D button */
+/* Text — DM Mono Medium 16px, letter-spacing -0.96px */
 .hero-btn-3d-label {
   position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  left: 25px;
+  top: 12px;
+  width: 166px;
+  height: 21px;
+  text-align: center;
   color: #000;
   font-family: 'DM Mono', monospace;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 16px;
+  letter-spacing: -0.96px;
+  line-height: normal;
   z-index: 2;
   white-space: nowrap;
-  letter-spacing: -0.02em;
 }
 
-/* Decorative icons — base */
+/* ── Decorative icons ── */
 .hero-btn-3d-deco {
   position: absolute;
   z-index: 3;
   transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-/* Laptop — top-left above the button */
+/* Laptop — left: 108, top: 2 */
 .hero-btn-3d-laptop {
-  top: -6px;
-  left: 16px;
+  left: 108px;
+  top: 2px;
 }
 
-/* Sandclock — bottom-right, slightly rotated */
+/* Sandclock — left: 9, top: 25.67, rotated -27deg */
 .hero-btn-3d-sandclock {
-  bottom: -6px;
-  right: 10px;
-  transform: rotate(-20deg);
-  transform-origin: center;
+  left: 9px;
+  top: 25.67px;
+  transform: rotate(-27deg);
+  transform-origin: top left;
 }
 
-/* Stars — scattered around */
+/* Star 2 — right side, left: 195.24, top: 7.52 */
 .hero-btn-3d-star1 {
-  top: 4px;
-  left: 36px;
+  left: 190px;
+  top: 7px;
 }
 
+/* Star 4 — left side, left: 26.68, top: 5.96 */
 .hero-btn-3d-star2 {
-  top: -4px;
-  left: 44px;
+  left: 20px;
+  top: 8.5px;
 }
 
+/* Star 3 — bottom right, left: 167, top: 33.50 */
 .hero-btn-3d-star3 {
-  bottom: 2px;
-  right: 30px;
+  left: 160px;
+  top: 28px;
 }
 
-/* Hover micro-animation on decorations */
-.hero-btn-3d-wrap:hover .hero-btn-3d-laptop {
-  transform: translateY(-3px) rotate(-5deg);
-}
-
-.hero-btn-3d-wrap:hover .hero-btn-3d-sandclock {
-  transform: rotate(-20deg) translateY(3px);
-}
-
-.hero-btn-3d-wrap:hover .hero-btn-3d-deco.hero-btn-3d-star1,
-.hero-btn-3d-wrap:hover .hero-btn-3d-deco.hero-btn-3d-star2,
-.hero-btn-3d-wrap:hover .hero-btn-3d-deco.hero-btn-3d-star3 {
-  transform: scale(1.3) rotate(15deg);
+/* ── Hover micro-animations on decorations ── */
+.hero-btn-3d-wrap:hover .hero-btn-3d-star1,
+.hero-btn-3d-wrap:hover .hero-btn-3d-star2,
+.hero-btn-3d-wrap:hover .hero-btn-3d-star3 {
+  transform: scale(1.5) rotate(15deg);
 }
 
 .btn-secondary {

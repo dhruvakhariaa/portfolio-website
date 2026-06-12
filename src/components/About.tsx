@@ -1,18 +1,15 @@
 'use client';
 
-import { useRef, useEffect, useState } from 'react';
+import { useRef } from 'react';
 import { useGSAP, gsap, ScrollTrigger } from '@/hooks/useGSAP';
 
 const aboutText = `I'm a Full Stack Developer passionate about creating exceptional digital experiences. With expertise in modern web technologies, I transform complex ideas into elegant, user-friendly applications. `;
+const aboutWords = aboutText.split(/\s+/);
 
 export default function About() {
     const sectionRef = useRef<HTMLElement>(null);
     const textContainerRef = useRef<HTMLDivElement>(null);
-    const [words, setWords] = useState<string[]>([]);
-
-    useEffect(() => {
-        setWords(aboutText.split(/\s+/));
-    }, []);
+    const words = aboutWords;
 
     useGSAP(() => {
         if (!sectionRef.current || !textContainerRef.current || words.length === 0) return;

@@ -27,7 +27,7 @@ export const projects: Project[] = [
                 },
                 {
                     title: 'Cloud Infrastructure',
-                    description: 'Provisioned entirely with Terraform on AWS — EC2, RDS (PostgreSQL), S3, Secrets Manager, and CloudWatch for monitoring.',
+                    description: 'Provisioned entirely with Terraform on AWS, including EC2, RDS (PostgreSQL), S3, Secrets Manager, and CloudWatch for monitoring.',
                 },
             ],
             stack: [
@@ -69,7 +69,7 @@ export const projects: Project[] = [
                 },
                 {
                     title: 'Role-Based Access Control (RBAC)',
-                    description: 'Secure, dedicated environments tailored for Citizens, Service Providers, Sector Managers, and Platform Admins — each with scoped permissions.',
+                    description: 'Secure, dedicated environments tailored for Citizens, Service Providers, Sector Managers, and Platform Admins, each with scoped permissions.',
                 },
                 {
                     title: 'Multi-Language Support',
@@ -102,7 +102,6 @@ export const projects: Project[] = [
         image: '/projects/project2.webp',
         tags: ['Next.js', 'Node.js', 'MongoDB', 'Redis', 'Docker'],
         github: 'https://github.com/dhruvakhariaa/missing-semicolon',
-        liveUrl: 'https://example.com',
         year: 'January 2026',
     },
     {
@@ -111,7 +110,7 @@ export const projects: Project[] = [
         description: 'An AI-powered logistics platform that optimizes clinker transportation routes, minimizes fuel consumption, and reduces delivery times.',
         details: {
             overview: 'A robust Multi-Period Mixed Integer Linear Programming (MILP) solution engineered to solve complex supply chain logistics for the cement industry. The platform determines the most cost-effective strategies for clinker production, multi-modal transportation routing, and inventory management across a network of Integrated Units (IUs) and Grinding Units (GUs) over configurable time horizons.',
-            problem: 'Managing heavy industrial supply chains involves balancing production costs, freight expenses, fluctuating demand, and strict inventory constraints. Traditional planning methods often fail to find the true mathematical optimum. This project solves that by translating complex logistics rules — like integer trip constraints and safety stock requirements — into a rigorous mathematical model, ensuring minimal operational costs while consistently meeting product demand.',
+            problem: 'Managing heavy industrial supply chains involves balancing production costs, freight expenses, fluctuating demand, and strict inventory constraints. Traditional planning methods often fail to find the true mathematical optimum. This project solves that by translating complex logistics rules, like integer trip constraints and safety stock requirements, into a rigorous mathematical model, ensuring minimal operational costs while consistently meeting product demand.',
             features: [
                 {
                     title: 'Advanced MILP Optimization',
@@ -152,7 +151,6 @@ export const projects: Project[] = [
         image: '/projects/project3.webp',
         tags: ['Python', 'FastAPI', 'React', 'Gurobi', 'MILP'],
         github: 'https://github.com/dhruvakhariaa/clinker_transport_optimisation',
-        liveUrl: 'https://example.com',
         year: 'December 2025',
     },
     {
@@ -160,20 +158,20 @@ export const projects: Project[] = [
         title: 'Emotion Analyser',
         description: 'A comprehensive mobile app for tracking workouts, nutrition, sleep patterns, and health metrics with personalized recommendations.',
         details: {
-            overview: 'An AI-powered emotion analysis platform that leverages IBM Watson\'s NLP Emotion Prediction API to dissect text into five core emotional dimensions — anger, disgust, fear, joy, and sadness. Delivers instant, precision-scored breakdowns with dominant emotion identification through an intuitive Flask-based web interface, turning raw text into measurable emotional intelligence.',
-            problem: 'Understanding the emotional undertone of text at scale is a challenge that spans industries — from customer support teams drowning in unstructured feedback, to content creators gauging audience reactions, to researchers studying sentiment in large text corpora. Manual emotion tagging is slow, subjective, and inconsistent. This platform eliminates that bottleneck by providing instant, API-driven analysis that scores text across five emotional axes and surfaces the dominant emotion — enabling data-backed decisions on tone, messaging, and audience engagement in real-time.',
+            overview: 'An AI-powered emotion analysis platform that leverages IBM Watson\'s NLP Emotion Prediction API to dissect text into five core emotional dimensions: anger, disgust, fear, joy, and sadness. Delivers instant, precision-scored breakdowns with dominant emotion identification through an intuitive Flask-based web interface, turning raw text into measurable emotional intelligence.',
+            problem: 'Understanding the emotional undertone of text at scale is a challenge that spans industries, from customer support teams drowning in unstructured feedback, to content creators gauging audience reactions, to researchers studying sentiment in large text corpora. Manual emotion tagging is slow, subjective, and inconsistent. This platform eliminates that bottleneck by providing instant, API-driven analysis that scores text across five emotional axes and surfaces the dominant emotion, enabling data-backed decisions on tone, messaging, and audience engagement in real-time.',
             features: [
                 {
                     title: 'Multi-Dimensional Emotion Scoring',
-                    description: 'Analyzes input text and returns precision-scored values across all five emotional dimensions — not just a single label, but a full emotional fingerprint of the content.',
+                    description: 'Analyzes input text and returns precision-scored values across all five emotional dimensions, not just a single label, but a full emotional fingerprint of the content.',
                 },
                 {
                     title: 'Dominant Emotion Identification',
-                    description: 'Automatically surfaces the strongest emotional signal from the analysis, making it instantly clear what feeling drives the text — no manual interpretation needed.',
+                    description: 'Automatically surfaces the strongest emotional signal from the analysis, making it instantly clear what feeling drives the text, no manual interpretation needed.',
                 },
                 {
                     title: 'Real-Time Web Analysis',
-                    description: 'A clean, responsive web interface where users can input any text and get instant emotional breakdowns — no API keys, no setup, just results on demand.',
+                    description: 'A clean, responsive web interface where users can input any text and get instant emotional breakdowns, no API keys, no setup, just results on demand.',
                 },
                 {
                     title: 'Graceful Error Handling',
@@ -196,93 +194,9 @@ export const projects: Project[] = [
             ],
         },
         image: '/projects/project4.webp',
-        tags: ['React Native', 'Expo', 'Node.js', 'PostgreSQL'],
+        tags: ['Python', 'Flask', 'IBM Watson NLP', 'JavaScript'],
         github: 'https://github.com/dhruvakhariaa/emotion-detector',
-        liveUrl: 'https://example.com',
         year: 'January 2026',
-    },
-    {
-        id: 'freelancer-leads-generator',
-        title: 'Freelancer Leads Generator',
-        description: 'Freelancers find it quite difficult to get leads. This project aims to solve that problem by generating leads for freelancers.',
-        details: {
-            overview: 'Once you enter the niche you want to go in and the platform you want to scrape the leads from, the website will scrape the leads from the platform and save them in a CSV file.',
-            problem: 'Freelancers find it quite difficult to get leads. They have to manually search for leads on different platforms and save them in a CSV file. This is a time consuming and tedious process.',
-            features: [
-                {
-                    title: 'Scrape Leads',
-                    description: 'Scrapes leads from the platform you want to scrape the leads from.',
-                },
-                {
-                    title: 'Save Leads',
-                    description: 'Saves the leads in a CSV file.',
-                },
-            ],
-            stack: [
-                {
-                    category: 'Frontend',
-                    items: ['React', 'TypeScript'],
-                },
-                {
-                    category: 'Backend',
-                    items: ['Python', 'Flask', 'Playwright'],
-                },
-                {
-                    category: 'Cloud & DevOps',
-                    items: ['AWS', 'Docker'],
-                },
-            ],
-        },
-        image: '/projects/project-5.jpg',
-        tags: ['AWS', 'Python', 'React', 'Terraform', 'Grafana'],
-        github: 'https://github.com/dhruvakhariaa/lead-generator',
-        year: '2024',
-    },
-    {
-        id: 'social-media-analytics',
-        title: 'Social Media Analytics',
-        description: 'An analytics platform for tracking social media performance across multiple platforms with sentiment analysis and competitor insights.',
-        details: {
-            overview: 'A multi-platform analytics tool that connects to social media APIs to aggregate engagement metrics, audience demographics, and content performance. Features NLP-powered sentiment analysis and automated reporting with data-driven content strategy recommendations.',
-            problem: 'Brands managing multiple social media accounts struggle to get a unified view of their performance. Manual reporting is time-consuming and misses real-time trend shifts. This platform automates cross-platform analytics with sentiment analysis, so teams can react to audience shifts and competitor moves in real-time.',
-            features: [
-                {
-                    title: 'Cross-Platform Aggregation',
-                    description: 'Unified dashboard pulling metrics from Instagram, Twitter/X, LinkedIn, and Facebook with normalized engagement scoring.',
-                },
-                {
-                    title: 'Sentiment Analysis',
-                    description: 'NLP-powered engine that gauges audience reactions on posts, comments, and mentions — identifying positive, negative, and neutral trends.',
-                },
-                {
-                    title: 'Competitor Benchmarking',
-                    description: 'Tracks rival brand performance, content strategies, and audience growth to surface actionable competitive insights.',
-                },
-                {
-                    title: 'Automated Reporting',
-                    description: 'Generates weekly and monthly summary reports with data-driven recommendations for content strategy, posting times, and audience targeting.',
-                },
-            ],
-            stack: [
-                {
-                    category: 'Frontend',
-                    items: ['React', 'Chart.js', 'TypeScript'],
-                },
-                {
-                    category: 'Backend',
-                    items: ['Python', 'Django', 'Celery'],
-                },
-                {
-                    category: 'Database & NLP',
-                    items: ['PostgreSQL', 'spaCy', 'NLTK'],
-                },
-            ],
-        },
-        image: '/projects/project-6.jpg',
-        tags: ['Python', 'Django', 'PostgreSQL', 'Chart.js', 'NLP'],
-        github: 'https://github.com/dhruvakhariaa',
-        liveUrl: 'https://example.com',
-        year: '2022',
     },
 ];
 

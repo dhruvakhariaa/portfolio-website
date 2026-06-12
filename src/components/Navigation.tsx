@@ -17,10 +17,10 @@ export default function Navigation() {
 
     // On home page: hide navbar until scrollY > 600. On other pages: always visible.
     const isHomePage = pathname === '/';
+    const isNavVisible = !isHomePage || isScrolled;
 
     useEffect(() => {
         if (!isHomePage) {
-            setIsScrolled(true);
             return;
         }
 
@@ -37,6 +37,7 @@ export default function Navigation() {
 
     // Close menu on route change
     useEffect(() => {
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setIsOpen(false);
     }, [pathname]);
 
@@ -60,7 +61,7 @@ export default function Navigation() {
             </a>
 
             <header
-                className={`fixed top-0 left-0 right-0 z-[var(--z-sticky)] transition-all duration-600 ${isScrolled
+                className={`fixed top-0 left-0 right-0 z-[var(--z-sticky)] transition-all duration-600 ${isNavVisible
                     ? 'bg-[var(--color-bg)]/90 backdrop-blur-lg border-b border-[var(--color-border)] translate-y-0 opacity-100'
                     : 'bg-transparent -translate-y-full opacity-0 pointer-events-none'
                     }`}
