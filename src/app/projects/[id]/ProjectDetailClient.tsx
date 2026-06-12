@@ -181,8 +181,8 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
                                                         key={i}
                                                         style={{
                                                             padding: '16px 20px',
-                                                            background: 'rgba(255,255,255,0.03)',
-                                                            border: '1px solid rgba(255,255,255,0.06)',
+                                                            background: 'var(--surface-3)',
+                                                            border: '1px solid var(--line-6)',
                                                             borderLeft: '3px solid var(--color-primary)',
                                                             borderRadius: '8px',
                                                         }}
@@ -226,7 +226,7 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
                                                                     style={{
                                                                         padding: '3px 10px',
                                                                         fontSize: 'clamp(0.75rem, 0.7rem + 0.1vw, 0.82rem)',
-                                                                        background: 'rgba(255,255,255,0.05)',
+                                                                        background: 'var(--surface-5)',
                                                                         color: 'var(--color-text-secondary)',
                                                                         borderRadius: '999px',
                                                                     }}
@@ -259,8 +259,8 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
                             <div
                                 style={{
                                     padding: 'clamp(20px, 3vw, 28px)',
-                                    background: 'rgba(255,255,255,0.03)',
-                                    border: '1px solid rgba(255,255,255,0.06)',
+                                    background: 'var(--surface-3)',
+                                    border: '1px solid var(--line-6)',
                                     borderRadius: '12px',
                                     marginBottom: '16px',
                                 }}
@@ -278,7 +278,7 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
                                             style={{
                                                 padding: '4px 12px',
                                                 fontSize: 'clamp(0.75rem, 0.7rem + 0.15vw, 0.85rem)',
-                                                background: 'rgba(255,255,255,0.05)',
+                                                background: 'var(--surface-5)',
                                                 color: 'var(--color-text-secondary)',
                                                 borderRadius: '999px',
                                             }}
@@ -293,8 +293,8 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
                             <div
                                 style={{
                                     padding: 'clamp(20px, 3vw, 28px)',
-                                    background: 'rgba(255,255,255,0.03)',
-                                    border: '1px solid rgba(255,255,255,0.06)',
+                                    background: 'var(--surface-3)',
+                                    border: '1px solid var(--line-6)',
                                     borderRadius: '12px',
                                 }}
                             >
@@ -334,8 +334,8 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
                                     className="group overflow-hidden"
                                     style={{
                                         borderRadius: '12px',
-                                        border: '1px solid rgba(255,255,255,0.06)',
-                                        background: 'rgba(255,255,255,0.02)',
+                                        border: '1px solid var(--line-6)',
+                                        background: 'var(--surface-2)',
                                     }}
                                 >
                                     <div className="relative aspect-video overflow-hidden">

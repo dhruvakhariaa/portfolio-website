@@ -172,8 +172,8 @@ export default function Testimonials() {
                         <div
                             className="testimonial-card relative overflow-hidden rounded-2xl"
                             style={{
-                                background: 'linear-gradient(135deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%)',
-                                border: '1px solid rgba(255,255,255,0.08)',
+                                background: 'linear-gradient(135deg, var(--surface-4) 0%, var(--surface-2) 100%)',
+                                border: '1px solid var(--line-8)',
                                 padding: 'clamp(32px, 5vw, 64px)',
                             }}
                             role="region"
@@ -291,7 +291,7 @@ export default function Testimonials() {
                                 style={{
                                     width: index === currentIndex ? '24px' : '8px',
                                     height: '8px',
-                                    background: index === currentIndex ? 'var(--color-primary)' : 'rgba(255,255,255,0.15)',
+                                    background: index === currentIndex ? 'var(--color-primary)' : 'var(--line-15)',
                                     border: 'none',
                                     cursor: 'pointer',
                                 }}

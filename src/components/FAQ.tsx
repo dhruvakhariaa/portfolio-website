@@ -100,7 +100,7 @@ export default function FAQ({ showAll = true }: FAQProps) {
                                 <span className="text-xs sm:text-sm uppercase tracking-[0.2em] text-[var(--color-primary)]">
                                     FAQ
                                 </span>
-                                <div className="w-12 h-[1px] bg-[rgba(255,255,255,0.15)]" />
+                                <div className="w-12 h-[1px] bg-[var(--line-15)]" />
                             </div>
                             <h2
                                 className="font-black text-[var(--color-text)] leading-[0.95] mb-6"
@@ -124,7 +124,7 @@ export default function FAQ({ showAll = true }: FAQProps) {
                                         key={item.id}
                                         className="faq-item"
                                         style={{
-                                            borderBottom: '1px solid rgba(255,255,255,0.08)',
+                                            borderBottom: '1px solid var(--line-8)',
                                         }}
                                     >
                                         <button

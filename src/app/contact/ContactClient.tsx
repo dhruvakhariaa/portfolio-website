@@ -49,9 +49,9 @@ const inputStyle: React.CSSProperties = {
     width: '100%',
     padding: '12px 16px',
     fontSize: 'clamp(0.875rem, 0.85rem + 0.15vw, 1rem)',
-    color: '#fff',
-    background: 'rgba(255,255,255,0.04)',
-    border: '1px solid rgba(255,255,255,0.1)',
+    color: 'var(--color-text)',
+    background: 'var(--surface-4)',
+    border: '1px solid var(--line-10)',
     borderRadius: '8px',
     outline: 'none',
     transition: 'border-color 0.2s',
@@ -184,7 +184,7 @@ export default function ContactClient() {
                                             style={inputStyle}
                                             placeholder="Your name"
                                             onFocus={e => { e.currentTarget.style.borderColor = 'var(--color-primary)'; }}
-                                            onBlur={e => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)'; }}
+                                            onBlur={e => { e.currentTarget.style.borderColor = 'var(--line-10)'; }}
                                         />
                                     </div>
                                     <div>
@@ -210,7 +210,7 @@ export default function ContactClient() {
                                             style={inputStyle}
                                             placeholder="your@email.com"
                                             onFocus={e => { e.currentTarget.style.borderColor = 'var(--color-primary)'; }}
-                                            onBlur={e => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)'; }}
+                                            onBlur={e => { e.currentTarget.style.borderColor = 'var(--line-10)'; }}
                                         />
                                     </div>
                                 </div>
@@ -308,8 +308,8 @@ export default function ContactClient() {
                                 <div
                                     style={{
                                         padding: 'clamp(20px, 3vw, 32px)',
-                                        background: 'rgba(255,255,255,0.03)',
-                                        border: '1px solid rgba(255,255,255,0.06)',
+                                        background: 'var(--surface-3)',
+                                        border: '1px solid var(--line-6)',
                                         borderRadius: '12px',
                                     }}
                                 >
@@ -331,7 +331,7 @@ export default function ContactClient() {
                                                         width: '40px',
                                                         height: '40px',
                                                         borderRadius: '50%',
-                                                        background: 'rgba(255,255,255,0.05)',
+                                                        background: 'var(--surface-5)',
                                                         color: 'var(--color-primary)',
                                                     }}
                                                 >
@@ -371,8 +371,8 @@ export default function ContactClient() {
                                 <div
                                     style={{
                                         padding: 'clamp(20px, 3vw, 32px)',
-                                        background: 'rgba(255,255,255,0.03)',
-                                        border: '1px solid rgba(255,255,255,0.06)',
+                                        background: 'var(--surface-3)',
+                                        border: '1px solid var(--line-6)',
                                         borderRadius: '12px',
                                     }}
                                 >
@@ -395,13 +395,13 @@ export default function ContactClient() {
                                                 className="transition-colors"
                                                 style={{
                                                     padding: '8px 16px',
-                                                    background: 'rgba(255,255,255,0.05)',
+                                                    background: 'var(--surface-5)',
                                                     color: 'var(--color-text-secondary)',
                                                     borderRadius: '999px',
                                                     fontSize: 'clamp(0.8rem, 0.75rem + 0.15vw, 0.875rem)',
                                                 }}
                                                 onMouseEnter={e => { e.currentTarget.style.background = 'var(--color-primary)'; e.currentTarget.style.color = '#000'; }}
-                                                onMouseLeave={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.05)'; e.currentTarget.style.color = 'var(--color-text-secondary)'; }}
+                                                onMouseLeave={e => { e.currentTarget.style.background = 'var(--surface-5)'; e.currentTarget.style.color = 'var(--color-text-secondary)'; }}
                                             >
                                                 {social.name}
                                             </a>

@@ -128,15 +128,15 @@ export default function Process() {
                     </div>
 
                     {/* Cards — same row, scroll horizontally */}
-                    <div className="flex border-t border-[rgba(255,255,255,0.1)]">
+                    <div className="flex border-t border-[var(--line-10)]">
                         {steps.map((step) => (
                             <div
                                 key={step.step}
                                 className="process-step-card flex flex-col justify-between
                                     p-5 sm:p-6 lg:p-5 xl:p-6
                                     min-h-[380px] sm:min-h-[420px] lg:min-h-[460px]
-                                    border-b border-[rgba(255,255,255,0.1)]
-                                    border-r border-r-[rgba(255,255,255,0.1)]
+                                    border-b border-[var(--line-10)]
+                                    border-r border-r-[var(--line-10)]
                                     shrink-0"
                                 style={{ padding: '24px', width: 'clamp(300px, 25vw, 380px)' }}
                             >

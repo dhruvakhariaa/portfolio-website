@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import ThemeToggle from './ThemeToggle';
 
 const navLinks = [
     { name: 'Home', href: '/' },
@@ -110,6 +111,8 @@ export default function Navigation() {
 
                     {/* Right Side Actions */}
                     <div className="hidden lg:flex items-center justify-end gap-4">
+                        {/* Theme toggle */}
+                        <ThemeToggle />
                         {/* Availability Badge */}
                         <div className="flex items-center gap-2 px-3 py-1.5 bg-[var(--color-bg-card)] border border-[var(--color-border)] rounded-full">
                             <span className="relative flex h-2 w-2 !ml-4">
@@ -136,15 +139,15 @@ export default function Navigation() {
                         <div className="w-6 flex flex-col gap-1.5">
                             <span
                                 className={`block h-0.5 bg-current transition-all duration-300 ${isOpen ? 'rotate-45 translate-y-2' : ''
-                                    } ${isOpen ? 'text-primary' : 'text-white'}`}
+                                    } ${isOpen ? 'text-black' : 'text-[var(--color-text)]'}`}
                             />
                             <span
                                 className={`block h-0.5 bg-current transition-all duration-300 ${isOpen ? 'opacity-0' : ''
-                                    } ${isOpen ? 'text-primary' : 'text-white'}`}
+                                    } ${isOpen ? 'text-black' : 'text-[var(--color-text)]'}`}
                             />
                             <span
                                 className={`block h-0.5 bg-current transition-all duration-300 ${isOpen ? '-rotate-45 -translate-y-2' : ''
-                                    } ${isOpen ? 'text-primary' : 'text-white'}`}
+                                    } ${isOpen ? 'text-black' : 'text-[var(--color-text)]'}`}
                             />
                         </div>
                     </button>
@@ -177,6 +180,7 @@ export default function Navigation() {
                             {link.name}
                         </Link>
                     ))}
+                    <ThemeToggle className="!bg-transparent !border-black/40 !text-black hover:!border-black hover:!text-black mt-4" />
                 </div>
             </div>
         </>
